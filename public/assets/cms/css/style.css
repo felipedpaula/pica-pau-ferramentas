@@ -1,0 +1,8 @@
+.cms-logo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    margin-top: 40px;
+}
