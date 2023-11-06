@@ -23,6 +23,23 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin/categorias">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Categorias</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin/produtos">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Produtos</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
     <!-- Heading -->
     <div class="sidebar-heading">
         Interface
