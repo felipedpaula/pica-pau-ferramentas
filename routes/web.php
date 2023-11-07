@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', 'AuthController@showLoginForm')->name('login');
     Route::post('login', 'AuthController@login');
 
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    Route::get('/users', 'UsersController@index')->name('users.index');
+    Route::get('/users/register', 'UsersController@register')->name('user.create');
+    
+    // rotas de controle de categoria e produtos -> exclusivas para admin (passar por autenticaçao)
+    Route::get('/categorias', [CategoriaController::class, 'index']);
+    Route::get('/categorias/criar', [CategoriaController::class, 'createCategoria']);
+    Route::get('/categorias/editar/{slug_categoria}', [CategoriaController::class, 'editCategoria']);
+    Route::get('/categorias/{slug_categoria}', [CategoriaController::class, 'indexProdutoPorCategoria']);
+
+    Route::get('/produtos', [ProdutosController::class, 'index']);
+    Route::get('/produtos/criar', [ProdutosController::class, 'createProduto']);
+    Route::get('/produtos/editar/{slug_categoria}', [ProdutosController::class, 'editProduto']);
+
     // Outras rotas específicas do CMS que só devem ser acessíveis por usuários autenticados:
     Route::middleware(['auth'])->group(function () {
         Route::post('logout', 'AuthController@logout')->name('logout');
@@ -49,19 +65,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('cms.pages.dahsboard.index');
-});
 
-Route::get('/admin/users', 'UsersController@index')->name('user.index');
-Route::get('/admin/users/register', 'UsersController@register')->name('user.register');
-
-// rotas de controle de categoria e produtos -> exclusivas para admin (passar por autenticaçao)
-Route::get('/admin/categorias', [CategoriaController::class, 'index']);
-Route::get('/admin/categorias/criar', [CategoriaController::class, 'createCategoria']);
-Route::get('/admin/categorias/editar/{slug_categoria}', [CategoriaController::class, 'editCategoria']);
-Route::get('/admin/categorias/{slug_categoria}', [CategoriaController::class, 'indexProdutoPorCategoria']);
-
-Route::get('/admin/produtos', [ProdutosController::class, 'index']);
-Route::get('/admin/produtos/criar', [ProdutosController::class, 'createProduto']);
-Route::get('/admin/produtos/editar/{slug_categoria}', [ProdutosController::class, 'editProduto']);

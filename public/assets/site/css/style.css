@@ -16859,7 +16859,7 @@ img {
   font-weight: 500;
 }
 .countdown__time:before {
-  content: url("../images/shape/1.png");
+  content: url("../../../tromic/assets/images/shape/1.png");
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -17989,10 +17989,10 @@ blockquote .user-name:before {
   background-position: 0 100%;
 }
 .custom-button-prev {
-  background-image: url("../images/slider/arrow/left-arrow.png");
+  background-image: url("../../../tromic/assets/images/slider/arrow/left-arrow.png");
 }
 .custom-button-next {
-  background-image: url("../images/slider/arrow/right-arrow.png");
+  background-image: url("../../../tromic/assets/images/slider/arrow/right-arrow.png");
   left: auto;
   right: 30px;
 }
@@ -19007,7 +19007,7 @@ blockquote .user-name:before {
   color: #3e3e3f;
 }
 .shipping-style-2 .shipping-item {
-  background-image: url("../images/shipping/shape/1.png");
+  background-image: url("../../../tromic/assets/images/shipping/shape/1.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size: auto;
@@ -20230,7 +20230,7 @@ blockquote .user-name:before {
   position: relative;
 }
 .testimonial-item.swiper-slide-active:before {
-  content: url("../images/testimonial/user/inner-icon/1.png");
+  content: url("../../../tromic/assets/images/testimonial/user/inner-icon/1.png");
   position: absolute;
   bottom: -6px;
   right: 0;
