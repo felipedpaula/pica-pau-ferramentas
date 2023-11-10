@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\ProdutosController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CmsControllers\UsersController;
+use App\Http\Controllers\CmsControllers\CategoriasController;
+use App\Http\Controllers\CmsControllers\ProdutosController;
+use App\Http\Controllers\CmsControllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,35 +34,49 @@ Route::get('/blog', function () {
     return view('site.pages.blog.index');
 });
 
-
-
 // Rotas CMS ################################################################
 // --------------------------------------------------------------------------
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('login', 'AuthController@showLoginForm')->name('login');
-    Route::post('login', 'AuthController@login');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
-    Route::get('/users', 'UsersController@index')->name('users.index');
-    Route::get('/users/register', 'UsersController@register')->name('user.create');
-    
-    // rotas de controle de categoria e produtos -> exclusivas para admin (passar por autenticaçao)
-    Route::get('/categorias', [CategoriaController::class, 'index']);
-    Route::get('/categorias/criar', [CategoriaController::class, 'createCategoria']);
-    Route::get('/categorias/editar/{slug_categoria}', [CategoriaController::class, 'editCategoria']);
-    Route::get('/categorias/{slug_categoria}', [CategoriaController::class, 'indexProdutoPorCategoria']);
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/produtos', [ProdutosController::class, 'index']);
-    Route::get('/produtos/criar', [ProdutosController::class, 'createProduto']);
-    Route::get('/produtos/editar/{slug_categoria}', [ProdutosController::class, 'editProduto']);
+        // USUÁRIOS
+        Route::get('/users', [UsersController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [UsersController::class, 'create'])->name('user.create');
+        Route::post('/users/store', [UsersController::class, 'store'])->name('user.store');
+        Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('user.edit');
+        Route::post('/users/{id}/update', [UsersController::class, 'update'])->name('user.update');
+        Route::get('/users/{id}/delete', [UsersController::class, 'delete'])->name('user.delete');
 
-    // Outras rotas específicas do CMS que só devem ser acessíveis por usuários autenticados:
-    Route::middleware(['auth'])->group(function () {
+        // CATEGORIAS
+        Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias.index');
+        Route::get('/categorias/create', [CategoriasController::class, 'create'])->name('categoria.create');
+        Route::post('/categorias/store', [CategoriasController::class, 'store'])->name('categoria.store');
+        Route::get('/categorias/{id}/edit', [CategoriasController::class, 'edit'])->name('categoria.edit');
+        Route::post('/categorias/{id}/update', [CategoriasController::class, 'update'])->name('categoria.update');
+        Route::get('/categorias/{id}/delete', [CategoriasController::class, 'delete'])->name('categoria.delete');
+
+        // PRODUTOS
+        Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos.index');
+        Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produto.create');
+        Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produto.create');
+        Route::get('/produtos/{id}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
+        Route::post('/produtos/{id}/update', [ProdutosController::class, 'update'])->name('produto.update');
+        Route::get('/produtos/{id}/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
+
+        // CATEGORIAS DESTAQUES (Não editável)
+        Route::get('/destaques-categorias', [DestaquesController::class, 'indexCategorias'])->name('destaquesCategorias.index');
+        // --- DESTAQUES
+        Route::get('/destaques-categorias/{id_categoria}', [DestaquesController::class, 'indexDestaques'])->name('destaques.index');
+        Route::get('/destaques-categorias/{id_categoria}/create', [DestaquesController::class, 'createDestaque'])->name('destaque.create');
+        Route::post('/destaques-categorias/{id_categoria}/store', [DestaquesController::class, 'storeDestaque'])->name('destaque.store');
+        Route::get('/destaques-categorias/{id_categoria}/{id_destaque}/edit', [DestaquesController::class, 'editDestaque'])->name('destaque.edit');
+        Route::post('/destaques-categorias/{id_categoria}/{id_destaque}/update', [DestaquesController::class, 'updateDestaque'])->name('destaque.update');
+        Route::post('/destaques-categorias/{id_categoria}/{id_destaque}/delete', [DestaquesController::class, 'deleteDestaque'])->name('destaque.delete');
+
+
         Route::post('logout', 'AuthController@logout')->name('logout');
-        Route::get('register', 'AuthController@showRegistrationForm')->name('register');
-        Route::post('register', 'AuthController@register');
-        // Route::get('categorias/criar-categoria', [CategoriaController::class, 'indexCategorias']);
     });
 });
 

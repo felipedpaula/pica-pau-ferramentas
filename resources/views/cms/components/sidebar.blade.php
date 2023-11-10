@@ -16,8 +16,8 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span></a>
     </li>
 
     <!-- Divider -->
@@ -29,11 +29,24 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDestaques" aria-expanded="true" aria-controls="collapseDestaques">
+            <i class="fas fa-fw fa-file"></i>
+            <span>Destaques</span>
+        </a>
+        <div id="collapseDestaques" class="collapse" aria-labelledby="headingDestaques" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="">Categorias destaques</a>
+                <a class="collapse-item" href="">Novo destaque</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog" aria-expanded="true" aria-controls="collapseBlog">
             <i class="fas fa-fw fa-file"></i>
             <span>Blog</span>
         </a>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+        <div id="collapseBlog" class="collapse" aria-labelledby="headingBlog" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="buttons.html">Nova postagem</a>
                 <a class="collapse-item" href="cards.html">Todas as postagens</a>
@@ -42,11 +55,11 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePaginas" aria-expanded="true" aria-controls="collapsePaginas">
             <i class="fas fa-fw fa-desktop"></i>
             <span>Páginas</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsePaginas" class="collapse" aria-labelledby="headingPaginas" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Páginas Estáticas:</h6>
                 <a class="collapse-item" href="cards.html">Sobre Nós</a>
@@ -57,11 +70,11 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEventos" aria-expanded="true" aria-controls="collapseEventos">
             <i class="fas fa-fw fa-calendar"></i>
             <span>Eventos</span>
         </a>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+        <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="cards.html">Novo evento</a>
                 <a class="collapse-item" href="buttons.html">Todos os eventos</a>
@@ -97,8 +110,8 @@
         </a>
         <div id="collapseCategorias" class="collapse" aria-labelledby="headingCategorias" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="register.html">Nova categoria</a>
-                <a class="collapse-item" href="login.html">Todas as categorias</a>
+                <a class="collapse-item" href="{{route('admin.categoria.create')}}">Nova categoria</a>
+                <a class="collapse-item" href="{{route('admin.categorias.index')}}">Todas as categorias</a>
             </div>
         </div>
     </li>
