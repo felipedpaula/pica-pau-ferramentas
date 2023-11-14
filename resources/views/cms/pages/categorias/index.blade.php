@@ -43,7 +43,7 @@
             </form>
         </div>
         <div class="col-md-4 text-right">
-            <a href="{{route('admin.user.create')}}" class="btn btn-primary" type="button">+ Nova categoria</a>
+            <a href="{{route('admin.categoria.create')}}" class="btn btn-primary" type="button">+ Nova categoria</a>
         </div>
     </div>
 

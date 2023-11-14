@@ -12,3 +12,4 @@
 
  <!-- Style CSS -->
  <link rel="stylesheet" href="/assets/site/css/style.css">
+ <link rel="stylesheet" href="/assets/site/css/app.min.css">

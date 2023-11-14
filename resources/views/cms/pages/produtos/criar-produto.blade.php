@@ -19,6 +19,13 @@
         <label for="descricao">Descrição do Produto:</label>
         <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
     </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-control" id="status" name="status">
+            <option value="1">Ativo</option>
+            <option value="0">Bloqueado</option>
+        </select>
+    </div>
 
     <div class="form-group">
         <label for="imagem">Imagem do Produto:</label>

@@ -21,7 +21,7 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="cms-logo mb-5">
-                        <a href="/"><img width="200px" class="" src="assets/site/images/logos/logo-horizontal.png" alt="Pica Pau"></a>
+                        <a href="/"><img width="200px" class="" src="{{asset('assets/site/images/logos-text/logo_amarelo.svg')}}" alt="Pica Pau"></a>
                     </div>
                     <div class="form-items">
                         <h3 class="mb-4">Login</h3>

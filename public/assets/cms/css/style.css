@@ -1,3 +1,11 @@
+:root {
+    --vermelho: #E5002C;
+    --azul: #003D6D;
+    --amarelo: #FFB236;
+    --offwhite: #FFF6F0;
+    --black: #181818;
+}
+
 .cms-logo {
     position: relative;
     width: 100%;
@@ -5,4 +13,17 @@
     justify-content: center;
     z-index: 5;
     margin-top: 40px;
+}
+.logo-dash{
+    width: 189px;
+    height: 100%;
+}
+.bg-primario-az{
+    background-color: var(--azul);
+}
+.bg-primario-am{
+    background-color: var(--amarelo);
+}
+.bg-primario-ver{
+    background-color: var(--vermelho);
 }

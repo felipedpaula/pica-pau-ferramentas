@@ -78,7 +78,7 @@
         <img id="selected-image" src="" alt="Imagem selecionada" style="max-width: 200px; max-height: 200px;">
     </div>
     <script defer>
-        const imageInput = document.getElementById('imagem');
+        const imageInput = document.getElementById('img_destaque');
         const imagePreview = document.getElementById('image-preview');
         const selectedImage = document.getElementById('selected-image');
 

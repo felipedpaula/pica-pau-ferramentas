@@ -14,5 +14,6 @@
 
     <!-- Custom styles for this template-->
     <link href="/assets/cms/css/sb-admin.css" rel="stylesheet">
+    <link href="/assets/cms/css/style.css" rel="stylesheet">
 
 </head>

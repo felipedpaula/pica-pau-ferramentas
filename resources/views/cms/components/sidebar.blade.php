@@ -1,13 +1,13 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-primario-az sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex flex-column h-auto align-items-center justify-content-center" href="{{route('admin.dashboard')}}">
+        <div class="sidebar-brand-text mx-3">Administração</div>
         <div class="sidebar-brand-icon">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img width="40px" src="/assets/site/images/logos/logo-ico.png" alt="">
+            <img src="{{asset('assets/site/images/logos-text/logo_amarelo.svg')}}" alt="" width="189px" height="54px">
         </div>
-        <div class="sidebar-brand-text mx-3">Administrção</div>
     </a>
 
     <!-- Divider -->
@@ -123,8 +123,8 @@
         </a>
         <div id="collapseProdutos" class="collapse" aria-labelledby="headingProdutos" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="register.html">Novo produto</a>
-                <a class="collapse-item" href="login.html">Todas os produtos</a>
+                <a class="collapse-item" href="{{route('admin.produto.create')}}">Novo produto</a>
+                <a class="collapse-item" href="{{route('admin.produtos.index')}}">Todos os produtos</a>
             </div>
         </div>
     </li>

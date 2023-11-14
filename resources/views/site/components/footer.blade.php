@@ -1,13 +1,13 @@
 <!-- Begin Footer Area -->
 <div class="footer-area">
-    <div class="footer-top section-space-y-axis-100 text-lavender" data-bg-image="/tromic/assets/images/background-img/1-4-1920x419.png">
+    <div class="footer-top section-space-y-axis-100 text-lavender">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="widget-item">
                         <div class="footer-logo pb-4">
                             <a href="index.html">
-                                <img src="/tromic/assets/images/logo/light.png" alt="Logo">
+                                <img src="{{asset('assets/site/images/logos-mascote/logo_v_amarelo.png')}}" alt="Logo">
                             </a>
                         </div>
                         <p class="short-desc mb-2">Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tempor incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
