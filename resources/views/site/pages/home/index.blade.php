@@ -50,7 +50,7 @@
 
     <div class="background-img">
         <div class="inner-bg">
-            <img src="/tromic/assets/images/background-img/inner-bg/1-1-496x566.png" alt="Inner Background">
+            <img src={{asset('assets/site/images/background/bg-3.jpg')}} alt="Inner Background">
         </div>
         <div class="banner-area section-space-top-100">
             <div class="container">
@@ -104,7 +104,7 @@
         <!-- Begin Shipping Area -->
         <div class="shipping-area section-space-y-axis-100">
             <div class="container">
-                <div class="shipping-bg" data-bg-image="/tromic/assets/images/shipping/bg/1-1-1280x202.jpg">
+                <div class="shipping-bg" data-bg-image="{{asset('assets/site/images/background/bg-2.jpg')}}">
                     <div class="row shipping-wrap py-5 py-xl-0">
                         <div class="col-lg-4">
                             <div class="shipping-item">
@@ -148,7 +148,7 @@
     </div>
 
     <!-- Begin Product Area -->
-    <div class="background-img" data-bg-image="/tromic/assets/images/background-img/1-1-1920x1107.jpg">
+    <div class="background-img" data-bg-image="{{asset('assets/site/images/background/gpt2.png')}}">
         <div class="product-area section-space-y-axis-100">
             <div class="container">
                 <div class="section-title pb-55">
@@ -771,7 +771,7 @@
     <!-- Testimonial Area End Here -->
 
     <!-- Begin Banner Area -->
-    <div class="banner-area banner-style-2 section-border-y-axis section-space-y-axis-100" data-bg-image="/tromic/assets/images/background-img/1-3-1920x208.png">
+    <div class="banner-area banner-style-2 section-border-y-axis section-space-y-axis-100" data-bg-image="{{asset('assets/site/images/background/bg-4.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

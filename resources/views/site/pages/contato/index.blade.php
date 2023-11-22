@@ -3,17 +3,17 @@
 @section('content')
     <!-- Begin Main Content Area -->
     <main class="main-content">
-        <div class="breadcrumb-area breadcrumb-height" data-bg-image="/tromic/assets/images/breadcrumb/bg/1-1-1920x400.jpg">
+        <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{asset('assets/site/images/contato/banner-contato.jpg')}}">
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-lg-12">
                         <div class="breadcrumb-item text-night-rider">
-                            <h2 class="breadcrumb-heading">Contact Us</h2>
+                            <h2 style="color:#FFF" class="breadcrumb-heading">Contato</h2>
                             <ul>
                                 <li>
-                                    <a href="index.html">Home/</a>
+                                    <a style="color:#FFF" href="index.html">Home/</a>
                                 </li>
-                                <li>Contact</li>
+                                <li style="color:#FFF">Contato</li>
                             </ul>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                                 <img src="/tromic/assets/images/shipping/icon/phone.png" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Phone/Fax</h2>
-                                <p class="short-desc mb-0">0123456789</p>
+                                <h2 class="title">Telefone</h2>
+                                <p class="short-desc mb-0">(62) 99146-6107</p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                 <img src="/tromic/assets/images/shipping/icon/message.png" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Email/Web</h2>
+                                <h2 class="title">Email</h2>
                                 <p class="short-desc mb-0">demo@example.com</p>
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                                 <img src="/tromic/assets/images/shipping/icon/home.png" alt="Shipping Icon">
                             </div>
                             <div class="shipping-content">
-                                <h2 class="title">Address:</h2>
-                                <p class="short-desc mb-0">Your address goes here</p>
+                                <h2 class="title">Endereço</h2>
+                                <p class="short-desc mb-0">Av. Bernardo Sayão, 2462<br>Inhumas - GO, 75402-050</p>
                             </div>
                         </div>
                     </div>
@@ -72,20 +72,27 @@
                                 <img src="/tromic/assets/images/contact/1-1-520x278.png" alt="Contact Images">
                             </div>
                             <form id="contact-form" class="contact-form" action="https://whizthemes.com/mail-php/mamunur/tromic/tromic.php">
-                                <h4 class="contact-form-title mb-7">Send Us a Massage</h4>
+                                <h4 class="contact-form-title mb-7">Deixe um feedback sobre sua experiência conosco.</h4>
                                 <div class="group-input">
                                     <div class="form-field me-xl-6">
-                                        <input type="text" name="con_name" id="con_name" placeholder="Name*" class="input-field">
+                                        <input type="text" name="name" id="name" placeholder="Nome*" class="input-field">
                                     </div>
                                     <div class="form-field mt-6 mt-xl-0">
-                                        <input type="text" name="con_email" id="con_email" placeholder="Email*" class="input-field">
+                                        <input type="text" name="email" id="email" placeholder="Email*" class="input-field">
                                     </div>
                                 </div>
+
+                                <div class="group-input mt-6">
+                                    <div class="form-field mt-6 mt-xl-0">
+                                        <input type="text" name="telefone" id="telefone" placeholder="Telefone*" class="input-field">
+                                    </div>
+                                </div>
+
                                 <div class="form-field mt-6">
-                                    <textarea name="con_message" id="con_message" placeholder="Message" class="textarea-field"></textarea>
+                                    <textarea name="mensagem" id="mensagem" placeholder="Menssagem" class="textarea-field"></textarea>
                                 </div>
                                 <div class="button-wrap mt-8">
-                                    <button type="submit" value="submit" class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" name="submit">Post Comment</button>
+                                    <button type="submit" value="Enviar" class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" name="submit">Enviar</button>
                                     <p class="form-message mt-3 mb-0"></p>
                                 </div>
                             </form>
@@ -96,7 +103,7 @@
         </div>
         <div class="contact-with-map">
             <div class="contact-map">
-                <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1613802584124!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15312.280028793391!2d-49.493885!3d-16.3703958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e785b8c0cd89b%3A0x82a58af7e8af35e5!2sPica-Pau%20Parafusos%20e%20Ferramentas!5e0!3m2!1spt-BR!2sbr!4v1700676388141!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </main>

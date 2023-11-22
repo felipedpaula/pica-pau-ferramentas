@@ -13,23 +13,14 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav class="main-nav">
                                 <ul>
-                                    <li class="drop-holder">
-                                        <a href="index.html">Home
-                                            <i class="pe-7s-angle-down"></i>
-                                        </a>
-                                        <ul class="drop-menu">
-                                            <li>
-                                                <a href="index.html">Home One</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">Home Two</a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sobre">Sobre nós</a>
                                     </li>
                                     <li class="megamenu-holder">
-                                        <a href="shop.html">Shop
-                                            <i class="pe-7s-angle-down"></i>
-                                        </a>
+                                        <a href="/categorias">Categorias <i class="pe-7s-angle-down"></i></a>
                                         <ul class="drop-menu megamenu">
                                             <li>
                                                 <span class="title">Shop Layout</span>
@@ -107,50 +98,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="drop-holder">
-                                        <a href="#">Pages
-                                            <i class="pe-7s-angle-down"></i>
-                                        </a>
-                                        <ul class="drop-menu">
-                                            <li>
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="faq.html">FAQ</a>
-                                            </li>
-                                            <li>
-                                                <a href="404.html">Error 404</a>
-                                            </li>
-                                            <li class="drop-holder">
-                                                <a href="#">Multi Dropdown</a>
-                                                <ul class="drop-menu">
-                                                    <li class="drop-holder">
-                                                        <a href="#">Level 02</a>
-                                                        <ul class="drop-menu">
-                                                            <li>
-                                                                <a href="#">Level 03</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="drop-holder">
-                                        <a href="blog.html">Blog
-                                            <i class="pe-7s-angle-down"></i>
-                                        </a>
-                                        <ul class="drop-menu">
-                                            <li>
-                                                <a href="blog-listview.html">Blog List View</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-detail.html">Blog Detail</a>
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li>
-                                        <a href="contact.html">Contact</a>
+                                        <a href="/contato">Contato</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -394,8 +343,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">
-                                    <span class="mm-text">Contact</span>
+                                <a href="/contato">
+                                    <span class="mm-text">Contato</span>
                                 </a>
                             </li>
                         </ul>
