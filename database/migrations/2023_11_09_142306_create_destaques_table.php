@@ -10,7 +10,7 @@ class CreateDestaquesTable extends Migration
     {
         Schema::create('destaques', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categoria_id')->constrained('categorias_destaques');
+            $table->foreignId('categoria_id')->constrained('destaques_categorias')->unsigned();
             $table->string('titulo');
             $table->string('subtitulo')->nullable();
             $table->text('texto')->nullable();

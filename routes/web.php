@@ -5,10 +5,14 @@ use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
 use App\Http\Controllers\FeedBackController;
+use App\Http\Controllers\SiteControllers\SiteProdutosControllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
+
+// Pagina de Produto unico
+Route::get('/produto/teste', [SiteProdutosControllers::class, 'index'])->name('produto.index');
 
 // Home ---------------------------------
 Route::get('/', function () {

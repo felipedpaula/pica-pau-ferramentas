@@ -87,5 +87,28 @@ class DatabaseSeeder extends Seeder
             'tamanho_img' => '290x350',
             'status' => true
         ]);
+
+        DB::table('categories')->insert([
+            'name' => 'Parafusos',
+            'description' => 'Descrição da Categoria Principal',
+            'body' => 'Conteúdo adicional da Categoria Principal',
+            'img_destaque' => 'url_da_imagem.jpg',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $categories = DB::table('categories')->pluck('id')->toArray();
+        DB::table('products')->insert([
+            'name' => 'Produto Exemplo',
+            'slug' => 'produto-exemplo',
+            'description' => 'Descrição do Produto Exemplo',
+            'price' => 29.99,
+            'category_id' => count($categories) > 0 ? $categories[0] : null,
+            'image_url' => 'url_da_imagem_produto.jpg',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

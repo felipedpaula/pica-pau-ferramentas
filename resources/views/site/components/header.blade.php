@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="header-middle-wrap position-relative">
 
-                        <a href="{{route('admin.dashboard')}}" class="header-logo">
+                        <a href="/" class="header-logo">
                             <img rel='preload' width="189px" height="54px" src="{{asset('assets/site/images/logos-text/logo_vermelho.svg')}}" alt="Header Logo">
                         </a>
 
