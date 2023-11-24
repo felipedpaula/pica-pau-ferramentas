@@ -4,6 +4,7 @@ use App\Http\Controllers\CmsControllers\UsersController;
 use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
+use App\Http\Controllers\FeedBackController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Route::get('/sobre', function () {
 Route::get('/contato', function () {
     return view('site.pages.contato.index');
 });
+// Fedback
+Route::post('/contato/send-feedback', [FeedBackController::class, 'sendFeedBack'])->name('sendfb');
 
 // Galeria ---------------------------------
 Route::get('/galeria', function () {

@@ -15,7 +15,7 @@ class CreateClienteFeedbackTable extends Migration
     {
         Schema::create('cliente_feedback', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->nullable();
+            $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('telefone')->nullable();
             $table->enum('tipo', ['Comentário', 'Reclamação', 'Sugestão', 'Elogio']);

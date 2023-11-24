@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        DB::table('categorias_destaques')->insert([
+        DB::table('destaques_categorias')->insert([
             'titulo' => 'Slider Home',
             'slug' => 'slider-home',
             'descricao' => 'Slides da primeira seção da Home',
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'status' => true
         ]);
 
-        DB::table('categorias_destaques')->insert([
+        DB::table('destaques_categorias')->insert([
             'titulo' => 'Destaques Pequenos',
             'slug' => 'destaques-pequenos',
             'descricao' => 'Destaques abaixo do slider inicial | 3',
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'status' => true
         ]);
 
-        DB::table('categorias_destaques')->insert([
+        DB::table('destaques_categorias')->insert([
             'titulo' => 'Banner Lateral',
             'slug' => 'banner-lateral',
             'descricao' => 'Banner lateral vertical do site | 1',
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
             'status' => true
         ]);
 
-        DB::table('categorias_destaques')->insert([
+        DB::table('destaques_categorias')->insert([
             'titulo' => 'Ofertas Especiais',
             'slug' => 'ofertas-especiais',
             'descricao' => 'Cards ao lado do banner latera na Home | 1 Grande - 4 Pequenos',
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
             'status' => true
         ]);
 
-        DB::table('categorias_destaques')->insert([
+        DB::table('destaques_categorias')->insert([
             'titulo' => 'Categorias dos Produtos',
             'slug' => 'categorias-produtos',
             'descricao' => 'Slider de categorias dos produtos',

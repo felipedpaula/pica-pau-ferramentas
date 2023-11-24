@@ -3,7 +3,7 @@
 @section('content')
     <!-- Begin Main Content Area -->
     <main class="main-content">
-        <div class="breadcrumb-area breadcrumb-height" data-bg-image="{{asset('assets/site/images/contato/banner-contato.jpg')}}">
+        <div style="height:200px" class="breadcrumb-area breadcrumb-height" data-bg-image="{{asset('assets/site/images/background/contato/contato.png')}}">
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-lg-12">
@@ -71,7 +71,24 @@
                             <div class="contact-img">
                                 <img src="/tromic/assets/images/contact/1-1-520x278.png" alt="Contact Images">
                             </div>
-                            <form id="contact-form" class="contact-form" action="https://whizthemes.com/mail-php/mamunur/tromic/tromic.php">
+
+                            <form class="contact-form" action="{{ route('sendfb') }}" method="POST">
+                                @if(session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+    
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @csrf
                                 <h4 class="contact-form-title mb-7">Deixe um feedback sobre sua experiência conosco.</h4>
                                 <div class="group-input">
                                     <div class="form-field me-xl-6">
@@ -93,7 +110,7 @@
                                 </div>
                                 <div class="button-wrap mt-8">
                                     <button type="submit" value="Enviar" class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" name="submit">Enviar</button>
-                                    <p class="form-message mt-3 mb-0"></p>
+                                    <p class="mt-3 mb-0"></p>
                                 </div>
                             </form>
                         </div>
