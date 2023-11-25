@@ -5,19 +5,24 @@ use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
 use App\Http\Controllers\FeedBackController;
+use App\Http\Controllers\SiteControllers\SiteCategoriasController;
 use App\Http\Controllers\SiteControllers\SiteProdutosControllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Pagina de Produto unico
-Route::get('/produto/teste', [SiteProdutosControllers::class, 'index'])->name('produto.index');
 
 // Home ---------------------------------
 Route::get('/', function () {
     return view('site.pages.home.index');
 });
+
+// Pagina de Produto unico
+Route::get('/produto/{slug}.html', [SiteProdutosControllers::class, 'index'])->name('produto.index');
+
+// Pagina de Categoria unica
+Route::get('/categoria/{slug}.html', [SiteCategoriasController::class, 'index'])->name('produto.index');
 
 // Contato ---------------------------------
 Route::get('/sobre', function () {

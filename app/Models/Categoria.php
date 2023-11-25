@@ -4,8 +4,66 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Categoria extends Model
 {
     use HasFactory;
+
+    protected $table = 'categories';
+
+    protected $fillable = [
+        'name',
+        'description',
+        'body',
+        'img_destaque',
+        'parent_category_id',
+        'status'
+    ];
+
+    /**
+     * Obtém todas categorias.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getCategorias()
+    {
+        $dados = DB::table($this->table)
+            ->select('name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
+            ->where('status', 1)
+            ->orderBy('name', 'asc')
+            ->get();
+        return $dados;
+    }
+
+    /**
+     * Obtém uma categoria especifica
+     *
+     *
+     */
+    public function getSingleCategoria()
+    {
+        $dados = DB::table($this->table)
+            ->select('name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
+            ->where('status', 1)
+            ->orderBy('name', 'asc')
+            ->get();
+        return $dados;
+    }
+
+            /**
+     * Obtém a categoria de um produto.
+     *
+     *
+     */
+    public function getCategoriaDoProduto($id)
+    {
+        $dados = DB::table($this->table)
+            ->select('name', 'slug', 'description', 'status')
+            ->where('status', 1)
+            ->where('id', $id)
+            ->orderBy('name', 'asc')
+            ->first();
+        return $dados;
+    }
 }

@@ -90,6 +90,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('categories')->insert([
             'name' => 'Parafusos',
+            'slug' => 'parafusos',
             'description' => 'Descrição da Categoria Principal',
             'body' => 'Conteúdo adicional da Categoria Principal',
             'img_destaque' => 'url_da_imagem.jpg',
@@ -110,5 +111,28 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        DB::table('products')->insert([
+            'name' => 'Produto Exemplo 2',
+            'slug' => 'produto-exemplo-2',
+            'description' => 'Descrição do Produto2 Exemplo',
+            'price' => 52.74,
+            'category_id' => count($categories) > 0 ? $categories[0] : null,
+            'image_url' => 'url_da_imagem_produto.jpg',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('products')->insert([
+            'name' => 'Produto Exemplo 3',
+            'slug' => 'produto-exemplo-3',
+            'description' => 'Descrição do Produto3 Exemplo',
+            'price' => 15,
+            'category_id' => count($categories) > 0 ? $categories[0] : null,
+            'image_url' => 'url_da_imagem_produto.jpg',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }
