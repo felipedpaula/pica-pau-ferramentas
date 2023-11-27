@@ -59,4 +59,14 @@ class Produto extends Model
         return $dados;
     }
 
+    public function getProdutosMesmaCategoria($categoriaId){
+        $dados = DB::table($this->table)
+            ->select('name','slug','description','price','category_id','image_url','status')
+            ->where('status', 1)
+            ->where('category_id', $categoriaId)
+            ->orderBy('name', 'asc')
+            ->get();
+        return $dados;
+    }
+
 }

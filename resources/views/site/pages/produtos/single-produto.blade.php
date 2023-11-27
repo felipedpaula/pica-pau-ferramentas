@@ -74,9 +74,9 @@
                                                 </a>
                                             </div>
                                             <div class="product-content">
-                                                <a class="product-name pb-1" href="/produto/{{$prodRel->slug}}.html">{{$prodRel->name}}</a>
+                                                <a class="product-name pb-1" href="/produto/{{$prodRel->slug}}.html"><h3>{{$prodRel->name}}</h3></a>
                                                 <div class="price-box pb-3">
-                                                    <span class="new-price text-danger">R$29.99 </span>
+                                                    <h3 class="new-price text-danger">R$ {{$prodRel->price}}</h3>
                                                 </div>
                                             </div>
                                         </div>

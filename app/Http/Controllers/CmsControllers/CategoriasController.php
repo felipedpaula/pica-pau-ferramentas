@@ -46,7 +46,7 @@ class CategoriasController extends Controller
             'description' => 'required|string|max:255',
             'body' => 'required|string',
             'img_destaque' => 'nullable|image',
-            'parent_category_id' => 'nullable|exists:categorias,id',
+            'parent_category_id' => 'nullable|exists:categories,id',
             'status' => ['required', 'in:0,1'],
         ];
 

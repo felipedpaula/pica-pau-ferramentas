@@ -29,7 +29,7 @@ class Categoria extends Model
     public function getCategorias()
     {
         $dados = DB::table($this->table)
-            ->select('name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
+            ->select('id','name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status', 'slug')
             ->where('status', 1)
             ->orderBy('name', 'asc')
             ->get();
@@ -44,10 +44,10 @@ class Categoria extends Model
     public function getSingleCategoria()
     {
         $dados = DB::table($this->table)
-            ->select('name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
+            ->select('id','name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
             ->where('status', 1)
             ->orderBy('name', 'asc')
-            ->get();
+            ->first();
         return $dados;
     }
 

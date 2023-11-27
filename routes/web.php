@@ -19,10 +19,16 @@ Route::get('/', function () {
 });
 
 // Pagina de Produto unico
-Route::get('/produto/{slug}.html', [SiteProdutosControllers::class, 'index'])->name('produto.index');
+Route::get('/produto/{slug}.html', [SiteProdutosControllers::class, 'singleProduto'])->name('produto.single');
+
+// Pagina com todos os produtos
+Route::get('/produtos', [SiteProdutosControllers::class, 'index'])->name('produto.geral');
+
+// Pagina com todas as categorias
+Route::get('/categorias', [SiteCategoriasController::class, 'index'])->name('categoria.geral');
 
 // Pagina de Categoria unica
-Route::get('/categoria/{slug}.html', [SiteCategoriasController::class, 'index'])->name('produto.index');
+Route::get('/categoria/{slug}.html', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
 
 // Contato ---------------------------------
 Route::get('/sobre', function () {

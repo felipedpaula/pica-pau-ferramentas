@@ -1,6 +1,6 @@
 @extends('cms.layouts.cms-default')
 @section('content')
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/') }}/admin/produtos/store" method="POST">
     <div class="form-group">
         <label for="nome">Nome do Produto:</label>
         <input type="text" class="form-control" id="nome" name="nome" required>
@@ -9,8 +9,10 @@
     <div class="form-group">
         <label for="categoria">Categoria:</label>
         <select class="form-control" id="categoria" name="categoria" required>
-            <option value="categoria1">Categoria 1</option>
-            <option value="categoria2">Categoria 2</option>
+            <option value="0" selected>--</option>
+            @foreach ($categorias as $cat)
+                <option value="{{$cat->id}}">{{$cat->name}}</option>
+            @endforeach
             <!-- Adicione mais opções para categorias aqui -->
         </select>
     </div>

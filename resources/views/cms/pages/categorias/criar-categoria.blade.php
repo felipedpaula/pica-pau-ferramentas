@@ -36,7 +36,8 @@
     <!-- FIM ALERTAS -->
 
     <!-- Formulário de criação de categoria -->
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/') }}/admin/categorias/store" method="POST">
+        @csrf
         <div class="form-group">
             <label for="parent_category_id">Categoria pai:</label>
             <select class="form-control" id="parent_category_id" name="parent_category_id">

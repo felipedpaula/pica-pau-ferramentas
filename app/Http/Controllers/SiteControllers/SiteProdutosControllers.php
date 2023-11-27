@@ -20,7 +20,7 @@ class SiteProdutosControllers extends Controller
         $this->categoria = new Categoria();
     }
 
-    public function index(Request $request) {
+    public function singleProduto(Request $request) {
         $this->dadosPagina['tituloPagina'] = 'Produto tal';
 
         $slug = preg_replace('/\/produto\/([^\/]+)\.html$/', '$1', $request->getRequestUri());
@@ -33,9 +33,15 @@ class SiteProdutosControllers extends Controller
 
         $this->dadosPagina['produto'] = $produto;
 
-
         // dd($this->produto->getSingleProduto($slug));
         return view('site.pages.produtos.single-produto', $this->dadosPagina);
     }
 
+    public function index(Request $request){
+        $this->dadosPagina['tituloPagina'] = 'Todos os produtos';
+
+        $this->dadosPagina['allProdutos'] = $this->produto->getProdutos();
+
+        return view('site.pages.produtos.all-produtos', $this->dadosPagina);
+    }
 }

@@ -16,10 +16,12 @@ class ProdutosController extends Controller
     private $dadosPagina;
     private $user;
     private $produto;
+    private $categoria;
 
     public function __construct()
     {
         $this->produto = new Produto();
+        $this->categoria = new Categoria();
     }
 
     public function index(Request $request) {
@@ -29,6 +31,7 @@ class ProdutosController extends Controller
 
     public function create(Request $request) {
         $this->dadosPagina['tituloPagina'] = 'Cadastro de novo produto';
+        $this->dadosPagina['categorias'] = $this->categoria->getCategorias();
         return view('cms.pages.produtos.criar-produto', $this->dadosPagina);
     }
 
@@ -48,7 +51,7 @@ class ProdutosController extends Controller
 
         $rules = [
             'name' => 'required|string|max:255',
-            'parent_category_id' => 'nullable|exists:categorias,id',
+            'parent_category_id' => 'nullable|exists:categories,id|numeric',
             'description' => 'required|string|max:255',
             'img_destaque' => 'nullable|image',
             'status' => ['required', 'in:0,1'],
