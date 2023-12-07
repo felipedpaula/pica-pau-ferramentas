@@ -83,15 +83,24 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/produtos/{id}/update', [ProdutosController::class, 'update'])->name('produto.update');
         Route::get('/produtos/{id}/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
 
-        // CATEGORIAS DESTAQUES (Não editável)
-        Route::get('/destaques-categorias', [DestaquesController::class, 'indexCategorias'])->name('destaquesCategorias.index');
-        // --- DESTAQUES
-        Route::get('/destaques-categorias/{id_categoria}', [DestaquesController::class, 'indexDestaques'])->name('destaques.index');
-        Route::get('/destaques-categorias/{id_categoria}/create', [DestaquesController::class, 'createDestaque'])->name('destaque.create');
-        Route::post('/destaques-categorias/{id_categoria}/store', [DestaquesController::class, 'storeDestaque'])->name('destaque.store');
-        Route::get('/destaques-categorias/{id_categoria}/{id_destaque}/edit', [DestaquesController::class, 'editDestaque'])->name('destaque.edit');
-        Route::post('/destaques-categorias/{id_categoria}/{id_destaque}/update', [DestaquesController::class, 'updateDestaque'])->name('destaque.update');
-        Route::post('/destaques-categorias/{id_categoria}/{id_destaque}/delete', [DestaquesController::class, 'deleteDestaque'])->name('destaque.delete');
+        // DESTAQUES(HOME)
+        Route::get('/destaques', [DestaqueController::class, 'index'])->name('destaques.index');
+        Route::get('/destaques/register', [DestaqueController::class , 'register'])->name('destaque.create');
+        Route::post('/destaques/store', [DestaqueController::class , 'store'])->name('destaque.store');
+        Route::get('/destaques/{id}/edit', [DestaqueController::class , 'edit'])->name('destaque.edit');
+        Route::put('/destaques/{id}/update', [DestaqueController::class , 'update'])->name('destaque.update');
+        Route::delete('/destaques/{id}/delete', [DestaqueController::class , 'delete'])->name('destaque.delete');
+
+        // EVENTOS
+        Route::get('/events', [EventController::class , 'index'])->name('events.index');
+        Route::get('/events/register', [EventController::class , 'register'])->name('event.create');
+        Route::post('/events/store', [EventController::class , 'store'])->name('event.store');
+        Route::get('/events/{id}/edit', [EventController::class , 'edit'])->name('event.edit');
+        Route::put('/events/{id}/update', [EventController::class , 'update'])->name('event.update');
+        Route::delete('/events/{id}/delete', [EventController::class , 'delete'])->name('event.delete');
+
+        // PAGINAS HOME
+        Route::get('/paginas/home', [PaginaHome::class, 'index'])->name('paginas.home');
 
 
         Route::post('logout', 'AuthController@logout')->name('logout');

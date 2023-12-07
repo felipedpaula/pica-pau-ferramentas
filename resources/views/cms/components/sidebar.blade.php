@@ -15,9 +15,21 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <a class="nav-link" href="/" target="_blank">
+            <i class="fas fa-fw fa-house-damage"></i>
+            <span>Site</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('admin.dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -29,39 +41,14 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDestaques" aria-expanded="true" aria-controls="collapseDestaques">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Destaques</span>
-        </a>
-        <div id="collapseDestaques" class="collapse" aria-labelledby="headingDestaques" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="">Categorias destaques</a>
-                <a class="collapse-item" href="">Novo destaque</a>
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog" aria-expanded="true" aria-controls="collapseBlog">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Blog</span>
-        </a>
-        <div id="collapseBlog" class="collapse" aria-labelledby="headingBlog" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Nova postagem</a>
-                <a class="collapse-item" href="cards.html">Todas as postagens</a>
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePaginas" aria-expanded="true" aria-controls="collapsePaginas">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-desktop"></i>
             <span>Páginas</span>
         </a>
-        <div id="collapsePaginas" class="collapse" aria-labelledby="headingPaginas" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Páginas Estáticas:</h6>
+                <a class="collapse-item" href="{{route('admin.paginas.home')}}">Home</a>
                 <a class="collapse-item" href="cards.html">Sobre Nós</a>
                 <a class="collapse-item" href="buttons.html">Política de Privacidade</a>
                 <a class="collapse-item" href="cards.html">Termos de Uso</a>
@@ -70,14 +57,14 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEventos" aria-expanded="true" aria-controls="collapseEventos">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
             <i class="fas fa-fw fa-calendar"></i>
             <span>Eventos</span>
         </a>
-        <div id="collapseEventos" class="collapse" aria-labelledby="headingEventos" data-parent="#accordionSidebar">
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="cards.html">Novo evento</a>
-                <a class="collapse-item" href="buttons.html">Todos os eventos</a>
+                <a class="collapse-item" href="{{route('admin.event.create')}}">Novo evento</a>
+                <a class="collapse-item" href="{{route('admin.events.index')}}">Todos os eventos</a>
             </div>
         </div>
     </li>
