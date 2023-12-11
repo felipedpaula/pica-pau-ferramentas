@@ -23,11 +23,13 @@ class CategoriasController extends Controller
 
     public function index() {
         $this->dadosPagina['tituloPagina'] = 'Todas as categorias de produtos';
+        $this->dadosPagina['allCategorias'] = $this->categoria->getCategorias();
         return view('cms.pages.categorias.index', $this->dadosPagina);
     }
 
     public function create() {
         $this->dadosPagina['tituloPagina'] = 'Cadastro de nova categoria de produtos';
+        $this->dadosPagina['allCategorias'] = $this->categoria->getCategorias();
         return view('cms.pages.categorias.criar-categoria', $this->dadosPagina);
     }
 
@@ -61,7 +63,7 @@ class CategoriasController extends Controller
         $data['slug'] = Str::slug($data['name'], '-');
 
         try {
-            $this->categoria->title = $data['name'];
+            $this->categoria->name = $data['name'];
             $this->categoria->slug = $data['slug'];
             $this->categoria->description = $data['description'];
             $this->categoria->body = $data['body'];
@@ -71,6 +73,7 @@ class CategoriasController extends Controller
             return redirect()->route('admin.categorias.index')->with('success', 'Categoria criada com sucesso!');
 
         } catch (\Exception $e) {
+            dd($e);
             return redirect()->route('admin.categoria.create')->with('error', 'Ocorreu um erro ao criar a categoria. Por favor, tente novamente.');
         }
     }

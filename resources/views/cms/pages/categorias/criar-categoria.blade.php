@@ -40,9 +40,14 @@
         @csrf
         <div class="form-group">
             <label for="parent_category_id">Categoria pai:</label>
-            <select class="form-control" id="parent_category_id" name="parent_category_id">
-                <option value="0">--</option>
-            </select>
+            @if (isset($allCategorias) && !empty($allCategorias))
+                @foreach ($allCategorias as $categoria)
+                    <select class="form-control" id="parent_category_id" name="parent_category_id">
+                        <option value="">Nenhuma</option>
+                        <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                    </select>
+                @endforeach
+            @endif
         </div>
         <div class="form-group">
             <label for="name">Título:</label>
@@ -58,7 +63,7 @@
         </div>
         <div class="form-group">
             <label for="img_destaque">Imagem destaque:</label>
-            <input type="file" class="form-control-file" id="img_destaque" name="img_destaque" required>
+            <input type="file" class="form-control-file" id="img_destaque" name="img_destaque">
         </div>
         <div class="form-group">
             <label for="status">Status</label>

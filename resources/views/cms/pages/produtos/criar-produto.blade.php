@@ -1,14 +1,25 @@
 @extends('cms.layouts.cms-default')
 @section('content')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 <form action="{{ url('/') }}/admin/produtos/store" method="POST">
+    @csrf
     <div class="form-group">
-        <label for="nome">Nome do Produto:</label>
-        <input type="text" class="form-control" id="nome" name="nome" required>
+        <label for="name">Nome do Produto:</label>
+        <input type="text" class="form-control" id="nome" name="name" required>
     </div>
 
     <div class="form-group">
-        <label for="categoria">Categoria:</label>
-        <select class="form-control" id="categoria" name="categoria" required>
+        <label for="parent_category_id">Categoria:</label>
+        <select class="form-control" id="categoria" name="parent_category_id" required>
             <option value="0" selected>--</option>
             @foreach ($categorias as $cat)
                 <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -18,20 +29,36 @@
     </div>
 
     <div class="form-group">
-        <label for="descricao">Descrição do Produto:</label>
-        <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
+        <label for="description">Descrição do Produto:</label>
+        <textarea class="form-control" id="descricao" name="description" rows="4" required></textarea>
     </div>
-    <div class="form-group">
-        <label for="status">Status</label>
-        <select class="form-control" id="status" name="status">
-            <option value="1">Ativo</option>
-            <option value="0">Bloqueado</option>
-        </select>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="price">Preço do Produto:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">R$</span>
+                    </div>
+                    <input type="text" class="form-control" id="price" name="price" step="0.01" placeholder="0.00" oninput="formatarMoeda(this)" required>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="1">Ativo</option>
+                    <option value="0">Bloqueado</option>
+                </select>
+            </div>
+        </div>
     </div>
 
+
     <div class="form-group">
-        <label for="imagem">Imagem do Produto:</label>
-        <input type="file" class="form-control-file" id="imagem" name="imagem" accept="image/*" required>
+        <label for="img_destaque">Imagem do Produto:</label>
+        <input type="file" class="form-control-file" id="imagem" name="img_destaque" accept="image/*">
         <!-- Visualização da imagem -->
         <div id="image-preview" class="mt-3" style="display: none;">
             <h4>Imagem Selecionada:</h4>
@@ -56,6 +83,15 @@
                 imagePreview.style.display = 'none';
             }
         });
+
+        function formatarMoeda(input) {
+            let valor = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (valor.length === 1) {
+                valor = '00' + valor; // Adiciona zeros à esquerda se houver apenas um dígito
+            }
+            valor = parseFloat(valor) / 100; // Converte para número e divide por 100
+            input.value = valor.toFixed(2);
+        }
     </script>
 </form>
 @endsection

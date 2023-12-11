@@ -48,7 +48,7 @@
     </div>
 
     <div class="row mt-4">
-        @if (isset($categorias) && !empty($categorias))
+        @if (isset($allCategorias) && !empty($allCategorias))
             <ul class="list-group col-12">
                 <!-- Cabeçalho da Lista -->
                 <li class="list-group-item">
@@ -59,7 +59,7 @@
                     </div>
                 </li>
 
-                @foreach ($categorias as $categoria)
+                @foreach ($allCategorias as $categoria)
                 <!-- Item da Lista -->
                 <li class="list-group-item">
                 <div class="row flex-nowrap overflow-auto">
@@ -73,7 +73,7 @@
                 @endforeach
             </ul>
 
-            {{ $categorias->links() }}
+            {{-- {{ $allCategorias->links() }} --}}
         @else
             <div class="col-12">
                 <p>Não existem categorias cadastradas.</p>

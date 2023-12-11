@@ -29,7 +29,7 @@ class Produto extends Model
      */
     public function getProdutos(){
         $dados = DB::table($this->table)
-            ->select('name','slug','description','price','category_id','image_url','status')
+            ->select('id','name','slug','description','price','category_id','image_url','status')
             ->where('status', 1)
             ->orderBy('name', 'asc')
             ->get();

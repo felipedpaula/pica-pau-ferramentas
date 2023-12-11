@@ -79,8 +79,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos.index');
         Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produto.create');
         Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produto.store');
-        Route::get('/produtos/{id}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
-        Route::post('/produtos/{id}/update', [ProdutosController::class, 'update'])->name('produto.update');
+        Route::get('/produtos/{slug}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
+        Route::put('/produtos/{id}/update', [ProdutosController::class, 'update'])->name('produto.update');
         Route::get('/produtos/{id}/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
 
         // DESTAQUES(HOME)
