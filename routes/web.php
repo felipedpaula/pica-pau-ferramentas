@@ -57,6 +57,7 @@ Route::get('/blog', function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
 
+        Route::get('/', [DashboardController::class, 'index']);
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         // USUÁRIOS
@@ -71,17 +72,23 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias.index');
         Route::get('/categorias/create', [CategoriasController::class, 'create'])->name('categoria.create');
         Route::post('/categorias/store', [CategoriasController::class, 'store'])->name('categoria.store');
-        Route::get('/categorias/{id}/edit', [CategoriasController::class, 'edit'])->name('categoria.edit');
-        Route::post('/categorias/{id}/update', [CategoriasController::class, 'update'])->name('categoria.update');
-        Route::get('/categorias/{id}/delete', [CategoriasController::class, 'delete'])->name('categoria.delete');
+        Route::get('/categorias/{id}/edit', [CategoriasController::class, 'editCategoria'])->name('categoria.edit');
+        Route::put('/categorias/{id}/update', [CategoriasController::class, 'update'])->name('categoria.update');
+        Route::delete('/categorias/{id}/delete', [CategoriasController::class, 'delete'])->name('categoria.delete');
+        // -- ADICIONAR/REMOVER FOTOS DA CATEGORIA
+        Route::put('/categorias/{id}/add', [CategoriasController::class, 'add'])->name('categoria.add');
+        Route::get('/categorias/{id}/remove/{id_foto}', [CategoriasController::class, 'remove'])->name('categoria.remove');
 
         // PRODUTOS
         Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos.index');
         Route::get('/produtos/create', [ProdutosController::class, 'create'])->name('produto.create');
         Route::post('/produtos/store', [ProdutosController::class, 'store'])->name('produto.store');
-        Route::get('/produtos/{slug}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
+        Route::get('/produtos/{id}/edit', [ProdutosController::class, 'edit'])->name('produto.edit');
         Route::put('/produtos/{id}/update', [ProdutosController::class, 'update'])->name('produto.update');
-        Route::get('/produtos/{id}/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
+        Route::delete('/produtos/{id}/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
+        // -- ADICIONAR/REMOVER FOTOS DO PRODUTO
+        Route::put('/produtos/{id}/add', [ProdutosController::class, 'add'])->name('produto.add');
+        Route::get('/produtos/{id}/remove/{id_foto}', [ProdutosController::class, 'remove'])->name('produto.remove');
 
         // DESTAQUES(HOME)
         Route::get('/destaques', [DestaqueController::class, 'index'])->name('destaques.index');

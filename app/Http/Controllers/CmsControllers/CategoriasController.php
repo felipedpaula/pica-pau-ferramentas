@@ -79,12 +79,76 @@ class CategoriasController extends Controller
     }
 
     public function editCategoria(Request $request) {
+        $idCaregoria = $request->id;
         $this->dadosPagina['tituloPagina'] = 'Editar categoria';
+        $this->dadosPagina['categoria'] = Categoria::findOrFail($idCaregoria);
+        $this->dadosPagina['allCategorias'] = $this->categoria->getCategorias();
         return view('cms.pages.categorias.editar-categoria', $this->dadosPagina);
     }
+
+    public function update(Request $request, $id) {
+        $categoria = Categoria::findOrFail($id);
+    
+        $data = $request->only([
+            'name',
+            'description',
+            'body',
+            // 'img_destaque',
+            'parent_category_id',
+            'status'
+        ]);
+    
+        $rules = [
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'body' => 'required|string',
+            // 'img_destaque' => 'nullable|image',
+            'parent_category_id' => 'nullable|exists:categories,id',
+            'status' => ['required', 'in:0,1'],
+        ];
+    
+        $validator = Validator::make($data, $rules);
+    
+        if($validator->fails()) {
+            return redirect()->route('admin.categoria.edit', ['id' => $id])
+                ->withErrors($validator)
+                ->withInput();
+        }
+    
+        $data['slug'] = Str::slug($data['name'], '-');
+    
+        try {
+            $categoria->name = $data['name'];
+            $categoria->slug = $data['slug'];
+            $categoria->description = $data['description'];
+            $categoria->body = $data['body'];
+            $categoria->parent_category_id = $data['parent_category_id'];
+            $categoria->status = $data['status'];
+            $categoria->save();
+            return redirect()->route('admin.categorias.index')->with('success', 'Categoria atualizada com sucesso!');
+    
+        } catch (\Exception $e) {
+            dd($e);
+            return redirect()->route('admin.categoria.edit', ['id' => $id])->with('error', 'Ocorreu um erro ao atualizar a categoria. Por favor, tente novamente.');
+        }
+    }
+    
 
     public function indexProdutoPorCategoria(Request $request) {
         $this->dadosPagina['tituloPagina'] = 'Produtos da categoria - X';
         return view('cms.pages.categorias.produtos-por-categoria', $this->dadosPagina);
+    }
+
+
+    public function delete($id)
+    {
+        $categoria = Categoria::findOrFail($id);
+        try {
+            $categoria->delete();
+            return redirect()->route('admin.categorias.index')->with('success', 'Categoria excluída com sucesso.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.categorias.index')->with('error', 'Erro ao tentar excluir a categoria.');
+        }
+
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CmsControllers;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\ProdutoImagem;
 use App\Models\Produto;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -17,11 +18,13 @@ class ProdutosController extends Controller
     private $user;
     private $produto;
     private $categoria;
+    private $imagens;
 
     public function __construct()
     {
         $this->produto = new Produto();
         $this->categoria = new Categoria();
+        $this->imagens = new ProdutoImagem();
     }
 
     public function index(Request $request) {
@@ -37,12 +40,12 @@ class ProdutosController extends Controller
     }
 
     public function edit(Request $request) {
+        $idProduto = $request->id;
         $this->dadosPagina['tituloPagina'] = 'Editar produto';
 
-        $slug = preg_replace('/\/admin\/produtos\/([^\/]+)\/edit$/', '$1', $request->getRequestUri());
-
-        $this->dadosPagina['produto'] = $this->produto->getSingleProduto($slug);
+        $this->dadosPagina['produto'] = Produto::findOrFail($idProduto);
         $this->dadosPagina['categorias'] = $this->categoria->getCategorias();
+        $this->dadosPagina['imagens'] = $this->imagens->getImagensByProdutoId($idProduto);
 
         return view('cms.pages.produtos.editar-produto', $this->dadosPagina);
     }
@@ -65,7 +68,7 @@ class ProdutosController extends Controller
             'description' => 'required|string|max:255',
             'img_destaque' => 'nullable|image',
             'status' => ['required', 'in:0,1'],
-            'price' => 'required|numeric|max:255'
+            'price' => 'required|numeric'
         ];
 
         $validator = Validator::make($data, $rules);
@@ -121,7 +124,7 @@ class ProdutosController extends Controller
             'description' => 'required|string|max:255',
             'img_destaque' => 'nullable|image',
             'status' => ['required', 'in:0,1'],
-            'price' => 'required|numeric|max:255'
+            'price' => 'required|numeric'
         ];
 
         $validator = Validator::make($data, $rules);
@@ -161,5 +164,54 @@ class ProdutosController extends Controller
         }
     }
 
+    public function delete($id)
+    {
+        $produto = Produto::findOrFail($id);
+        try {
+            $produto->delete();
+            return redirect()->route('admin.produtos.index')->with('success', 'Produto excluído com sucesso.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.produtos.index')->with('error', 'Erro ao tentar excluir o produto.');
+        }
+
+    }
+
+    public function add(Request $request) {
+
+        $idProduto = $request->id;
+
+        $data = $request->only([
+            'title',
+            'imagem',
+        ]);
+
+        $rules = [
+            'title' => ['required', 'string', 'max:255'],
+            'imagem' => ['nullable','file', 'mimes:jpg,png,webp'],
+        ];
+
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // try {
+            $this->imgGaleria->gallery_id = $idGaleria;
+            $this->imgGaleria->img_title = $data['title'];
+            if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+                $img_default = $request->file('imagem')->store('public/images');
+                $url = asset(Storage::url($img_default));
+                $this->imgGaleria->src = $url;
+            }
+            $this->imgGaleria->save();
+            return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])->with('success', 'Galeria atualizada com sucesso!');
+        // } catch (\Exception $e) {
+        //     return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])
+        //         ->with('error', 'Ocorreu um erro ao atualizar a galeria. Por favor, tente novamente.');
+        // }
+    }
 
 }

@@ -36,17 +36,17 @@
     <!-- FIM ALERTAS -->
 
     <!-- Formulário de criação de categoria -->
-    <form action="{{ url('/') }}/admin/categorias/store" method="POST">
+    <form action="{{route('admin.categoria.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="parent_category_id">Categoria pai:</label>
             @if (isset($allCategorias) && !empty($allCategorias))
+            <select class="form-control" id="parent_category_id" name="parent_category_id">
+                <option value="">Nenhuma</option>
                 @foreach ($allCategorias as $categoria)
-                    <select class="form-control" id="parent_category_id" name="parent_category_id">
-                        <option value="">Nenhuma</option>
-                        <option value="{{$categoria->id}}">{{$categoria->name}}</option>
-                    </select>
+                <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                 @endforeach
+            </select>
             @endif
         </div>
         <div class="form-group">

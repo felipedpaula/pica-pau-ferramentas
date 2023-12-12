@@ -32,7 +32,7 @@ class Categoria extends Model
             ->select('id','name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status', 'slug')
             ->where('status', 1)
             ->orderBy('name', 'asc')
-            ->get();
+            ->paginate(10);
         return $dados;
     }
 
