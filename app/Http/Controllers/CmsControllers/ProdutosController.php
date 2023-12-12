@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -181,37 +182,52 @@ class ProdutosController extends Controller
         $idProduto = $request->id;
 
         $data = $request->only([
-            'title',
             'imagem',
+            'description'
         ]);
 
         $rules = [
-            'title' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:255'],
             'imagem' => ['nullable','file', 'mimes:jpg,png,webp'],
         ];
 
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-            return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        // try {
-            $this->imgGaleria->gallery_id = $idGaleria;
-            $this->imgGaleria->img_title = $data['title'];
+        try {
+            $this->imagens->product_id = $idProduto;
+            $this->imagens->description = $data['description'];
             if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
-                $img_default = $request->file('imagem')->store('public/images');
+                $img_default = $request->file('imagem')->store('public');
                 $url = asset(Storage::url($img_default));
-                $this->imgGaleria->src = $url;
+                $this->imagens->image_url = $url;
             }
-            $this->imgGaleria->save();
-            return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])->with('success', 'Galeria atualizada com sucesso!');
-        // } catch (\Exception $e) {
-        //     return redirect()->route('admin.galeria.edit', ['id' => $idGaleria])
-        //         ->with('error', 'Ocorreu um erro ao atualizar a galeria. Por favor, tente novamente.');
-        // }
+            $this->imagens->save();
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])->with('success', 'Produto atualizado com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])
+                ->with('error', 'Ocorreu um erro ao atualizar a galeria. Por favor, tente novamente.');
+        }
+    }
+
+    public function remove(Request $request) {
+        $idImagem = $request->id_foto;
+        $idProduto = $request->id;
+        $imagem = ProdutoImagem::find($idImagem);
+        if (!$imagem) {
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])->with('error', 'Imagem não encontrada.');
+        }
+        try {
+            $imagem->delete();
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])->with('success', 'Imagem excluída com sucesso.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.produto.edit', ['id' => $idProduto])->with('error', 'Erro ao tentar excluir a imagem.');
+        }
     }
 
 }

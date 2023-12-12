@@ -105,8 +105,8 @@
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#imagemModal" style="width:100px;height:100px;font-size:50px">+</button>
                     @foreach ($imagens as $imagem)
                     <div class="img-galeria">
-                        <img width="100px" height="100px" src="{{$imagem->src}}" alt="{{$imagem->img_alt}}">
-                        <a href="{{ route('admin.galeria.remove', ['id' => $galeria->id, 'id_foto' => $imagem->id]) }}" class="lixeira-layer" onclick="return confirm('Tem certeza que deseja excluir esta imagem?')">
+                        <img width="100px" height="100px" src="{{$imagem->image_url}}" alt="{{$imagem->description}}">
+                        <a href="{{ route('admin.produto.remove', ['id' => $produto->id, 'id_foto' => $imagem->id]) }}" class="lixeira-layer" onclick="return confirm('Tem certeza que deseja excluir esta imagem?')">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -159,8 +159,8 @@
                     {{ method_field('PUT') }}
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="imagemTitulo">Título</label>
-                            <input type="text" class="form-control" id="imagemTitulo" name="title" placeholder="Título da imagem">
+                            <label for="description">Descrição</label>
+                            <input type="text" class="form-control" id="description" name="description" placeholder="Descrição da imagem">
                         </div>
                         <div class="form-group">
                             <label for="imagemFile">Escolher imagem</label>
