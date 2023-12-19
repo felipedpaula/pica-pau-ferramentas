@@ -1,6 +1,7 @@
 @extends('cms.layouts.cms-default')
 
 @section('content')
+{{-- {{dd($categoria)}} --}}
     <div class="row mb-4">
         <div class="col-md-8">
             <a href="{{ url()->previous() }}" class="btn btn-secondary">

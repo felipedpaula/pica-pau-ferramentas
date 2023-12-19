@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoriaDestaque extends Model
 {
+    protected $table = 'destaques_categorias';
+
     use HasFactory;
 }

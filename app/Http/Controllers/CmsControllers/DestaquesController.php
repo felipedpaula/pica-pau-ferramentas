@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
-class DestaqueController extends Controller
+class DestaquesController extends Controller
 {
     private $dadosPagina;
 
@@ -34,46 +34,46 @@ class DestaqueController extends Controller
     public function store(Request $request) {
         $data = $request->only([
             'categoria_id',
-            'title',
-            'subtitle',
-            'body',
+            'titulo',
+            'subtitulo',
             'url_link',
-            'txt_link',
-            'date_start',
-            'date_end',
+            'texto_link',
+            'data_inicio',
+            'data_fim',
             'ordem',
             'status',
+            'img_src'
         ]);
 
         $rules = [
             'categoria_id' => ['required'],
-            'title' => ['required', 'string', 'max:255'],
-            'subtitle' => ['required', 'string', 'max:255'],
-            'body' => ['required'],
+            'titulo' => ['required', 'string', 'max:255'],
+            'subtitulo' => ['required', 'string', 'max:255'],
             'url_link' => ['nullable', 'string' , 'max:255'],
-            'txt_link' => ['nullable', 'string' , 'max:255'],
-            'date_start' => ['nullable', 'date'],
-            'date_end' => ['nullable', 'date'],
+            'texto_link' => ['nullable', 'string' , 'max:255'],
+            'data_inicio' => ['nullable', 'date'],
+            'data_fim' => ['nullable', 'date'],
             'ordem' => ['required'],
             'status' => ['required', 'in:0,1'],
         ];
+
 
         if($request->file('img_src')){
             $path =  Storage::disk('public')->put('/images', $request->file('img_src'));
             $data['img_src']= Storage::url($path);
 
         }else{
-            $data['img_src']= 'assets/site/images/main-slider/slider-2.jpg';
+            $data['img_src']= 'tromic/assets/images/slider/bg/1-1.jpg';
         }
 
-        if($request->date_start){
-            $date_start = \DateTime::createFromFormat('d/m/Y H:i:s', $request->date_start.':00');
-            $data['date_start'] = $date_start->format('Y-m-d H:i:s');
+        if($request->data_inicio){
+            $data_inicio = \DateTime::createFromFormat('d/m/Y H:i:s', $request->data_inicio.':00');
+            $data['data_inicio'] = $data_inicio->format('Y-m-d H:i:s');
         }
 
-        if($request->date_end){
-            $date_end = \DateTime::createFromFormat('d/m/Y H:i:s', $request->date_end.':00');
-            $data['date_end'] = $date_end->format('Y-m-d H:i:s');
+        if($request->data_fim){
+            $data_fim = \DateTime::createFromFormat('d/m/Y H:i:s', $request->data_fim.':00');
+            $data['data_fim'] = $data_fim->format('Y-m-d H:i:s');
         }
 
         $validator = Validator::make($data, $rules);
@@ -86,13 +86,12 @@ class DestaqueController extends Controller
         try {
             $destaque = new Destaque([
                 'categoria_id' => $data['categoria_id'],
-                'title' => $data['title'],
-                'subtitle' => $data['subtitle'],
-                'body' =>  $data['body'],
+                'titulo' => $data['titulo'],
+                'subtitulo' => $data['subtitulo'],
                 'url_link' =>  $data['url_link'],
-                'txt_link' =>  $data['txt_link'],
-                'date_start' => $data['date_start'],
-                'date_end' => $data['date_end'],
+                'texto_link' =>  $data['texto_link'],
+                'data_inicio' => $data['data_inicio'],
+                'data_fim' => $data['data_fim'],
                 'ordem' => $data['ordem'],
                 'status' => $data['status'],
                 'img_src' => $data['img_src']
@@ -124,27 +123,26 @@ class DestaqueController extends Controller
 
         $data = $request->only([
             'categoria_id',
-            'title',
-            'subtitle',
-            'body',
+            'titulo',
+            'subtitulo',
             'url_link',
-            'txt_link',
-            'date_start',
-            'date_end',
-            'order',
+            'texto_link',
+            'data_inicio',
+            'data_fim',
+            'ordem',
             'status',
+            'img_src'
         ]);
 
         $rules = [
             'categoria_id' => ['required'],
-            'title' => ['required', 'string', 'max:255'],
-            'subtitle' => ['required', 'string', 'max:255'],
-            'body' => ['required'],
+            'titulo' => ['required', 'string', 'max:255'],
+            'subtitulo' => ['required', 'string', 'max:255'],
             'url_link' => ['nullable', 'string' , 'max:255'],
-            'txt_link' => ['nullable', 'string' , 'max:255'],
-            'date_start' => ['nullable', 'date'],
-            'date_end' => ['nullable', 'date'],
-            'order' => ['required'],
+            'texto_link' => ['nullable', 'string' , 'max:255'],
+            'data_inicio' => ['nullable', 'date'],
+            'data_fim' => ['nullable', 'date'],
+            'ordem' => ['required'],
             'status' => ['required', 'in:0,1'],
         ];
 
@@ -163,14 +161,14 @@ class DestaqueController extends Controller
             unset($data['img_src']);
         }
 
-        if($request->date_start){
-            $date_start = \DateTime::createFromFormat('d/m/Y H:i:s', $request->date_start.':00');
-            $data['date_start'] = $date_start->format('Y-m-d H:i:s');
+        if($request->data_inicio){
+            $data_inicio = \DateTime::createFromFormat('d/m/Y H:i:s', $request->data_inicio.':00');
+            $data['data_inicio'] = $data_inicio->format('Y-m-d H:i:s');
         }
 
-        if($request->date_end){
-            $date_end = \DateTime::createFromFormat('d/m/Y H:i:s', $request->date_end.':00');
-            $data['date_end'] = $date_end->format('Y-m-d H:i:s');
+        if($request->data_fim){
+            $data_fim = \DateTime::createFromFormat('d/m/Y H:i:s', $request->data_fim.':00');
+            $data['data_fim'] = $data_fim->format('Y-m-d H:i:s');
         }
 
         $validator = Validator::make($data, $rules);

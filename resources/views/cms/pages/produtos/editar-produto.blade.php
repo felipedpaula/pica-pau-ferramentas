@@ -88,8 +88,8 @@
         </div>
 
         <div class="form-group">
-            <label for="img_destaque">Imagem do Produto:</label>
-            <input type="file" class="form-control-file" id="img_destaque" name="img_destaque" accept="image/*">
+            <label for="image_url">Imagem do Produto:</label>
+            <input type="file" class="form-control-file" id="image_url" name="image_url" accept="image/*">
             <img src="{{ asset($produto->image_url) }}" alt="Imagem selecionada" style="max-width: 200px; max-height: 200px;">
             <!-- Visualização da imagem -->
             <div id="image-preview" class="mt-3" style="display: none;">
@@ -177,7 +177,7 @@
     </div>
 
     <script defer>
-        const imageInput = document.getElementById('img_destaque');
+        const imageInput = document.getElementById('img_url');
         const imagePreview = document.getElementById('image-preview');
         const selectedImage = document.getElementById('selected-image');
 

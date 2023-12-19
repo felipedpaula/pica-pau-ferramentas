@@ -48,23 +48,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Páginas Estáticas:</h6>
-                <a class="collapse-item" href="{{route('admin.paginas.home')}}">Home</a>
+                <a class="collapse-item" href="{{route('admin.destaques.index')}}">Destaques</a>
                 <a class="collapse-item" href="cards.html">Sobre Nós</a>
                 <a class="collapse-item" href="buttons.html">Política de Privacidade</a>
                 <a class="collapse-item" href="cards.html">Termos de Uso</a>
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-            <i class="fas fa-fw fa-calendar"></i>
-            <span>Eventos</span>
-        </a>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.event.create')}}">Novo evento</a>
-                <a class="collapse-item" href="{{route('admin.events.index')}}">Todos os eventos</a>
             </div>
         </div>
     </li>

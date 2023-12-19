@@ -2,39 +2,31 @@
 
 @section('content')
     <!-- Begin Slider Area -->
+    @if (isset($destaques_slide) && count($destaques_slide) > 0)
     <div class="slider-area">
         <!-- Main Slider -->
         <div class="swiper-container main-slider swiper-arrow with-bg_white">
             <div class="swiper-wrapper">
+                @foreach ($destaques_slide as $destaque)
                 <div class="swiper-slide animation-style-01">
-                    <div class="slide-inner bg-height" data-bg-image="/tromic/assets/images/slider/bg/1-1.jpg">
+                    <div class="slide-inner bg-height" data-bg-image="{{$destaque->img_src}}">
                         <div class="container">
                             <div class="slide-content text-white">
-                                <h3 class="sub-title">Big Sale Offer</h3>
-                                <h2 class="title mb-3">Parts & repair</h2>
-                                <p class="short-desc different-width mb-10">Exclusive Exchange Offer & 30% Off In This Week</p>
+                                <h2 class="title mb-3">{{$destaque->titulo}}</h2>
+                                <p class="short-desc different-width mb-10">{{$destaque->subtitulo}}</p>
+                                @if (isset($destaque->texto_link) && $destaque->texto_link != '')
                                 <div class="button-wrap">
-                                    <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Shop Now</a>
+                                    <a class="btn btn-custom-size lg-size btn-primary" href="{{$destaque->url_link}}">{{$destaque->texto_link}}</a>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide animation-style-01">
-                    <div class="slide-inner bg-height" data-bg-image="/tromic/assets/images/slider/bg/1-2.jpg">
-                        <div class="container">
-                            <div class="slide-content text-white">
-                                <h3 class="sub-title">Big Sale Offer</h3>
-                                <h2 class="title mb-3">Parts & repair</h2>
-                                <p class="short-desc different-width mb-10">Exclusive Exchange Offer & 30% Off In This Week</p>
-                                <div class="button-wrap">
-                                    <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            
+            
             <!-- Add Pagination -->
             <div class="swiper-pagination with-bg d-md-none"></div>
 
@@ -44,8 +36,8 @@
                 <div class="custom-button-next"></div>
             </div>
         </div>
-
     </div>
+    @endif
     <!-- Slider Area End Here -->
 
     <div class="background-img">

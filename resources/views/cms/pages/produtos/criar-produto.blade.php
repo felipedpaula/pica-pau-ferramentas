@@ -10,7 +10,7 @@
         {{ session('error') }}
     </div>
 @endif
-<form action="{{ url('/') }}/admin/produtos/store" method="POST">
+<form action="{{ url('/') }}/admin/produtos/store" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="name">Nome do Produto:</label>
@@ -57,8 +57,8 @@
 
 
     <div class="form-group">
-        <label for="img_destaque">Imagem do Produto:</label>
-        <input type="file" class="form-control-file" id="imagem" name="img_destaque" accept="image/*">
+        <label for="image_url">Imagem do Produto:</label>
+        <input type="file" class="form-control-file" id="image_url" name="image_url">
         <!-- Visualização da imagem -->
         <div id="image-preview" class="mt-3" style="display: none;">
             <h4>Imagem Selecionada:</h4>
@@ -69,7 +69,7 @@
     <button type="submit" class="btn btn-primary">Criar Produto</button>
 
     <script defer>
-        const imageInput = document.getElementById('imagem');
+        const imageInput = document.getElementById('image_url');
         const imagePreview = document.getElementById('image-preview');
         const selectedImage = document.getElementById('selected-image');
 

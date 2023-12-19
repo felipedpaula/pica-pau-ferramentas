@@ -4,6 +4,8 @@ use App\Http\Controllers\CmsControllers\UsersController;
 use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
+use App\Http\Controllers\CmsControllers\DestaquesController;
+use App\Http\Controllers\SiteControllers\HomeController;
 use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\SiteControllers\SiteCategoriasController;
 use App\Http\Controllers\SiteControllers\SiteProdutosControllers;
@@ -14,9 +16,7 @@ Auth::routes();
 
 
 // Home ---------------------------------
-Route::get('/', function () {
-    return view('site.pages.home.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
 // Pagina de Produto unico
 Route::get('/produto/{slug}.html', [SiteProdutosControllers::class, 'singleProduto'])->name('produto.single');
@@ -91,12 +91,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/produtos/{id}/remove/{id_foto}', [ProdutosController::class, 'remove'])->name('produto.remove');
 
         // DESTAQUES(HOME)
-        Route::get('/destaques', [DestaqueController::class, 'index'])->name('destaques.index');
-        Route::get('/destaques/register', [DestaqueController::class , 'register'])->name('destaque.create');
-        Route::post('/destaques/store', [DestaqueController::class , 'store'])->name('destaque.store');
-        Route::get('/destaques/{id}/edit', [DestaqueController::class , 'edit'])->name('destaque.edit');
-        Route::put('/destaques/{id}/update', [DestaqueController::class , 'update'])->name('destaque.update');
-        Route::delete('/destaques/{id}/delete', [DestaqueController::class , 'delete'])->name('destaque.delete');
+        Route::get('/destaques', [DestaquesController::class, 'index'])->name('destaques.index');
+        Route::get('/destaques/register', [DestaquesController::class , 'register'])->name('destaque.create');
+        Route::post('/destaques/store', [DestaquesController::class , 'store'])->name('destaque.store');
+        Route::get('/destaques/{id}/edit', [DestaquesController::class , 'edit'])->name('destaque.edit');
+        Route::put('/destaques/{id}/update', [DestaquesController::class , 'update'])->name('destaque.update');
+        Route::delete('/destaques/{id}/delete', [DestaquesController::class , 'delete'])->name('destaque.delete');
 
         // EVENTOS
         Route::get('/events', [EventController::class , 'index'])->name('events.index');
@@ -105,10 +105,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/events/{id}/edit', [EventController::class , 'edit'])->name('event.edit');
         Route::put('/events/{id}/update', [EventController::class , 'update'])->name('event.update');
         Route::delete('/events/{id}/delete', [EventController::class , 'delete'])->name('event.delete');
-
-        // PAGINAS HOME
-        Route::get('/paginas/home', [PaginaHome::class, 'index'])->name('paginas.home');
-
 
         Route::post('logout', 'AuthController@logout')->name('logout');
     });

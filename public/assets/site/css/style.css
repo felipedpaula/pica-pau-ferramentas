@@ -16570,6 +16570,7 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  object-fit: cover;
 }
 
 /* ---Text Color--- */
@@ -17829,7 +17830,8 @@ blockquote .user-name:before {
           justify-content: flex-start;
 }
 .slide-inner.bg-height {
-  min-height: 792px;
+  min-height: 720px;
+  max-width: 100%;
 }
 @media (max-width: 1599.98px) {
   .slide-inner.bg-height {

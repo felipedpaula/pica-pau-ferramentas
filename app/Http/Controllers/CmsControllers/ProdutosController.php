@@ -56,7 +56,7 @@ class ProdutosController extends Controller
             'name',
             'parent_category_id',
             'description',
-            'img_destaque',
+            'image_url',
             'status',
             'price'
         ]);
@@ -67,10 +67,16 @@ class ProdutosController extends Controller
             'name' => 'required|string|max:255',
             'parent_category_id' => 'required|numeric|max:255',
             'description' => 'required|string|max:255',
-            'img_destaque' => 'nullable|image',
             'status' => ['required', 'in:0,1'],
             'price' => 'required|numeric'
         ];
+
+        if($request->file('image_url')){
+            $path = Storage::disk('public')->put('/images', $request->file('image_url'));
+            $data['image_url']= Storage::url($path);
+        }else{
+            $data['image_url']= 'tromic/assets/images/slider/bg/1-1.jpg';
+        }
 
         $validator = Validator::make($data, $rules);
 
@@ -81,6 +87,7 @@ class ProdutosController extends Controller
         }
 
         $data['slug'] = Str::slug($data['name'], '-');
+
         try {
             $this->produto->name = $data['name'];
             $this->produto->category_id = $data['parent_category_id'];
@@ -88,18 +95,7 @@ class ProdutosController extends Controller
             $this->produto->description = $data['description'];
             $this->produto->price = $data['price'];
             $this->produto->status = $data['status'];
-            if ($request->hasFile('img_destaque')) {
-                // Atualizar método para armazenar imagens localmente e registrar o caminho da imagem aqui
-                $imagemPath = $request->file('img_destaque')->store('storage/app/public/imagens-internas', 'public');
-                $this->produto->image_url = $imagemPath;
-            } elseif (!$this->produto->image_url) {
-                // Define um valor padrão se nenhum novo arquivo de imagem for enviado e o produto não tiver uma imagem existente
-                $this->produto->image_url = 'storage/app/public/imagens-internas/default.jpg';
-            }
-
-            // criar metodo para armazenar imagens localmente e registrar o caminho da imagem aqui
-            $this->produto->image_url = $data['img_destaque'];
-
+            $this->produto->image_url = $data['image_url'];
             $this->produto->save();
             return redirect()->route('admin.produtos.index')->with('success', 'Produto criado com sucesso!');
         } catch (\Exception $e) {
@@ -108,11 +104,14 @@ class ProdutosController extends Controller
     }
 
     public function update(Request $request, $id) {
+
+        $produto = Produto::findOrFail($id);
+
         $data = $request->only([
             'name',
             'parent_category_id',
             'description',
-            'img_destaque',
+            'image_url',
             'status',
             'price'
         ]);
@@ -123,10 +122,24 @@ class ProdutosController extends Controller
             'name' => 'required|string|max:255',
             'parent_category_id' => 'required|numeric|max:255',
             'description' => 'required|string|max:255',
-            'img_destaque' => 'nullable|image',
             'status' => ['required', 'in:0,1'],
             'price' => 'required|numeric'
         ];
+
+        // Verificar se um novo arquivo foi enviado
+        if($request->hasFile('image_url')) {
+            // Remover a imagem anterior (opcional)
+            $existingImage = $produto->image_url;
+            if ($existingImage) {
+                Storage::disk('public')->delete($existingImage);
+            }
+            // Armazenar a nova imagem
+            $path = Storage::disk('public')->put('/images', $request->file('image_url'));
+            $data['image_url'] = Storage::url($path);
+        }else{
+            // Caso contrário, manter a imagem existente
+            unset($data['image_url']);
+        }
 
         $validator = Validator::make($data, $rules);
 
@@ -137,26 +150,15 @@ class ProdutosController extends Controller
         }
 
         $data['slug'] = Str::slug($data['name'], '-');
+
         try {
-            $produto = $this->produto->findOrFail($id);
             $produto->name = $data['name'];
             $produto->category_id = $data['parent_category_id'];
             $produto->slug = $data['slug'];
             $produto->description = $data['description'];
             $produto->price = $data['price'];
             $produto->status = $data['status'];
-
-            // Atualizar método para armazenar imagens localmente e registrar o caminho da imagem aqui
-            // Verifica se foi enviado um novo arquivo de imagem
-            if ($request->hasFile('img_destaque')) {
-                // Atualizar método para armazenar imagens localmente e registrar o caminho da imagem aqui
-                $imagemPath = $request->file('img_destaque')->store('storage/app/public/imagens-internas', 'public');
-                $produto->image_url = $imagemPath;
-            } elseif (!$produto->image_url) {
-                // Define um valor padrão se nenhum novo arquivo de imagem for enviado e o produto não tiver uma imagem existente
-                $produto->image_url = 'storage/app/public/imagens-internas/default.jpg';
-            }
-
+            $produto->image_url = $data['image_url'];
             $produto->save();
             return redirect()->route('admin.produtos.index')->with('success', 'Produto atualizado com sucesso!');
         } catch (\Exception $e) {

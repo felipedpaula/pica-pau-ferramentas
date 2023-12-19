@@ -6,6 +6,7 @@ use App\Models\Categoria;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -47,10 +48,17 @@ class CategoriasController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'body' => 'required|string',
-            'img_destaque' => 'nullable|image',
             'parent_category_id' => 'nullable|exists:categories,id',
             'status' => ['required', 'in:0,1'],
         ];
+
+        if($request->file('img_destaque')){
+            $path =  Storage::disk('public')->put('/images', $request->file('img_destaque'));
+            $data['img_destaque']= Storage::url($path);
+
+        }else{
+            $data['img_destaque']= 'tromic/assets/images/slider/bg/1-1.jpg';
+        }
 
         $validator = Validator::make($data, $rules);
 
@@ -69,6 +77,7 @@ class CategoriasController extends Controller
             $this->categoria->body = $data['body'];
             $this->categoria->parent_category_id = $data['parent_category_id'];
             $this->categoria->status = $data['status'];
+            $this->categoria->img_destaque = $data['img_destaque'];
             $this->categoria->save();
             return redirect()->route('admin.categorias.index')->with('success', 'Categoria criada com sucesso!');
 
@@ -93,7 +102,7 @@ class CategoriasController extends Controller
             'name',
             'description',
             'body',
-            // 'img_destaque',
+            'img_destaque',
             'parent_category_id',
             'status'
         ]);
@@ -102,10 +111,24 @@ class CategoriasController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'body' => 'required|string',
-            // 'img_destaque' => 'nullable|image',
             'parent_category_id' => 'nullable|exists:categories,id',
             'status' => ['required', 'in:0,1'],
         ];
+
+        // Verificar se um novo arquivo foi enviado
+        if($request->hasFile('img_destaque')) {
+            // Remover a imagem anterior (opcional)
+            $existingImage = $categoria->img_destaque;
+            if ($existingImage) {
+                Storage::disk('public')->delete($existingImage);
+            }
+            // Armazenar a nova imagem
+            $path = Storage::disk('public')->put('/images', $request->file('img_destaque'));
+            $data['img_destaque'] = Storage::url($path);
+        }else{
+            // Caso contrário, manter a imagem existente
+            unset($data['img_destaque']);
+        }
     
         $validator = Validator::make($data, $rules);
     
@@ -124,11 +147,11 @@ class CategoriasController extends Controller
             $categoria->body = $data['body'];
             $categoria->parent_category_id = $data['parent_category_id'];
             $categoria->status = $data['status'];
+            $categoria->img_destaque = $data['img_destaque'];
             $categoria->save();
             return redirect()->route('admin.categorias.index')->with('success', 'Categoria atualizada com sucesso!');
     
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->route('admin.categoria.edit', ['id' => $id])->with('error', 'Ocorreu um erro ao atualizar a categoria. Por favor, tente novamente.');
         }
     }

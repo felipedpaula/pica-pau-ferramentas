@@ -53,7 +53,7 @@
                 <!-- Cabeçalho da Lista -->
                 <li class="list-group-item">
                     <div class="row font-weight-bold flex-nowrap overflow-auto">
-                    <div class="col-lg-3">Nome</div>
+                    <div class="col-lg-6">Nome</div>
                     <div class="col-lg-3">Categoria pai</div>
                     <div class="col-lg-3">Ações</div>
                     </div>
@@ -63,7 +63,7 @@
                 <!-- Item da Lista -->
                 <li class="list-group-item">
                 <div class="row flex-nowrap overflow-auto">
-                    <div class="col-lg-3">{{$categoria->name}}</div>
+                    <div class="col-lg-6">{{$categoria->name}}</div>
                     <div class="col-lg-3">{{$categoria->parent_category_id}}</div>
                     <div class="col-lg-3">
                         <a href="{{route('admin.categoria.edit', ['id' => $categoria->id])}}" class="btn btn-primary btn-sm">Editar</a>
