@@ -68,8 +68,8 @@
             <input type="text" class="form-control" id="body" name="body" value="{{$categoria->body}}" required>
         </div>
         <div class="form-group">
-            <label for="img_destaque">Imagem destaque:</label>
-            <img src="{{$categoria->img_destaque}}" alt="{{$categoria->name}}">
+            <label for="img_destaque">Imagem destaque:</label><br>
+            <img width="300px" src="{{$categoria->img_destaque}}" alt="{{$categoria->name}}">
             <input type="file" class="form-control-file" id="img_destaque" name="img_destaque">
         </div>
         <div class="form-group">
@@ -79,6 +79,24 @@
                 <option value="0" {{isset($categoria->status) === true && $categoria->status === 0 ? 'selected="selected"' : ''}}>Bloqueado</option>
             </select>
         </div>
+
+        <div class="row">
+            <label for="imagens">Imagens da Categoria:</label>
+            <div class="col-12 px-0">
+                <div class="d-flex flex-wrap">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#imagemModal" style="width:100px;height:100px;font-size:50px">+</button>
+                    @foreach ($imagens as $imagem)
+                    <div class="img-galeria">
+                        <img width="100px" height="100px" src="{{$imagem->image_url}}" alt="{{$imagem->description}}">
+                        <a href="{{ route('admin.categoria.remove', ['id' => $categoria->id, 'id_foto' => $imagem->id]) }}" class="lixeira-layer" onclick="return confirm('Tem certeza que deseja excluir esta imagem?')">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
         <!-- Botão de Submissão -->
         <div class="text-right">
             <button type="submit" class="btn btn-primary">Salvar</button>
@@ -102,6 +120,38 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-danger">Excluir</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Adiciona Imagem -->
+    <div class="modal fade" id="imagemModal" tabindex="-1" role="dialog" aria-labelledby="imagemModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imagemModalLabel">Adicionar Imagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.categoria.add', ['id' => $categoria->id]) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    {{ method_field('PUT') }}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="description">Descrição</label>
+                            <input type="text" class="form-control" id="description" name="description" placeholder="Descrição da imagem">
+                        </div>
+                        <div class="form-group">
+                            <label for="imagemFile">Escolher imagem</label>
+                            <input type="file" class="form-control-file" id="imagemFile" name="imagem">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar Imagem</button>
                     </div>
                 </form>
             </div>

@@ -9,7 +9,7 @@ class CategoriaImagem extends Model
     protected $table = 'category_images';
 
     public function getImagensByCategoriaId($id) {
-        $imagens = ProdutoImagem::where('category_id', $id)->get();
+        $imagens = CategoriaImagem::where('category_id', $id)->get();
         return $imagens;
     }
 }

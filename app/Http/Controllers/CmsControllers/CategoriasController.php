@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CmsControllers;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\CategoriaImagem;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -16,10 +17,12 @@ class CategoriasController extends Controller
     private $dadosPagina;
     private $categoria;
     private $categorias;
+    private $imagens;
 
     public function __construct()
     {
         $this->categoria = new Categoria();
+        $this->imagens = new CategoriaImagem();
     }
 
     public function index() {
@@ -88,10 +91,11 @@ class CategoriasController extends Controller
     }
 
     public function editCategoria(Request $request) {
-        $idCaregoria = $request->id;
+        $idCategoria = $request->id;
         $this->dadosPagina['tituloPagina'] = 'Editar categoria';
-        $this->dadosPagina['categoria'] = Categoria::findOrFail($idCaregoria);
+        $this->dadosPagina['categoria'] = Categoria::findOrFail($idCategoria);
         $this->dadosPagina['allCategorias'] = $this->categoria->getCategorias();
+        $this->dadosPagina['imagens'] = $this->imagens->getImagensByCategoriaId($idCategoria);
         return view('cms.pages.categorias.editar-categoria', $this->dadosPagina);
     }
 
@@ -173,5 +177,59 @@ class CategoriasController extends Controller
             return redirect()->route('admin.categorias.index')->with('error', 'Erro ao tentar excluir a categoria.');
         }
 
+    }
+
+
+    public function add(Request $request) {
+
+        $idCategoria = $request->id;
+
+        $data = $request->only([
+            'imagem',
+            'description'
+        ]);
+
+        $rules = [
+            'description' => ['required', 'string', 'max:255'],
+            'imagem' => ['nullable','file', 'mimes:jpg,png,webp'],
+        ];
+
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        try {
+            $this->imagens->category_id = $idCategoria;
+            $this->imagens->description = $data['description'];
+            if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+                $img_default = $request->file('imagem')->store('public');
+                $url = asset(Storage::url($img_default));
+                $this->imagens->image_url = $url;
+            }
+            $this->imagens->save();
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])->with('success', 'Categoria atualizada com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])
+                ->with('error', 'Ocorreu um erro ao atualizar a categoria. Por favor, tente novamente.');
+        }
+    }
+
+    public function remove(Request $request) {
+        $idImagem = $request->id_foto;
+        $idCategoria = $request->id;
+        $imagem = CategoriaImagem::find($idImagem);
+        if (!$imagem) {
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])->with('error', 'Imagem não encontrada.');
+        }
+        try {
+            $imagem->delete();
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])->with('success', 'Imagem excluída com sucesso.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.categoria.edit', ['id' => $idCategoria])->with('error', 'Erro ao tentar excluir a imagem.');
+        }
     }
 }
