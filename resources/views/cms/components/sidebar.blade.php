@@ -5,8 +5,10 @@
     <a class="sidebar-brand d-flex flex-column h-auto align-items-center justify-content-center" href="{{route('admin.dashboard')}}">
         <div class="sidebar-brand-text mx-3">Administração</div>
         <div class="sidebar-brand-icon">
-            {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img src="{{asset('assets/site/images/logos-text/logo_amarelo.svg')}}" alt="" width="189px" height="54px">
+            <img src="{{asset('assets/site/images/logos-text/logo_amarelo.svg')}}" alt="" width="150px">
+        </div>
+        <div class="sidebar-brand-icon-small d-none">
+            <img src="{{asset('assets/site/images/logos-text/P.svg')}}" alt="" width="30px">
         </div>
     </a>
 

@@ -10619,6 +10619,12 @@
     .sidebar.toggled .sidebar-brand .sidebar-brand-text {
       display: none;
     }
+    .sidebar.toggled .sidebar-brand .sidebar-brand-icon {
+      display: none;
+    }
+    .sidebar.toggled .sidebar-brand .sidebar-brand-icon-small {
+      display: block !important;
+    }
     .sidebar.toggled .sidebar-heading {
       text-align: center;
     }
