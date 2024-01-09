@@ -32,6 +32,7 @@ class SiteCategoriasController extends Controller
         // fazer tratamento de subCategoria
 
         $this->dadosPagina['categoria'] = $categoria;
+        $this->dadosPagina['slug'] = $slug;
 
         // dd($this->categoria->getSinglecategoria($slug));
         return view('site.pages.categorias.single-categoria', $this->dadosPagina);

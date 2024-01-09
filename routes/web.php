@@ -29,9 +29,19 @@ Route::get('/categorias', [SiteCategoriasController::class, 'index'])->name('cat
 // Pagina de Categoria unica
 Route::get('/categoria/{slug}.html', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
 
-// Contato ---------------------------------
+// Sobre nós ---------------------------------
 Route::get('/sobre', function () {
     return view('site.pages.sobre.index');
+});
+
+// Política de Privacidade ---------------------------------
+Route::get('/politica-de-privacidade', function () {
+    return view('site.pages.politica-de-privacidade.index');
+});
+
+// Termos de uso ---------------------------------
+Route::get('/termos-de-uso', function () {
+    return view('site.pages.termos-de-uso.index');
 });
 
 // Contato ---------------------------------
@@ -96,14 +106,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/destaques/{id}/edit', [DestaquesController::class , 'edit'])->name('destaque.edit');
         Route::put('/destaques/{id}/update', [DestaquesController::class , 'update'])->name('destaque.update');
         Route::delete('/destaques/{id}/delete', [DestaquesController::class , 'delete'])->name('destaque.delete');
-
-        // EVENTOS
-        Route::get('/events', [EventController::class , 'index'])->name('events.index');
-        Route::get('/events/register', [EventController::class , 'register'])->name('event.create');
-        Route::post('/events/store', [EventController::class , 'store'])->name('event.store');
-        Route::get('/events/{id}/edit', [EventController::class , 'edit'])->name('event.edit');
-        Route::put('/events/{id}/update', [EventController::class , 'update'])->name('event.update');
-        Route::delete('/events/{id}/delete', [EventController::class , 'delete'])->name('event.delete');
 
         Route::post('logout', 'AuthController@logout')->name('logout');
     });

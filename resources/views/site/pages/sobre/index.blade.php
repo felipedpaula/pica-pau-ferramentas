@@ -8,12 +8,12 @@
                 <div class="row h-100">
                     <div class="col-lg-12">
                         <div class="breadcrumb-item text-night-rider">
-                            <h2 class="breadcrumb-heading">About Us</h2>
+                            <h2 class="breadcrumb-heading">Sobre nós</h2>
                             <ul>
                                 <li>
                                     <a href="index.html">Home /</a>
                                 </li>
-                                <li>About Us</li>
+                                <li>Sobre nós</li>
                             </ul>
                         </div>
                     </div>
@@ -26,8 +26,8 @@
                     <div class="col-lg-12">
                         <div class="about-banner-content text-center section-space-bottom-95">
                             <div class="section-title">
-                                <span class="about-sub-title text-primary">Our History</span>
-                                <h2 class="about-title mb-5">Tromic Car Parts Shop</h2>
+                                <span class="about-sub-title text-primary">Nossa história</span>
+                                <h2 class="about-title mb-5">A Loja Pica Pau Ferramentas</h2>
                                 <p class="short-desc mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisd nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut pers unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consec adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
                             </div>
                         </div>
@@ -53,109 +53,11 @@
             </div>
         </div>
 
-        <!-- Begin Testimonial Area -->
-        <div class="testimonial-area bg-white-smoke section-space-y-axis-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="swiper-container testimonial-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="user-info mb-3">
-                                        <div class="user-shape-wrap">
-                                            <div class="user-shape">
-                                                <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                            </div>
-                                            <div class="user-img">
-                                                <img src="/tromic/assets/images/testimonial/user/2.png" alt="User Image">
-                                            </div>
-                                        </div>
-                                        <div class="user-content">
-                                            <h4 class="user-name mb-1">Elmer Schmidt</h4>
-                                            <span class="user-occupation">Chief Engineer</span>
-                                        </div>
-                                    </div>
-                                    <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <span class="title">4.0</span>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="user-info mb-3">
-                                        <div class="user-shape-wrap">
-                                            <div class="user-shape">
-                                                <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                            </div>
-                                            <div class="user-img">
-                                                <img src="/tromic/assets/images/testimonial/user/3.png" alt="User Image">
-                                            </div>
-                                        </div>
-                                        <div class="user-content">
-                                            <h4 class="user-name mb-1">Azul Baldwin</h4>
-                                            <span class="user-occupation">Chief Engineer</span>
-                                        </div>
-                                    </div>
-                                    <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <span class="title">4.0</span>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="user-info mb-3">
-                                        <div class="user-shape-wrap">
-                                            <div class="user-shape">
-                                                <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                            </div>
-                                            <div class="user-img">
-                                                <img src="/tromic/assets/images/testimonial/user/1.png" alt="User Image">
-                                            </div>
-                                        </div>
-                                        <div class="user-content">
-                                            <h4 class="user-name mb-1">Dustin Mock</h4>
-                                            <span class="user-occupation">Chief Engineer</span>
-                                        </div>
-                                    </div>
-                                    <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <span class="title">4.0</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add Pagination -->
-                            <div class="testimonial-pagination with-bg"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial Area End Here -->
-
         <div class="team-member section-space-y-axis-100">
             <div class="container">
                 <div class="section-title text-center pb-55">
-                    <span class="about-sub-title text-primary">Our expert</span>
-                    <h2 class="about-title mb-0">Team Member</h2>
+                    <span class="about-sub-title text-primary">Nossos especialistas</span>
+                    <h2 class="about-title mb-0">Membros da equipe</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -169,32 +71,8 @@
                                             </a>
                                         </div>
                                         <div class="team-member-content">
-                                            <h2 class="title mb-0">Jaren Hammer</h2>
-                                            <span class="occupation">Salesman & Engineer</span>
-                                            <div class="social-link with-border pt-2">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-pinterest-p"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-tumblr"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-dribbble"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <h2 class="title mb-0">Fulano de tal</h2>
+                                            <span class="occupation">Vendedor</span>
                                         </div>
                                     </div>
                                 </div>
@@ -206,32 +84,8 @@
                                             </a>
                                         </div>
                                         <div class="team-member-content">
-                                            <h2 class="title mb-0">Jaren Hammer</h2>
-                                            <span class="occupation">Salesman & Engineer</span>
-                                            <div class="social-link with-border pt-2">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-pinterest-p"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-tumblr"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-dribbble"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <h2 class="title mb-0">Fulana de tal</h2>
+                                            <span class="occupation">Secretária</span>
                                         </div>
                                     </div>
                                 </div>
@@ -243,32 +97,8 @@
                                             </a>
                                         </div>
                                         <div class="team-member-content">
-                                            <h2 class="title mb-0">Jaren Hammer</h2>
-                                            <span class="occupation">Salesman & Engineer</span>
-                                            <div class="social-link with-border pt-2">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-pinterest-p"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-tumblr"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-dribbble"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            <h2 class="title mb-0">Ciclano de tal</h2>
+                                            <span class="occupation">Auxiliar de estoque</span>
                                         </div>
                                     </div>
                                 </div>
@@ -285,10 +115,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="banner-content text-center">
-                            <span class="sub-title mb-2">30% Limited Time Offer </span>
-                            <h2 class="title mb-5">car Parts for short people</h2>
+                            <span class="sub-title mb-2">A loja de ferramentas mais tradicional de Inhumas</span>
+                            <h2 class="title mb-5">Aqui tem o que você precisa</h2>
                             <div class="button-wrap">
-                                <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Shop Now</a>
+                                <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Ver produtos</a>
                             </div>
                         </div>
                     </div>
@@ -296,51 +126,6 @@
             </div>
         </div>
         <!-- Banner Area End Here -->
-
-        <!-- Begin Brand Area -->
-        <div class="brand-area section-space-y-axis-100 white-smoke-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="swiper-container brand-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-1.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-2.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-3.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-4.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-5.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a class="brand-item" href="#">
-                                        <img src="/tromic/assets/images/brand/1-6.png" alt="Brand Image">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Brand Area End Here -->
 
     </main>
     <!-- Main Content Area End Here -->

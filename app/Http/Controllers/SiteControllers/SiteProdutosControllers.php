@@ -32,6 +32,7 @@ class SiteProdutosControllers extends Controller
         $this->dadosPagina['produtosRelacionados'] = $this->produto->getProdutosSimilares($produto->id, $produto->category_id);
 
         $this->dadosPagina['produto'] = $produto;
+        $this->dadosPagina['slug'] = $slug;
 
         // dd($this->produto->getSingleProduto($slug));
         return view('site.pages.produtos.single-produto', $this->dadosPagina);

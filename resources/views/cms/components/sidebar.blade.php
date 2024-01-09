@@ -51,9 +51,9 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Páginas Estáticas:</h6>
                 <a class="collapse-item" href="{{route('admin.destaques.index')}}">Destaques</a>
-                <a class="collapse-item" href="cards.html">Sobre Nós</a>
-                <a class="collapse-item" href="buttons.html">Política de Privacidade</a>
-                <a class="collapse-item" href="cards.html">Termos de Uso</a>
+                <a class="collapse-item" href="/sobre-nos">Sobre Nós</a>
+                <a class="collapse-item" href="/politica-de-privacidade">Política de Privacidade</a>
+                <a class="collapse-item" href="/termos-de-uso">Termos de Uso</a>
             </div>
         </div>
     </li>

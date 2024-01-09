@@ -2,17 +2,17 @@
 
 @section('content')
 <main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height"style="background-size: contain" data-bg-image="{{asset('assets/site/images/background/bg-4.jpg')}}">
+    <div class="breadcrumb-area breadcrumb-height" style="background-color:#f4002d;height:200px">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item text-night-rider">
-                        <h2 class="breadcrumb-heading">Shop Layout</h2>
+                        <h2 style="color:#FFF" class="breadcrumb-heading">Categorias de Produtos</h2>
                         <ul>
                             <li>
-                                <a href="index.html">Home /</a>
+                                <a href="/">Home /</a>
                             </li>
-                            <li>Shop List Fullwidth</li>
+                            <li>Categorias</li>
                         </ul>
                     </div>
                 </div>
