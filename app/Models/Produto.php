@@ -69,4 +69,12 @@ class Produto extends Model
         return $dados;
     }
 
+    public static function getProdutosCategoriaMenu($categoriaId, $limit) {
+        return self::select('name', 'slug')
+                ->where('status', 1)
+                ->where('category_id', $categoriaId)
+                ->orderBy('name', 'asc')
+                ->take($limit)
+                ->get();
+    }
 }

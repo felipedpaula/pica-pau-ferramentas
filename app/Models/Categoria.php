@@ -66,4 +66,12 @@ class Categoria extends Model
             ->first();
         return $dados;
     }
+
+    public static function getCategoriasMenu($limit) {
+        return self::select('name', 'slug')
+                ->where('status', 1)
+                ->orderBy('name', 'asc')
+                ->take($limit)
+                ->get();
+    }
 }

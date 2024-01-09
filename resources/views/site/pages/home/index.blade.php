@@ -52,38 +52,38 @@
                             <div class="banner-img img-zoom-effect">
                                 <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
                                 <div class="inner-content text-white">
-                                    <h3 class="offer">From $96</h3>
-                                    <h2 class="title mb-5">Latest <br> Car Wheel</h2>
+                                    <h3 class="offer">$96</h3>
+                                    <h2 class="title mb-5">Produto de Exemplo</h2>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Shop Now</a>
+                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
+                    <div class="col-lg-4 col-md-6">
                         <div class="banner-item img-hover-effect">
                             <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="/tromic/assets/images/banner/1-2-400x250.jpg" alt="Banner Image">
+                                <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
                                 <div class="inner-content text-white">
-                                    <h3 class="offer">From $96</h3>
-                                    <h2 class="title mb-5">Latest <br> Car Wheel</h2>
+                                    <h3 class="offer">$96</h3>
+                                    <h2 class="title mb-5">Produto de Exemplo</h2>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Shop Now</a>
+                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
+                    <div class="col-lg-4 col-md-6">
                         <div class="banner-item img-hover-effect">
                             <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="/tromic/assets/images/banner/1-3-400x250.jpg" alt="Banner Image">
+                                <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
                                 <div class="inner-content text-white">
-                                    <h3 class="offer">From $96</h3>
-                                    <h2 class="title mb-5">Latest <br> Car Wheel</h2>
+                                    <h3 class="offer">$96</h3>
+                                    <h2 class="title mb-5">Produto de Exemplo</h2>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Shop Now</a>
+                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Begin Shipping Area -->
-        <div class="shipping-area section-space-y-axis-100">
+        {{-- <div class="shipping-area section-space-y-axis-100">
             <div class="container">
                 <div class="shipping-bg" data-bg-image="{{asset('assets/site/images/background/bg-2.jpg')}}">
                     <div class="row shipping-wrap py-5 py-xl-0">
@@ -104,8 +104,8 @@
                                     <img src="/tromic/assets/images/shipping/icon/plane.png" alt="Shipping Icon">
                                 </div>
                                 <div class="shipping-content">
-                                    <h2 class="title">Free Shipping</h2>
-                                    <p class="short-desc mb-0">Provide free home delivery for all product over $100</p>
+                                    <h2 class="title">Comunicação facilitada</h2>
+                                    <p class="short-desc mb-0">Entre em contato para tirar dúvidas</p>
                                 </div>
                             </div>
                         </div>
@@ -126,15 +126,15 @@
                                     <img src="/tromic/assets/images/shipping/icon/shield.png" alt="Shipping Icon">
                                 </div>
                                 <div class="shipping-content">
-                                    <h2 class="title">Secure Payment</h2>
-                                    <p class="short-desc mb-0">We ensure our product Good quality all times</p>
+                                    <h2 class="title">Compra segura</h2>
+                                    <p class="short-desc mb-0">Produtos da melhor qualidade</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Shipping Area End Here -->
 
     </div>
@@ -144,7 +144,7 @@
         <div class="product-area section-space-y-axis-100">
             <div class="container">
                 <div class="section-title pb-55">
-                    <h2 class="title mb-0">SPECIAL DEALS</h2>
+                    <h2 class="title mb-0">OFERTAS ESPECIAIS</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-9">
@@ -157,14 +157,14 @@
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Auto Clutch & Brake</a>
-                                        <div class="price-box">
-                                            <div class="price-box-holder">
-                                                <span>Price:</span>
-                                                <span class="new-price text-primary">$120.00</span>
+                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                        <div class="Preço-box">
+                                            <div class="Preço-box-holder">
+                                                <span>Preço:</span>
+                                                <span class="new-Preço text-primary">$120.00</span>
                                             </div>
                                         </div>
-                                        <div class="product-add-action">
+                                        {{-- <div class="product-add-action">
                                             <ul>
                                                 <li>
                                                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -187,7 +187,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -199,14 +199,14 @@
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Fuel Injector</a>
-                                        <div class="price-box">
-                                            <div class="price-box-holder">
-                                                <span>Price:</span>
-                                                <span class="new-price text-primary">$130.00</span>
+                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                        <div class="Preço-box">
+                                            <div class="Preço-box-holder">
+                                                <span>Preço:</span>
+                                                <span class="new-Preço text-primary">$130.00</span>
                                             </div>
                                         </div>
-                                        <div class="product-add-action">
+                                        {{-- <div class="product-add-action">
                                             <ul>
                                                 <li>
                                                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -229,7 +229,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -241,14 +241,14 @@
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">A/C Compressor</a>
-                                        <div class="price-box">
-                                            <div class="price-box-holder">
-                                                <span>Price:</span>
-                                                <span class="new-price text-primary">$150.00</span>
+                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                        <div class="Preço-box">
+                                            <div class="Preço-box-holder">
+                                                <span>Preço:</span>
+                                                <span class="new-Preço text-primary">$150.00</span>
                                             </div>
                                         </div>
-                                        <div class="product-add-action">
+                                        {{-- <div class="product-add-action">
                                             <ul>
                                                 <li>
                                                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -271,7 +271,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -283,14 +283,14 @@
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Shock Absorbers</a>
-                                        <div class="price-box">
-                                            <div class="price-box-holder">
-                                                <span>Price:</span>
-                                                <span class="new-price text-primary">$180.00</span>
+                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                        <div class="Preço-box">
+                                            <div class="Preço-box-holder">
+                                                <span>Preço:</span>
+                                                <span class="new-Preço text-primary">$180.00</span>
                                             </div>
                                         </div>
-                                        <div class="product-add-action">
+                                        {{-- <div class="product-add-action">
                                             <ul>
                                                 <li>
                                                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -313,7 +313,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -325,14 +325,14 @@
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Catalytic Converter</a>
-                                        <div class="price-box">
-                                            <div class="price-box-holder">
-                                                <span>Price:</span>
-                                                <span class="new-price text-primary">$200.00</span>
+                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                        <div class="Preço-box">
+                                            <div class="Preço-box-holder">
+                                                <span>Preço:</span>
+                                                <span class="new-Preço text-primary">$200.00</span>
                                             </div>
                                         </div>
-                                        <div class="product-add-action">
+                                        {{-- <div class="product-add-action">
                                             <ul>
                                                 <li>
                                                     <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -355,7 +355,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -368,11 +368,11 @@
                                     <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/banner/1-1-290x748.jpg" alt="Product Banner">
                                 </a>
                                 <div class="product-banner-content text-white">
-                                    <h3 class="category">Mage Sale</h3>
+                                    <h3 class="category">APROVEITE NOSSA PROMOÇÃO</h3>
                                     <h2 class="offer">30% Off</h2>
-                                    <p class="short-desc mb-7">To satisfy our customer we try to give support online</p>
+                                    {{-- <p class="short-desc mb-7">To satisfy our customer we try to give support online</p> --}}
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Shop Now</a>
+                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Ver produtos</a>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +380,7 @@
                     </div>
                     <div class="col-12 pt-55">
                         <div class="button-wrap">
-                            <a class="btn btn-link text-danger with-underline p-0" href="shop.html">See More Products</a>
+                            <a class="btn btn-link text-danger with-underline p-0" href="shop.html">Ver mais produtos</a>
                         </div>
                     </div>
                 </div>
@@ -390,7 +390,7 @@
     <!-- Product Area End Here -->
 
     <!-- Begin Newsletter Area -->
-    <div class="newsletter-area section-border-y-axis">
+    {{-- <div class="newsletter-area section-border-y-axis">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -418,7 +418,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Newsletter Area End Here -->
 
     <!-- Begin Product Area -->
@@ -426,7 +426,7 @@
         <div class="product-area section-space-y-axis-100 product-arrow">
             <div class="container">
                 <div class="section-title pb-55">
-                    <h2 class="title mb-0">Popular Item</h2>
+                    <h2 class="title mb-0">Produtos populares</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -440,14 +440,14 @@
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Auto Clutch & Brake</a>
-                                            <div class="price-box">
-                                                <div class="price-box-holder">
-                                                    <span>Price:</span>
-                                                    <span class="new-price text-primary">$120.00</span>
+                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                            <div class="Preço-box">
+                                                <div class="Preço-box-holder">
+                                                    <span>Preço:</span>
+                                                    <span class="new-Preço text-primary">$120.00</span>
                                                 </div>
                                             </div>
-                                            <div class="product-add-action">
+                                            {{-- <div class="product-add-action">
                                                 <ul>
                                                     <li>
                                                         <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -470,7 +470,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -482,14 +482,14 @@
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Fuel Injector</a>
-                                            <div class="price-box">
-                                                <div class="price-box-holder">
-                                                    <span>Price:</span>
-                                                    <span class="new-price text-primary">$130.00</span>
+                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                            <div class="Preço-box">
+                                                <div class="Preço-box-holder">
+                                                    <span>Preço:</span>
+                                                    <span class="new-Preço text-primary">$130.00</span>
                                                 </div>
                                             </div>
-                                            <div class="product-add-action">
+                                            {{-- <div class="product-add-action">
                                                 <ul>
                                                     <li>
                                                         <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -512,7 +512,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -524,14 +524,14 @@
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">A/C Compressor</a>
-                                            <div class="price-box">
-                                                <div class="price-box-holder">
-                                                    <span>Price:</span>
-                                                    <span class="new-price text-primary">$150.00</span>
+                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                            <div class="Preço-box">
+                                                <div class="Preço-box-holder">
+                                                    <span>Preço:</span>
+                                                    <span class="new-Preço text-primary">$150.00</span>
                                                 </div>
                                             </div>
-                                            <div class="product-add-action">
+                                            {{-- <div class="product-add-action">
                                                 <ul>
                                                     <li>
                                                         <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -554,7 +554,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -566,14 +566,14 @@
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Shock Absorbers</a>
-                                            <div class="price-box">
-                                                <div class="price-box-holder">
-                                                    <span>Price:</span>
-                                                    <span class="new-price text-primary">$180.00</span>
+                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                            <div class="Preço-box">
+                                                <div class="Preço-box-holder">
+                                                    <span>Preço:</span>
+                                                    <span class="new-Preço text-primary">$180.00</span>
                                                 </div>
                                             </div>
-                                            <div class="product-add-action">
+                                            {{-- <div class="product-add-action">
                                                 <ul>
                                                     <li>
                                                         <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
@@ -596,7 +596,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>

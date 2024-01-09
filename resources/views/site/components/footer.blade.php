@@ -42,7 +42,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-chevron-right"></i>
-                                <a href="/politica-de-privacidade">Sobre nós</a>
+                                <a href="/politica-de-privacidade">Política de Privacidade</a>
                             </li>
                         </ul>
                     </div>

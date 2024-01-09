@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\SiteControllers;
 use App\Http\Controllers\Controller;
 use App\Models\Destaque;
+use App\Models\Categoria;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
