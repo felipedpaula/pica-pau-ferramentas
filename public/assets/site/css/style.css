@@ -17521,6 +17521,16 @@ blockquote .user-name:before {
 }
 
 /* ---Main Header--- */
+.main-menu {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+@media (max-width: 991.98px) {
+    .main-menu {
+        display: none !important;
+    }
+}
+
 .main-nav > ul {
   display: -webkit-box;
   display: -webkit-flex;

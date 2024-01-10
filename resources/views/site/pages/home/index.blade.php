@@ -25,8 +25,8 @@
                 </div>
                 @endforeach
             </div>
-            
-            
+
+
             <!-- Add Pagination -->
             <div class="swiper-pagination with-bg d-md-none"></div>
 
@@ -47,96 +47,26 @@
         <div class="banner-area section-space-top-100">
             <div class="container">
                 <div class="row">
+                    @foreach ($destaques_pequenos as $destaque)
                     <div class="col-lg-4 col-md-6">
                         <div class="banner-item img-hover-effect">
                             <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
+                                <img width="400" height="250" class="img-full" src="{{$destaque->img_src}}" alt="{{$destaque->titulo}}">
+                                {{-- <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image"> --}}
                                 <div class="inner-content text-white">
-                                    <h3 class="offer">$96</h3>
-                                    <h2 class="title mb-5">Produto de Exemplo</h2>
+                                    {{-- <h3 class="offer">$96</h3> --}}
+                                    <h2 class="title mb-5">{{$destaque->titulo}}</h2>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
+                                        <a class="btn btn-custom-size btn-primary" href="{{$destaque->url_link}}">Produtos</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-item img-hover-effect">
-                            <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
-                                <div class="inner-content text-white">
-                                    <h3 class="offer">$96</h3>
-                                    <h2 class="title mb-5">Produto de Exemplo</h2>
-                                    <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-item img-hover-effect">
-                            <div class="banner-img img-zoom-effect">
-                                <img class="img-full" src="/tromic/assets/images/banner/1-1-400x250.jpg" alt="Banner Image">
-                                <div class="inner-content text-white">
-                                    <h3 class="offer">$96</h3>
-                                    <h2 class="title mb-5">Produto de Exemplo</h2>
-                                    <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-
-        <!-- Begin Shipping Area -->
-        {{-- <div class="shipping-area section-space-y-axis-100">
-            <div class="container">
-                <div class="shipping-bg" data-bg-image="{{asset('assets/site/images/background/bg-2.jpg')}}">
-                    <div class="row shipping-wrap py-5 py-xl-0">
-                        <div class="col-lg-4">
-                            <div class="shipping-item">
-                                <div class="shipping-img">
-                                    <img src="/tromic/assets/images/shipping/icon/plane.png" alt="Shipping Icon">
-                                </div>
-                                <div class="shipping-content">
-                                    <h2 class="title">Comunicação facilitada</h2>
-                                    <p class="short-desc mb-0">Entre em contato para tirar dúvidas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 pt-4 pt-lg-0">
-                            <div class="shipping-item">
-                                <div class="shipping-img">
-                                    <img src="/tromic/assets/images/shipping/icon/earphones.png" alt="Shipping Icon">
-                                </div>
-                                <div class="shipping-content">
-                                    <h2 class="title">Online Support</h2>
-                                    <p class="short-desc mb-0">To satisfy our customer we try to give support online</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 pt-4 pt-lg-0">
-                            <div class="shipping-item">
-                                <div class="shipping-img">
-                                    <img src="/tromic/assets/images/shipping/icon/shield.png" alt="Shipping Icon">
-                                </div>
-                                <div class="shipping-content">
-                                    <h2 class="title">Compra segura</h2>
-                                    <p class="short-desc mb-0">Produtos da melhor qualidade</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- Shipping Area End Here -->
-
     </div>
 
     <!-- Begin Product Area -->
@@ -149,216 +79,20 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="product-item-wrap row">
-                            <div class="col-lg-8 col-md-6">
-                                <div class="product-item">
+                            @foreach ($ofertas_especiais as $destaque)
+                            <div class="col-lg-4 col-md-6 {{ $loop->index >= 3 ? 'pt-7' : ''}}">
+                                <div class="product-item" style="max-height:350px">
                                     <div class="product-img img-zoom-effect">
                                         <a href="shop.html">
-                                            <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/1-1-620x350.jpg" alt="Product Images">
+                                            <img width="290" height="350" class="img-full" src="{{$destaque->img_src}}" alt="Product Images">
                                         </a>
                                     </div>
                                     <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        <div class="Preço-box">
-                                            <div class="Preço-box-holder">
-                                                <span>Preço:</span>
-                                                <span class="new-Preço text-primary">$120.00</span>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="product-add-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-cart"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                    <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-look"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-like"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-shuffle"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
+                                        <a class="product-name pb-1" href="{{$destaque->url_link ? $destaque->url_link : '#'}}">{{$destaque->titulo}}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 pt-7 pt-md-0">
-                                <div class="product-item">
-                                    <div class="product-img img-zoom-effect">
-                                        <a href="shop.html">
-                                            <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/1-2-290x350.jpg" alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        <div class="Preço-box">
-                                            <div class="Preço-box-holder">
-                                                <span>Preço:</span>
-                                                <span class="new-Preço text-primary">$130.00</span>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="product-add-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-cart"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                    <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-look"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-like"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-shuffle"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pt-7">
-                                <div class="product-item">
-                                    <div class="product-img img-zoom-effect">
-                                        <a href="shop.html">
-                                            <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/1-3-290x350.jpg" alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        <div class="Preço-box">
-                                            <div class="Preço-box-holder">
-                                                <span>Preço:</span>
-                                                <span class="new-Preço text-primary">$150.00</span>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="product-add-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-cart"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                    <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-look"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-like"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-shuffle"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pt-7">
-                                <div class="product-item">
-                                    <div class="product-img img-zoom-effect">
-                                        <a href="shop.html">
-                                            <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/1-4-290x350.jpg" alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        <div class="Preço-box">
-                                            <div class="Preço-box-holder">
-                                                <span>Preço:</span>
-                                                <span class="new-Preço text-primary">$180.00</span>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="product-add-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-cart"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                    <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-look"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-like"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-shuffle"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 pt-7">
-                                <div class="product-item">
-                                    <div class="product-img img-zoom-effect">
-                                        <a href="shop.html">
-                                            <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/1-5-290x350.jpg" alt="Product Images">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        <div class="Preço-box">
-                                            <div class="Preço-box-holder">
-                                                <span>Preço:</span>
-                                                <span class="new-Preço text-primary">$200.00</span>
-                                            </div>
-                                        </div>
-                                        {{-- <div class="product-add-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-cart"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                    <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-look"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-like"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                        <i class="pe-7s-shuffle"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> --}}
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-3 pt-7 pt-lg-0">
@@ -370,7 +104,6 @@
                                 <div class="product-banner-content text-white">
                                     <h3 class="category">APROVEITE NOSSA PROMOÇÃO</h3>
                                     <h2 class="offer">30% Off</h2>
-                                    {{-- <p class="short-desc mb-7">To satisfy our customer we try to give support online</p> --}}
                                     <div class="button-wrap">
                                         <a class="btn btn-custom-size btn-primary" href="shop.html">Ver produtos</a>
                                     </div>
@@ -388,38 +121,6 @@
         </div>
     </div>
     <!-- Product Area End Here -->
-
-    <!-- Begin Newsletter Area -->
-    {{-- <div class="newsletter-area section-border-y-axis">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="newsletter-img">
-                        <img src="/tromic/assets/images/newsletter/1-1-491x529.png" alt="Newsletter Image">
-                    </div>
-                </div>
-                <div class="col-md-6 align-self-md-center pb-10 pb-md-0">
-                    <div class="newsletter-content">
-                        <h2 class="newsletter-title mb-4">Have a Special Discount</h2>
-                        <h3 class="newsletter-sub-title text-primary mb-8">All New Car Parts</h3>
-                        <form class="newsletter-form" id="mc-form" action="#">
-                            <input class="input-field" id="mc-email" type="email" autocomplete="off" name="Your Email Address" value="Your Email Address" onblur="if(this.value==''){this.value='Your Email Address'}" onfocus="if(this.value=='Your Email Address'){this.value=''}">
-                            <div class="button-wrap">
-                                <button class="btn btn-custom-size btn-primary" id="mc-submit">Subscribe</button>
-                            </div>
-                        </form>
-                        <!-- Mailchimp Alerts -->
-                        <div class="mailchimp-alerts text-centre pt-5">
-                            <div class="mailchimp-submitting"></div>
-                            <div class="mailchimp-success"></div>
-                            <div class="mailchimp-error"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Newsletter Area End Here -->
 
     <!-- Begin Product Area -->
     <div class="background-img" data-bg-image="/tromic/assets/images/background-img/1-2-1920x716.jpg">
@@ -441,36 +142,6 @@
                                         </div>
                                         <div class="product-content">
                                             <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                            <div class="Preço-box">
-                                                <div class="Preço-box-holder">
-                                                    <span>Preço:</span>
-                                                    <span class="new-Preço text-primary">$120.00</span>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                        <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-look"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-shuffle"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -483,36 +154,6 @@
                                         </div>
                                         <div class="product-content">
                                             <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                            <div class="Preço-box">
-                                                <div class="Preço-box-holder">
-                                                    <span>Preço:</span>
-                                                    <span class="new-Preço text-primary">$130.00</span>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                        <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-look"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-shuffle"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -525,36 +166,6 @@
                                         </div>
                                         <div class="product-content">
                                             <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                            <div class="Preço-box">
-                                                <div class="Preço-box-holder">
-                                                    <span>Preço:</span>
-                                                    <span class="new-Preço text-primary">$150.00</span>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                        <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-look"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-shuffle"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -567,36 +178,6 @@
                                         </div>
                                         <div class="product-content">
                                             <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                            <div class="Preço-box">
-                                                <div class="Preço-box-holder">
-                                                    <span>Preço:</span>
-                                                    <span class="new-Preço text-primary">$180.00</span>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="cart.html" data-tippy="Add to cart" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
-                                                        <a href="#" data-tippy="Quickview" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-look"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html" data-tippy="Add to wishlist" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html" data-tippy="Add to compare" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-shuffle"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -617,150 +198,6 @@
         </div>
     </div>
     <!-- Product Area End Here -->
-
-    <!-- Begin Banner Area -->
-    <div class="banner-area section-border-y-axis ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 align-self-md-center order-2 order-md-1 pt-5 pt-md-0">
-                    <div class="banner-content text-center">
-                        <div class="inner-img mb-2">
-                            <img src="/tromic/assets/images/banner/inner-img/1-1-201x57.png" alt="Banner Image">
-                        </div>
-                        <h3 class="title text-charcoal">Deal of the day</h3>
-                        <h4 class="sub-title text-primary mb-6">Hot Deal ! Sale Up To 30% Off </h4>
-                        <div class="countdown-wrap pb-8">
-                            <div class="countdown item-4" data-countdown="2023/03/04" data-format="short">
-                                <div class="countdown__item me-3">
-                                    <span class="countdown__time daysLeft"></span>
-                                    <span class="countdown__text daysText"></span>
-                                </div>
-                                <div class="countdown__item me-3">
-                                    <span class="countdown__time hoursLeft"></span>
-                                    <span class="countdown__text hoursText"></span>
-                                </div>
-                                <div class="countdown__item me-3">
-                                    <span class="countdown__time minsLeft"></span>
-                                    <span class="countdown__text minsText"></span>
-                                </div>
-                                <div class="countdown__item">
-                                    <span class="countdown__time secsLeft"></span>
-                                    <span class="countdown__text secsText"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="button-wrap pb-8 pb-md-0">
-                            <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 order-1 order-md-2">
-                    <div class="banner-img">
-                        <img src="/tromic/assets/images/banner/2-1-407x529.png" alt="Banner Image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner Area End Here -->
-
-    <!-- Begin Testimonial Area -->
-    <div class="testimonial-area bg-white-smoke section-space-y-axis-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper-container testimonial-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide testimonial-item">
-                                <div class="user-info mb-3">
-                                    <div class="user-shape-wrap">
-                                        <div class="user-shape">
-                                            <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                        </div>
-                                        <div class="user-img">
-                                            <img src="/tromic/assets/images/testimonial/user/2.png" alt="User Image">
-                                        </div>
-                                    </div>
-                                    <div class="user-content">
-                                        <h4 class="user-name mb-1">Elmer Schmidt</h4>
-                                        <span class="user-occupation">Chief Engineer</span>
-                                    </div>
-                                </div>
-                                <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                    <span class="title">4.0</span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide testimonial-item">
-                                <div class="user-info mb-3">
-                                    <div class="user-shape-wrap">
-                                        <div class="user-shape">
-                                            <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                        </div>
-                                        <div class="user-img">
-                                            <img src="/tromic/assets/images/testimonial/user/3.png" alt="User Image">
-                                        </div>
-                                    </div>
-                                    <div class="user-content">
-                                        <h4 class="user-name mb-1">Azul Baldwin</h4>
-                                        <span class="user-occupation">Chief Engineer</span>
-                                    </div>
-                                </div>
-                                <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                    <span class="title">4.0</span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide testimonial-item">
-                                <div class="user-info mb-3">
-                                    <div class="user-shape-wrap">
-                                        <div class="user-shape">
-                                            <img src="/tromic/assets/images/testimonial/user/shape/1.png" alt="User Image">
-                                        </div>
-                                        <div class="user-img">
-                                            <img src="/tromic/assets/images/testimonial/user/1.png" alt="User Image">
-                                        </div>
-                                    </div>
-                                    <div class="user-content">
-                                        <h4 class="user-name mb-1">Dustin Mock</h4>
-                                        <span class="user-occupation">Chief Engineer</span>
-                                    </div>
-                                </div>
-                                <p class="user-comment mb-6">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua. Utenim ad minim veniam,</p>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                    <span class="title">4.0</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="testimonial-pagination with-bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Area End Here -->
 
     <!-- Begin Banner Area -->
     <div class="banner-area banner-style-2 section-border-y-axis section-space-y-axis-100" data-bg-image="{{asset('assets/site/images/background/bg-4.jpg')}}">

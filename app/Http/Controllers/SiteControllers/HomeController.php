@@ -15,10 +15,13 @@ class HomeController extends Controller
     public function __construct() {
         $this->destaques = new Destaque();
     }
-    
+
     public function index()
     {
         $this->dadosPagina['destaques_slide'] = $this->destaques->getDestaques('slider-home', 3);
+        $this->dadosPagina['destaques_pequenos'] = $this->destaques->getDestaques('destaques-pequenos', 3);
+        $this->dadosPagina['ofertas_especiais'] = $this->destaques->getDestaques('ofertas-especiais', 6);
+
         return view('site.pages.home.index', $this->dadosPagina);
     }
 }
