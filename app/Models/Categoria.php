@@ -21,11 +21,6 @@ class Categoria extends Model
         'status'
     ];
 
-    /**
-     * Obtém todas categorias.
-     *
-     * @return \Illuminate\Support\Collection
-     */
     public function getCategorias()
     {
         $dados = DB::table($this->table)
@@ -36,11 +31,6 @@ class Categoria extends Model
         return $dados;
     }
 
-    /**
-     * Obtém uma categoria especifica
-     *
-     *
-     */
     public function getSingleCategoria()
     {
         $dados = DB::table($this->table)
@@ -51,11 +41,6 @@ class Categoria extends Model
         return $dados;
     }
 
-            /**
-     * Obtém a categoria de um produto.
-     *
-     *
-     */
     public function getCategoriaDoProduto($id)
     {
         $dados = DB::table($this->table)
@@ -67,11 +52,23 @@ class Categoria extends Model
         return $dados;
     }
 
-    public static function getCategoriasMenu($limit) {
+    public static function getCategoriasMenu($limit)
+    {
         return self::select('name', 'slug')
-                ->where('status', 1)
-                ->orderBy('name', 'asc')
-                ->take($limit)
-                ->get();
+            ->where('status', 1)
+            ->orderBy('name', 'asc')
+            ->take($limit)
+            ->get();
     }
+
+    public static function getCategoriasDestaques($limit)
+    {
+        return self::select('name', 'slug', 'img_destaque')
+            ->where('status', 1)
+            ->whereNull('parent_category_id')
+            ->orderBy('name', 'asc')
+            ->take($limit)
+            ->get();
+    }
+
 }

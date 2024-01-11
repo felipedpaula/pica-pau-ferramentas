@@ -5,10 +5,14 @@ use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
 use App\Http\Controllers\CmsControllers\DestaquesController;
+use App\Http\Controllers\SiteControllers\ContatoController;
 use App\Http\Controllers\SiteControllers\HomeController;
+use App\Http\Controllers\SiteControllers\PoliticaDePrivacidadeController;
 use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\SiteControllers\SiteCategoriasController;
 use App\Http\Controllers\SiteControllers\SiteProdutosControllers;
+use App\Http\Controllers\SiteControllers\SobreController;
+use App\Http\Controllers\SiteControllers\TermosDeUsoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,36 +34,29 @@ Route::get('/categorias', [SiteCategoriasController::class, 'index'])->name('cat
 Route::get('/categoria/{slug}.html', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
 
 // Sobre nós ---------------------------------
-Route::get('/sobre', function () {
-    return view('site.pages.sobre.index');
-});
+Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
 
 // Política de Privacidade ---------------------------------
-Route::get('/politica-de-privacidade', function () {
-    return view('site.pages.politica-de-privacidade.index');
-});
+Route::get('/politica-de-privacidade', [PoliticaDePrivacidadeController::class, 'index'])->name('politica-privacidade');
 
 // Termos de uso ---------------------------------
-Route::get('/termos-de-uso', function () {
-    return view('site.pages.termos-de-uso.index');
-});
+Route::get('/termos-de-uso', [TermosDeUsoController::class, 'index'])->name('termos-uso');
 
 // Contato ---------------------------------
-Route::get('/contato', function () {
-    return view('site.pages.contato.index');
-});
+Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
+
 // Fedback
 Route::post('/contato/send-feedback', [FeedBackController::class, 'sendFeedBack'])->name('sendfb');
 
 // Galeria ---------------------------------
-Route::get('/galeria', function () {
-    return view('site.pages.galeria.index');
-});
+// Route::get('/galeria', function () {
+//     return view('site.pages.galeria.index');
+// });
 
 // Blog -----------------------------------
-Route::get('/blog', function () {
-    return view('site.pages.blog.index');
-});
+// Route::get('/blog', function () {
+//     return view('site.pages.blog.index');
+// });
 
 // Rotas CMS ################################################################
 // --------------------------------------------------------------------------

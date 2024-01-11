@@ -127,60 +127,26 @@
         <div class="product-area section-space-y-axis-100 product-arrow">
             <div class="container">
                 <div class="section-title pb-55">
-                    <h2 class="title mb-0">Produtos populares</h2>
+                    <h2 class="title mb-0">Categorias populares</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="swiper-container product-slider">
                             <div class="swiper-wrapper text-heading">
+                                @foreach ($categorias as $categoria)
                                 <div class="swiper-slide">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
                                             <a href="shop.html">
-                                                <img class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-1-290x350.jpg" alt="Product Images">
+                                                <img width="290" height="290" class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-1-290x350.jpg" alt="Product Images">
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
+                                            <a class="product-name pb-1" href="shop.html">{{$categoria->name}}</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="product-item">
-                                        <div class="product-img img-zoom-effect">
-                                            <a href="shop.html">
-                                                <img class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-2-290x350.jpg" alt="Product Images">
-                                            </a>
-                                        </div>
-                                        <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-item">
-                                        <div class="product-img img-zoom-effect">
-                                            <a href="shop.html">
-                                                <img class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-3-290x350.jpg" alt="Product Images">
-                                            </a>
-                                        </div>
-                                        <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product-item">
-                                        <div class="product-img img-zoom-effect">
-                                            <a href="shop.html">
-                                                <img class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-4-290x350.jpg" alt="Product Images">
-                                            </a>
-                                        </div>
-                                        <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">Produto de Exemplo</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Add Arrows -->
@@ -208,7 +174,7 @@
                         <span class="sub-title mb-2">30% Limited Time Offer </span>
                         <h2 class="title mb-5">car Parts for short people</h2>
                         <div class="button-wrap">
-                            <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Shop Now</a>
+                            <a class="btn btn-custom-size lg-size btn-primary" href="shop.html">Entrar em contato</a>
                         </div>
                     </div>
                 </div>
@@ -216,49 +182,4 @@
         </div>
     </div>
     <!-- Banner Area End Here -->
-
-    <!-- Begin Brand Area -->
-    <div class="brand-area section-space-y-axis-100 white-smoke-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper-container brand-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-1.png" alt="Brand Image">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-2.png" alt="Brand Image">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-3.png" alt="Brand Image">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-4.png" alt="Brand Image">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-5.png" alt="Brand Image">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a class="brand-item" href="#">
-                                    <img src="/tromic/assets/images/brand/1-6.png" alt="Brand Image">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand Area End Here -->
 @endsection
