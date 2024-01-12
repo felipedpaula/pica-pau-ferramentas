@@ -31,10 +31,11 @@ class Categoria extends Model
         return $dados;
     }
 
-    public function getSingleCategoria()
+    public function getSingleCategoria($slug)
     {
         $dados = DB::table($this->table)
             ->select('id','name', 'description', 'body', 'parent_category_id', 'img_destaque', 'status')
+            ->where('slug', $slug)
             ->where('status', 1)
             ->orderBy('name', 'asc')
             ->first();
@@ -44,7 +45,7 @@ class Categoria extends Model
     public function getCategoriaDoProduto($id)
     {
         $dados = DB::table($this->table)
-            ->select('name', 'slug', 'description', 'status')
+            ->select('id', 'name', 'slug', 'description', 'status')
             ->where('status', 1)
             ->where('id', $id)
             ->orderBy('name', 'asc')

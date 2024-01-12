@@ -34,15 +34,15 @@
                         <div class="tab-pane fade show active" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
                             <div class="product-list-view row">
                                 @foreach ($allCategorias as $categoria)
-                                    <div class="col-12 @if($loop->iteration > 1) pt-8 @endif">
+                                    <div class="col-md-6 mb-5">
                                         <div class="product-list-item" style="gap: 10px">
                                             <div class="product-list-img img-zoom-effect">
-                                                <a href="/categoria/{{$categoria->slug}}.html">
-                                                    <img class="img-full" src="assets/images/product/medium-size/shop/1-1-290x350.jpg" alt="Product Images">
+                                                <a href="/categoria/{{$categoria->slug}}">
+                                                    <img class="img-full" src="{{$categoria->img_destaque}}" alt="Product Images">
                                                 </a>
                                             </div>
                                             <div class="product-list-content">
-                                                <a class="product-name pb-2" href="/categoria/{{$categoria->slug}}.html">{{$categoria->name}}</a>
+                                                <a class="product-name pb-2" href="/categoria/{{$categoria->slug}}">{{$categoria->name}}</a>
                                                 <p class="short-desc mb-0">{{$categoria->description}}</p>
                                             </div>
                                         </div>

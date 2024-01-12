@@ -16,7 +16,7 @@
                                     <a href="/categorias">Categorias /</a>
                                 </li>
                                 <li>
-                                    <a href="/">{{$categoria->name}} /</a>
+                                    {{$categoria->name}}
                                 </li>
                             </ul>
                         </div>
@@ -26,23 +26,19 @@
         </div>
         <div class="single-product-area section-space-top-100">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="single-product-img">
-                            <div class="swiper-container single-product-slider">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img class="img-full" src="{{asset('assets/site/images/background/bg-3.jpg')}}" alt="Product Image">
-                                    </div>
+                <div class="product-info-container">
+                    <div class="single-product-img">
+                        <div class="swiper-container single-product-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img class="img-produto-destaque" src="{{$categoria->img_destaque}}" alt="Product Image">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 pt-9 pt-lg-0">
-                        <div class="single-product-content">
-                            <h2 class="title mb-3">{{$categoria->name}}</h2>
-                            <p class="short-desc mb-3">@if(isset($categoria->description) && $categoria->description != ''){{$categoria->description}} @else {{$categoria->name}} @endif</p>
-                        </div>
+                    <div class="single-product-content ms-4">
+                        <h2 class="title mb-3">{{$categoria->name}}</h2>
+                        <p class="short-desc mb-3">@if(isset($categoria->description) && $categoria->description != ''){{$categoria->description}} @else {{$categoria->name}} @endif</p>
                     </div>
                 </div>
             </div>
