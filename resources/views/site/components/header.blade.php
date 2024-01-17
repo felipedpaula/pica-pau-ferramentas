@@ -20,14 +20,14 @@
                                         <a href="/sobre">Sobre nós</a>
                                     </li>
                                     <li class="megamenu-holder">
-                                        <a href="/categorias">Categorias <i class="pe-7s-angle-down"></i></a>
+                                        <a href="/categoria">Categorias <i class="pe-7s-angle-down"></i></a>
                                         <ul class="drop-menu megamenu">
                                             <li>
                                                 <ul>
                                                     @foreach ($categoriasMenu as $item)
                                                     @if ($loop->index < 6)
                                                     <li>
-                                                        <a href="/categorias/{{$item->slug}}">{{$item->name}}</a>
+                                                        <a href="/categoria/{{$item->slug}}">{{$item->name}}</a>
                                                     </li>
                                                     @endif
                                                     @endforeach
@@ -38,7 +38,7 @@
                                                     @foreach ($categoriasMenu as $item)
                                                     @if ($loop->index > 5 && $loop->index < 12)
                                                     <li>
-                                                        <a href="/categorias/{{$item->slug}}">{{$item->name}}</a>
+                                                        <a href="/categoria/{{$item->slug}}">{{$item->name}}</a>
                                                     </li>
                                                     @endif
                                                     @endforeach
@@ -49,7 +49,7 @@
                                                     @foreach ($categoriasMenu as $item)
                                                     @if ($loop->index > 11 && $loop->index < 19)
                                                     <li>
-                                                        <a href="/categorias/{{$item->slug}}">{{$item->name}}</a>
+                                                        <a href="/categoria/{{$item->slug}}">{{$item->name}}</a>
                                                     </li>
                                                     @endif
                                                     @endforeach
@@ -129,7 +129,7 @@
                                     @foreach ($categoriasMenu as $item)
                                     @if ($loop->index < 10)
                                     <li>
-                                        <a href="/categorias/{{$item->slug}}">{{$item->name}}</a>
+                                        <a href="/categoria/{{$item->slug}}">{{$item->name}}</a>
                                     </li>
                                     @endif
                                     @endforeach

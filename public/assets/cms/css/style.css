@@ -51,3 +51,8 @@
 .lixeira-layer i {
     color: #FFF !important;
 }
+@media (max-width: 767px) {
+    .sidebar-brand-icon {
+        display: none !important;
+    }
+}

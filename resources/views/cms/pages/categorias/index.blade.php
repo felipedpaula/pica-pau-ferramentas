@@ -33,6 +33,15 @@
             </button>
         </div>
     @endif
+
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- FIM ALERTAS -->
 
     <div class="row">
@@ -49,7 +58,7 @@
 
     <div class="row mt-4">
         @if (isset($allCategorias) && !empty($allCategorias))
-            <ul class="list-group col-12">
+            <ul class="list-group col-12 mb-4">
                 <!-- Cabeçalho da Lista -->
                 <li class="list-group-item">
                     <div class="row font-weight-bold flex-nowrap overflow-auto">
@@ -73,7 +82,7 @@
                 @endforeach
             </ul>
 
-            {{-- {{ $allCategorias->links() }} --}}
+            {{ $allCategorias->links('pagination::bootstrap-4') }}
         @else
             <div class="col-12">
                 <p>Não existem categorias cadastradas.</p>

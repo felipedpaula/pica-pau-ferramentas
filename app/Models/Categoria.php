@@ -72,4 +72,12 @@ class Categoria extends Model
             ->get();
     }
 
+    public static function getSubcategorias($id) {
+        return self::select('name', 'slug', 'img_destaque')
+            ->where('status', 1)
+            ->where('parent_category_id', $id)
+            ->orderBy('name', 'asc')
+            ->get();
+    }
+
 }

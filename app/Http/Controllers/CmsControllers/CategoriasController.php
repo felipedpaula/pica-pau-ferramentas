@@ -101,7 +101,7 @@ class CategoriasController extends Controller
 
     public function update(Request $request, $id) {
         $categoria = Categoria::findOrFail($id);
-    
+
         $data = $request->only([
             'name',
             'description',
@@ -110,7 +110,7 @@ class CategoriasController extends Controller
             'parent_category_id',
             'status'
         ]);
-    
+
         $rules = [
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
@@ -133,17 +133,17 @@ class CategoriasController extends Controller
             // Caso contrário, manter a imagem existente
             unset($data['img_destaque']);
         }
-    
+
         $validator = Validator::make($data, $rules);
-    
+
         if($validator->fails()) {
             return redirect()->route('admin.categoria.edit', ['id' => $id])
                 ->withErrors($validator)
                 ->withInput();
         }
-    
+
         $data['slug'] = Str::slug($data['name'], '-');
-    
+
         try {
             $categoria->name = $data['name'];
             $categoria->slug = $data['slug'];
@@ -154,12 +154,12 @@ class CategoriasController extends Controller
             $categoria->img_destaque = $data['img_destaque'];
             $categoria->save();
             return redirect()->route('admin.categorias.index')->with('success', 'Categoria atualizada com sucesso!');
-    
+
         } catch (\Exception $e) {
             return redirect()->route('admin.categoria.edit', ['id' => $id])->with('error', 'Ocorreu um erro ao atualizar a categoria. Por favor, tente novamente.');
         }
     }
-    
+
 
     public function indexProdutoPorCategoria(Request $request) {
         $this->dadosPagina['tituloPagina'] = 'Produtos da categoria - X';

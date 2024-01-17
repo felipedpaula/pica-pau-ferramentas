@@ -28,6 +28,7 @@ class SiteCategoriasController extends Controller
         $this->dadosPagina['categoria'] = $categoria;
         $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
         $this->dadosPagina['produtosDaCategoria'] = $this->produto->getProdutosMesmaCategoria($categoria->id);
+        $this->dadosPagina['subcategorias'] = $this->categorias->getSubcategorias($categoria->id);
         return view('site.pages.categorias.single-categoria', $this->dadosPagina);
     }
 

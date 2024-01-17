@@ -43,6 +43,44 @@
                 </div>
             </div>
         </div>
+
+        <div class="shop-area section-space-y-axis-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product-topbar">
+                            <ul>
+                                <li class="page-count">
+                                    <span>{{$subcategorias->count()}} subcategorias</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content text-charcoal pt-8">
+                            <div class="tab-pane fade show active" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
+                                <div class="product-list-view row">
+                                    @foreach ($subcategorias as $categoria)
+                                        <div class="col-md-6 mb-5">
+                                            <div class="product-list-item" style="gap: 10px">
+                                                <div class="product-list-img img-zoom-effect">
+                                                    <a href="/categoria/{{$categoria->slug}}">
+                                                        <img class="img-full" src="{{$categoria->img_destaque}}" alt="Product Images">
+                                                    </a>
+                                                </div>
+                                                <div class="product-list-content">
+                                                    <a class="product-name pb-2" href="/categoria/{{$categoria->slug}}">{{$categoria->name}}</a>
+                                                    <p class="short-desc mb-0">{{$categoria->description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="background-img" data-bg-image="assets/images/background-img/1-2-1920x716.jpg">
             <div class="product-area product-arrow section-space-y-axis-100">
                 <div class="container">
