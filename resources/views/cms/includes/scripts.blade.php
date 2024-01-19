@@ -11,9 +11,3 @@
  <script src="{{asset('assets/cms/scripts/sb-admin.min.js')}}"></script>
  <script src="{{asset('assets/cms/scripts/mask.js')}}" type="text/javascript"></script>
 
- <!-- Page level plugins -->
- <script src="{{asset('assets/cms/scripts/charts/Chart.js')}}"></script>
-
- <!-- Page level custom scripts -->
- <script src="{{asset('assets/cms/scripts/charts/chart-area-demo.js')}}"></script>
- <script src="{{asset('assets/cms/scripts/charts/chart-pie-demo.js')}}"></script>

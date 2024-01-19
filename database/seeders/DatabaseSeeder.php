@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Dev',
             'type_id' => 1,
-            'email' => 'dev@email.com',
+            'email' => 'felipeppdev@gmail.com',
             'password' => Hash::make('12345678'),
             'status' => 1,
             'created_at' => now(),
@@ -39,9 +39,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Admin',
-            'type_id' => 2,
-            'email' => 'admin@email.com',
+            'name' => 'João',
+            'type_id' => 1,
+            'email' => 'essadoj@gmail.com',
             'password' => Hash::make('12345678'),
             'status' => 1,
             'created_at' => now(),
