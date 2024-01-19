@@ -20,7 +20,7 @@
                                         <a href="/sobre">Sobre nós</a>
                                     </li>
                                     <li class="megamenu-holder">
-                                        <a href="/categoria">Categorias <i class="pe-7s-angle-down"></i></a>
+                                        <a href="/categorias">Categorias <i class="pe-7s-angle-down"></i></a>
                                         <ul class="drop-menu megamenu">
                                             <li>
                                                 <ul>
