@@ -42,7 +42,7 @@
 
     <div class="background-img">
         <div class="inner-bg">
-            <img src={{asset('assets/site/images/background/bg-3.jpg')}} alt="Inner Background">
+            {{-- <img src={{asset('assets/site/images/background/bg-3.jpg')}} alt="Inner Background"> --}}
         </div>
         <div class="banner-area section-space-top-100">
             <div class="container">
@@ -70,7 +70,8 @@
     </div>
 
     <!-- Begin Product Area -->
-    <div class="background-img" data-bg-image="{{asset('assets/site/images/background/gpt2.png')}}">
+    {{-- <div class="background-img" data-bg-image="{{asset('assets/site/images/background/gpt2.png')}}"> --}}
+    <div class="background-img" data-bg-image="">
         <div class="product-area section-space-y-axis-100">
             <div class="container">
                 <div class="section-title pb-55">
@@ -80,7 +81,7 @@
                     <div class="col-lg-9">
                         <div class="product-item-wrap row">
                             @foreach ($ofertas_especiais as $destaque)
-                            <div class="col-lg-4 col-md-6 {{ $loop->index >= 3 ? 'pt-7' : ''}}">
+                            <div class="col-lg-4 col-md-6 pt-7">
                                 <div class="product-item" style="max-height:350px">
                                     <div class="product-img img-zoom-effect">
                                         <a href="shop.html">
@@ -95,17 +96,18 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-lg-3 pt-7 pt-lg-0">
+                    <div class="col-lg-3 pt-7">
                         <div class="product-banner img-hover-effect">
                             <div class="product-banner-img fixed-height img-zoom-effect">
                                 <a href="shop.html">
-                                    <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/banner/1-1-290x748.jpg" alt="Product Banner">
+                                    {{-- <img class="img-full" src="/tromic/assets/images/product/medium-size/special-deals/banner/1-1-290x748.jpg" alt="Product Banner"> --}}
+                                    <img class="img-full" src="{{$banner_lateral[0]->img_src}}" alt="Product Banner">
                                 </a>
                                 <div class="product-banner-content text-white">
-                                    <h3 class="category">APROVEITE NOSSA PROMOÇÃO</h3>
-                                    <h2 class="offer">30% Off</h2>
+                                    <h3 class="category">{{$banner_lateral[0]->titulo}}</h3>
+                                    <h2 class="offer">{{$banner_lateral[0]->subtitulo}}</h2>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size btn-primary" href="shop.html">Ver produtos</a>
+                                        <a class="btn btn-custom-size btn-primary" href="{{$banner_lateral[0]->url_link ? $banner_lateral[0]->url_link : '#'}}">{{$banner_lateral[0]->txt_link ? $banner_lateral[0]->txt_link : 'Ver'}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +115,7 @@
                     </div>
                     <div class="col-12 pt-55">
                         <div class="button-wrap">
-                            <a class="btn btn-link text-danger with-underline p-0" href="shop.html">Ver mais produtos</a>
+                            <a class="btn btn-link text-danger with-underline p-0" href="/categorias">Ver mais produtos</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +125,8 @@
     <!-- Product Area End Here -->
 
     <!-- Begin Product Area -->
-    <div class="background-img" data-bg-image="/tromic/assets/images/background-img/1-2-1920x716.jpg">
+    {{-- <div class="background-img" data-bg-image="/tromic/assets/images/background-img/1-2-1920x716.jpg"> --}}
+    <div class="background-img" data-bg-image="">
         <div class="product-area section-space-y-axis-100 product-arrow">
             <div class="container">
                 <div class="section-title pb-55">
@@ -137,12 +140,12 @@
                                 <div class="swiper-slide">
                                     <div class="product-item">
                                         <div class="product-img img-zoom-effect">
-                                            <a href="shop.html">
-                                                <img width="290" height="290" class="img-full" src="/tromic/assets/images/product/medium-size/product-slider/1-1-290x350.jpg" alt="Product Images">
+                                            <a href="/categoria/{{$categoria->slug}}">
+                                                <img width="290" height="290" class="img-full" src="{{$categoria->img_destaque}}" alt="{{$categoria->name}}">
                                             </a>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name pb-1" href="shop.html">{{$categoria->name}}</a>
+                                            <a class="product-name pb-1" href="/categoria/{{$categoria->slug}}">{{$categoria->name}}</a>
                                         </div>
                                     </div>
                                 </div>

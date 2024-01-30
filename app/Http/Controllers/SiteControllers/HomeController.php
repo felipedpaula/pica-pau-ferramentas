@@ -23,6 +23,7 @@ class HomeController extends Controller
         $this->dadosPagina['destaques_slide'] = $this->destaques->getDestaques('slider-home', 3);
         $this->dadosPagina['destaques_pequenos'] = $this->destaques->getDestaques('destaques-pequenos', 3);
         $this->dadosPagina['ofertas_especiais'] = $this->destaques->getDestaques('ofertas-especiais', 6);
+        $this->dadosPagina['banner_lateral'] = $this->destaques->getDestaques('banner-lateral', 1);
         $this->dadosPagina['categorias'] = $this->categorias->getCategoriasDestaques(8);
         $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
 

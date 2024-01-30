@@ -13,11 +13,13 @@ class SiteProdutosControllers extends Controller
     private $dadosPagina;
     private $produto;
     private $categoria;
+    private $categorias;
 
     public function __construct()
     {
         $this->produto = new Produto();
         $this->categoria = new Categoria();
+        $this->categorias = new Categoria();
     }
 
     public function singleProduto(Request $request) {
@@ -28,7 +30,7 @@ class SiteProdutosControllers extends Controller
         $produto = $this->produto->getSingleProduto($slug);
 
         $this->dadosPagina['categoriaProduto'] = $this->categoria->getCategoriaDoProduto($produto->category_id);
-
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
         $this->dadosPagina['produtosRelacionados'] = $this->produto->getProdutosSimilares($produto->id, $produto->category_id);
 
         $this->dadosPagina['produto'] = $produto;

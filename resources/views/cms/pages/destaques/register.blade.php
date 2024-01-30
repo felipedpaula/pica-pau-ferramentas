@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                     <label for="img_src">Imagem</label>
-                    <img  src="{{asset('tromic/assets/images/slider/bg/1-1.jpg')}}" alt="preview" width="220px" height="300px" id="preview" class="img-fluid"/>
+                    <img  src="/tromic/assets/images/slider/bg/1-1.jpg" alt="preview" width="220px" height="300px" id="preview" class="img-fluid"/>
                     <input type="file" name="img_src" class="form-control" id="img_src">
                 </div>
 
@@ -117,7 +117,29 @@
 
         document.getElementById("img_src").addEventListener("change", readImage, false);
 
+        document.getElementById('categoria_id').addEventListener('change', function() {
+        var selectedValue = this.value;
+        var imageUrl = "";
+        switch (selectedValue) {
+            case '1':
+                imageUrl = "/tromic/assets/images/slider/bg/1-1.jpg";
+                break;
+            case '2':
+                imageUrl = "/tromic/assets/images/banner/1-1-400x250.jpg";
+                break;
+            case '3':
+                imageUrl = "/tromic/assets/images/product/medium-size/special-deals/banner/1-1-290x748.jpg";
+                break;
+            case '4':
+            case '5': // As categorias 4 e 5 compartilham a mesma imagem
+                imageUrl = "/tromic/assets/images/about/banner/1-1-400x500.jpg";
+                break;
+        }
+        document.getElementById('preview').src = imageUrl;
+    });
+
     </script>
+
 
 
 @endsection

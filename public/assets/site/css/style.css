@@ -16468,8 +16468,8 @@ img {
   }
 }
 .section-space-y-axis-100 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 @media (max-width: 991.98px) {
   .section-space-y-axis-100 {
@@ -19094,7 +19094,7 @@ blockquote .user-name:before {
 }
 .product-content .product-name {
   display: block;
-  color: #383838;
+  color: #ee3231;
   font-weight: 500;
 }
 .product-content .product-name:hover {
