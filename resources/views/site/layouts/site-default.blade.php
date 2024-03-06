@@ -4,7 +4,6 @@
 @include('site.components.head-default')
 
 <body>
-    @include('site.components.preloader')
 
     <div class="main-wrapper">
 
