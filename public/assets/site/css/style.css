@@ -40,13 +40,22 @@
     height: 45px;
 }
 .btn-wpp-menu {
-    margin-left: 20px;
+    margin-left: 10px;
     height: 45px;
 }
 #btn-wpp-menu {
-    font-size: 13px;
     min-width: 120px;
     height: 45px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #359613;
+    color: #FFF;
+    border: 0;
+    border-radius: 6px;
+    font-weight: 700;
 }
 .header-bottom {
     width: 100%;
