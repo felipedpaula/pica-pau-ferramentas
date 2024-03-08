@@ -5,3 +5,8 @@
     --offwhite: #FFF6F0;
     --black: #181818;
 }
+.main-header-area {
+    width: 100%;
+    background-color: var(--azul);
+    color: var(--offwhite);
+}

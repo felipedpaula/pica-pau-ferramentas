@@ -43,6 +43,19 @@
     </div>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDestaques" aria-expanded="true" aria-controls="collapseDestaques">
+            <i class="fas fa-fw fa-desktop"></i>
+            <span>Destaques</span>
+        </a>
+        <div id="collapseDestaques" class="collapse" aria-labelledby="headingDestaques" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('admin.destaques.index')}}">Todos os Destaques</a>
+                <a class="collapse-item" href="{{route('admin.destaque.create')}}">Novo Destaque</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-desktop"></i>
             <span>Páginas</span>
@@ -109,22 +122,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('admin.users.index')}}">Todos os usuários</a>
                 <a class="collapse-item" href="{{route('admin.user.create')}}">Registrar novo</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Configurações</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Utilitários:</h6>
-                <a class="collapse-item" href="#">Opção</a>
             </div>
         </div>
     </li>

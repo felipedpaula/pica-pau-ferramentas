@@ -98,7 +98,7 @@ Route::middleware(['auth'])->group(function () {
 
         // DESTAQUES(HOME)
         Route::get('/destaques', [DestaquesController::class, 'index'])->name('destaques.index');
-        Route::get('/destaques/register', [DestaquesController::class , 'register'])->name('destaque.create');
+        Route::get('/destaques/create', [DestaquesController::class , 'create'])->name('destaque.create');
         Route::post('/destaques/store', [DestaquesController::class , 'store'])->name('destaque.store');
         Route::get('/destaques/{id}/edit', [DestaquesController::class , 'edit'])->name('destaque.edit');
         Route::put('/destaques/{id}/update', [DestaquesController::class , 'update'])->name('destaque.update');

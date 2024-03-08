@@ -25,10 +25,10 @@ class DestaquesController extends Controller
        return view('cms.pages.destaques.index',$this->dadosPagina);
     }
 
-    public function register() {
+    public function create() {
         $this->dadosPagina['tituloPagina'] = 'Registro de Destaques';
         $this->dadosPagina['destaqueCategorias'] = CategoriaDestaque::all();
-        return view('cms.pages.destaques.register', $this->dadosPagina);
+        return view('cms.pages.destaques.create', $this->dadosPagina);
     }
 
     public function store(Request $request) {
