@@ -33,10 +33,23 @@
                 <div class="header-bottom">
                     <div class="menu-desktop">
                         <ul>
-                            <a href=""><li>Home</li></a>
-                            <a href=""><li>Categorias</li></a>
-                            <a href=""><li>Sobre</li></a>
-                            <a href=""><li>Contato</li></a>
+                            <li><a href="#">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#">
+                                    Categorias
+                                    <span class="material-symbols-outlined">
+                                        expand_more
+                                    </span>
+                                </a>
+                                <ul class="submenu">
+                                    <li><a href="#">Subcategoria 1</a></li>
+                                    <li><a href="#">Subcategoria 2</a></li>
+                                    <li><a href="#">Subcategoria 3</a></li>
+                                    <!-- Mais itens de submenu conforme necessário -->
+                                </ul>
+                            </li>
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Contato</a></li>
                         </ul>
                     </div>
                 </div>
