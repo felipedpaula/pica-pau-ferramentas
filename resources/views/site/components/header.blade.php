@@ -32,24 +32,23 @@
 
                 <div class="header-bottom">
                     <div class="menu-desktop">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li class="dropdown">
-                                <a href="#">
+                        <ul class="nav-desktop">
+                            <li><a class="link-menu" href="/">Home</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="link-menu" href="/categorias">
                                     Categorias
                                     <span class="material-symbols-outlined">
                                         expand_more
                                     </span>
                                 </a>
                                 <ul class="submenu">
-                                    <li><a href="#">Subcategoria 1</a></li>
-                                    <li><a href="#">Subcategoria 2</a></li>
-                                    <li><a href="#">Subcategoria 3</a></li>
-                                    <!-- Mais itens de submenu conforme necessário -->
+                                    <li><a class="link-submenu" href="#">Subcategoria 1</a></li>
+                                    <li><a class="link-submenu" href="#">Subcategoria 2</a></li>
+                                    <li><a class="link-submenu" href="#">Subcategoria 3</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Sobre nós</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a class="link-menu" href="/sobre">Sobre nós</a></li>
+                            <li><a class="link-menu" href="/contato">Contato</a></li>
                         </ul>
                     </div>
                 </div>
@@ -57,3 +56,43 @@
         </div>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+        dropdownSubmenus.forEach(function(dropdownSubmenu) {
+            let submenu = dropdownSubmenu.querySelector('.submenu');
+            let isMouseOverSubmenu = false; // Flag para rastrear se o mouse está sobre o submenu
+
+            if (submenu) {
+                // Evento de mouseover para o submenu para definir a flag como true
+                submenu.addEventListener('mouseover', function() {
+                    isMouseOverSubmenu = true;
+                });
+
+                // Evento de mouseleave para o submenu para definir a flag como false e fechar o submenu
+                submenu.addEventListener('mouseleave', function() {
+                    isMouseOverSubmenu = false;
+                    this.style.bottom = '0px'; // Fecha o submenu
+                });
+            }
+
+            // Evento de mouseover no menu pai para mostrar o submenu
+            dropdownSubmenu.addEventListener('mouseover', function() {
+                if (submenu) {
+                    submenu.style.bottom = '-250px'; // Mostra o submenu
+                }
+            });
+
+            // Evento de mouseleave no menu pai para fechar o submenu se o mouse não estiver sobre o submenu
+            dropdownSubmenu.addEventListener('mouseleave', function() {
+                // Fecha o submenu apenas se o mouse não estiver sobre o submenu
+                if (!isMouseOverSubmenu && submenu) {
+                    submenu.style.bottom = '0px';
+                }
+            });
+        });
+    });
+
+
+</script>
