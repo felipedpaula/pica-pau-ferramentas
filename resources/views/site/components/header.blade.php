@@ -28,6 +28,12 @@
                             </svg>
                         </button>
                     </div>
+
+                    <div class="sandwith" onclick="handleSandwitch(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                      </div>
                 </div>
 
                 <div class="header-bottom">
@@ -55,25 +61,66 @@
             </div>
         </div>
     </div>
+    <div class="side-menu">
+        <div class="container">
+            <ul class="side-menu-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li class="dropdown-side-submenu">
+                    <a onclick="openSideSubmenu()" href="#">
+                        Categorias
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </a>
+                    <ul class="side-submenu">
+                        <li><a href="#">Subcategoria 1</a></li>
+                        <li><a href="#">Subcategoria 2</a></li>
+                        <li><a href="#">Subcategoria 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/sobre">
+                        Sobre nós
+                    </a>
+                </li>
+                <li>
+                    <a href="/contato">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         let dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
-        dropdownSubmenus.forEach(function(dropdownSubmenu) {
+        let isMouseOverSubmenu = {}; // Objeto para rastrear o estado de mouseover para cada submenu
+
+        dropdownSubmenus.forEach(function(dropdownSubmenu, index) {
             let submenu = dropdownSubmenu.querySelector('.submenu');
-            let isMouseOverSubmenu = false; // Flag para rastrear se o mouse está sobre o submenu
 
             if (submenu) {
+                // Inicializa a flag para o submenu atual como false
+                isMouseOverSubmenu[index] = false;
+
                 // Evento de mouseover para o submenu para definir a flag como true
                 submenu.addEventListener('mouseover', function() {
-                    isMouseOverSubmenu = true;
+                    isMouseOverSubmenu[index] = true;
                 });
 
-                // Evento de mouseleave para o submenu para definir a flag como false e fechar o submenu
+                // Evento de mouseleave para o submenu para definir a flag como false e tentar fechar o submenu
                 submenu.addEventListener('mouseleave', function() {
-                    isMouseOverSubmenu = false;
-                    this.style.bottom = '0px'; // Fecha o submenu
+                    isMouseOverSubmenu[index] = false;
+                    // Tenta fechar o submenu após um curto delay para permitir transição suave entre submenu e menu pai
+                    setTimeout(() => {
+                        if (!isMouseOverSubmenu[index]) {
+                            this.style.bottom = '0px'; // Fecha o submenu
+                        }
+                    }, 100); // Delay de 100ms
                 });
             }
 
@@ -87,12 +134,25 @@
             // Evento de mouseleave no menu pai para fechar o submenu se o mouse não estiver sobre o submenu
             dropdownSubmenu.addEventListener('mouseleave', function() {
                 // Fecha o submenu apenas se o mouse não estiver sobre o submenu
-                if (!isMouseOverSubmenu && submenu) {
-                    submenu.style.bottom = '0px';
-                }
+                setTimeout(() => {
+                    if (!isMouseOverSubmenu[index] && submenu) {
+                        submenu.style.bottom = '0px';
+                    }
+                }, 100); // Delay de 100ms
             });
         });
+
     });
 
+    let sideMenu = document.querySelector('.side-menu');
+    function handleSandwitch(x) {
+        x.classList.toggle("change");
+        sideMenu.classList.toggle("open-side");
+    }
+
+    let sideSubmenu = document.querySelector('.side-submenu');
+    function openSideSubmenu() {
+        sideSubmenu.classList.toggle('open-sidemenu');
+    }
 
 </script>
