@@ -16,7 +16,8 @@ class CreateDestaquesTable extends Migration
             $table->text('texto')->nullable();
             $table->string('url_link')->nullable();
             $table->string('texto_link')->nullable();
-            $table->string('img_src');
+            $table->string('img_src')->nullable();
+            $table->string('background')->nullable();
             $table->dateTime('data_inicio')->nullable();
             $table->dateTime('data_fim')->nullable();
             $table->integer('ordem')->default(0);

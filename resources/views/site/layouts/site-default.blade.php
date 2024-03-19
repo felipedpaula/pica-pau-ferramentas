@@ -5,15 +5,11 @@
 
 <body>
 
-    <div class="main-wrapper">
+    @include('site.components.header')
 
-        @include('site.components.header')
+    @yield('content')
 
-        @yield('content')
-
-        @include('site.components.footer')
-
-    </div>
+    @include('site.components.footer')
 
     <!-- Global Vendor, plugins JS -->
 

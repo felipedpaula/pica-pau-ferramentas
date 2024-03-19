@@ -9,10 +9,12 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    overflow: hidden;
+    position: relative;
 }
 header {
     border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    z-index: 5;
 }
 .topo-info {
     width: 100%;
@@ -194,7 +196,7 @@ header {
 .side-menu {
     width: 100%;
     background-color: var(--vermelho);
-    height: -webkit-fill-available;
+    min-height: 460px;
     position: absolute;
     top: 65px;
     left: -110%;
@@ -208,6 +210,7 @@ header {
     padding: 10px 0;
     list-style: none;
     margin: 0;
+    background-color: var(--vermelho);
 }
 .side-menu-nav li {
     min-height: 45px;
@@ -239,12 +242,60 @@ header {
     position: relative;
     width: 100%;
 }
-.section-1 .swiper {
+.section-1 .swiper-1 {
     width: 100%;
-    height: 500px;
+    height: 420px;
+    position: relative;
+}
+#area-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.gradient-slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #00000060;
+}
+#area-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .main-slide {
-    height: 500px;
+    height: 400px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.main-slide h2 {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 48px;
+}
+.main-slide p {
+    color: #FFF;
+    font-size: 22px;
+}
+.main-slide a {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vermelho);
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 6px;
 }
 .swiper-button-next, .swiper-button-prev {
     color: var(--vermelho);
@@ -255,8 +306,206 @@ header {
 .swiper-pagination-bullet-active {
     background-color: var(--vermelho);
 }
+.topo-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-2 .topo-section h3 {
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+.section-2 .topo-section .link-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--vermelho);
+    transition: 0.2s;
+    font-weight: 600;
+}
+.section-2 .topo-section .link-section:hover {
+    color: var(--azul);
+}
+.slider-categorias-home {
+    width: 100%;
+}
+.card-slide {
+    position: relative;
+    height: 240px;
+    padding: 15px;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.card-slide h5 {
+    font-size: 18px;
+    color: #FFF;
+    font-weight: 700;
+    position: relative;
+    z-index: 3;
+}
+.btn-card {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--vermelho);
+}
+.img-destaque-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+.gradient-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #00000060;
+    z-index: 2;
+}
+.section-3 {
+    background-color: var(--vermelho);
+}
+.section-3 .topo-section h3 {
+    color: var(--offwhite);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+.section-3 .topo-section .link-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--offwhite);
+    transition: 0.2s;
+    font-weight: 600;
+}
+.lista-ofertas-home {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.card-oferta {
+    background-color: var(--offwhite);
+    min-height: 400px;
+    padding: 15px;
+    width: 100%;
+}
+.img-oferta {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+.img-oferta img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.info-oferta {
+    width: 100%;
+}
+.info-oferta h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+.info-oferta p {
+    font-size: 13px;
+    margin-bottom: 15px;
+    min-height: 60px;
+}
+.link-oferta {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul);
+    color: var(--offwhite);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+.section-4 {
+    width: 100%;
+    background-color: var(--azul);
+}
+.section-4 .topo-section h3 {
+    color: var(--amarelo);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+.section-4 .topo-section .link-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--amarelo);
+    transition: 0.2s;
+    font-weight: 600;
+}
+.sobre-home {
+    width: 100%;
+    display: flex;
+}
+.info-sobre-home {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--offwhite);
+}
+.mascote-sobre-home {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 /* RESPONSIVIDADE ============================== */
 /* --------------------------------------------- */
+@media (max-width: 1200px) {
+    .mascote-sobre-home {
+        justify-content: center;
+    }
+    .mascote-sobre-home img {
+        height: 150px;
+    }
+}
+@media (max-width: 991px) {
+    .sobre-home {
+        flex-direction: column;
+    }
+}
 @media (max-width: 960px) {
     .logo-menu img {
         width: 120px;
@@ -286,5 +535,39 @@ header {
     }
     .topo-info-mobile {
         display: block;
+    }
+    .topo-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .topo-section h3 {
+        font-size: 18px;
+    }
+    .topo-section .link-section {
+        font-size: 13px;
+    }
+    .col-oferta {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-slide {
+        padding: 0 15px;
+        text-align: center;
+    }
+    .main-slide h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+    .main-slide p {
+        font-size: 14px;
+    }
+    .main-slide a {
+        font-size: 14px;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: 25px;
+        font-weight: 700;
     }
 }
