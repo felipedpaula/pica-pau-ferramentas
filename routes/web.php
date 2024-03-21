@@ -5,6 +5,7 @@ use App\Http\Controllers\CmsControllers\CategoriasController;
 use App\Http\Controllers\CmsControllers\ProdutosController;
 use App\Http\Controllers\CmsControllers\DashboardController;
 use App\Http\Controllers\CmsControllers\DestaquesController;
+use App\Http\Controllers\CmsControllers\ContatoCMSController;
 use App\Http\Controllers\SiteControllers\ContatoController;
 use App\Http\Controllers\SiteControllers\HomeController;
 use App\Http\Controllers\SiteControllers\PoliticaDePrivacidadeController;
@@ -103,6 +104,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/destaques/{id}/edit', [DestaquesController::class , 'edit'])->name('destaque.edit');
         Route::put('/destaques/{id}/update', [DestaquesController::class , 'update'])->name('destaque.update');
         Route::delete('/destaques/{id}/delete', [DestaquesController::class , 'delete'])->name('destaque.delete');
+
+        // CONTATO
+        Route::get('/contatos', [ContatoCMSController::class, 'index'])->name('contatos.index');
 
         Route::post('logout', 'AuthController@logout')->name('logout');
     });

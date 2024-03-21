@@ -147,7 +147,72 @@
             </div>
         </div>
     </section>
-    {{-- <p>$ofertas_especiais</p> --}}
-    {{-- <p>$destaques_pequenos</p> --}}
-    {{-- <p>$categorias</p> --}}
+
+    <section class="main-section section-5 py-5">
+        <div class="container">
+            <div class="topo-section">
+                <h3>
+                    <span class="material-symbols-outlined">
+                        store
+                    </span>
+                    As melhores marcas
+                </h3>
+            </div>
+            <div class="lista-marcas-home mt-5 py-5">
+                <div class="swiper swiper-3">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/belenus.webp')}}" alt="Belenus">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/bonevau.webp')}}" alt="Bonevau">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/bosch.webp')}}" alt="Bosch">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/carbografite.webp')}}" alt="Carbografite">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/ciser.webp')}}" alt="Ciser">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/denver.webp')}}" alt="Denver">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/dewalt.webp')}}" alt="Dewalt">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/gedore.webp')}}" alt="Gedore">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/gerdau.webp')}}" alt="Gerdau">
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="140px" src="{{asset('assets/site/images/marcas/tyrolit.webp')}}" alt="Tyrolit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-section section-6 py-5">
+        <div class="container">
+            <div class="topo-section">
+                <h3>
+                    <span class="material-symbols-outlined">
+                        map
+                    </span>
+                    Visite a loja física
+                </h3>
+            </div>
+            <div class="contact-map">
+                <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15312.280028793391!2d-49.493885!3d-16.3703958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e785b8c0cd89b%3A0x82a58af7e8af35e5!2sPica-Pau%20Parafusos%20e%20Ferramentas!5e0!3m2!1spt-BR!2sbr!4v1700676388141!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
 @endsection

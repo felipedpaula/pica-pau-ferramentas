@@ -55,3 +55,28 @@ const swiperCategorias = new Swiper('.swiper-2', {
 
 });
 
+const swiperMarcas = new Swiper('.swiper-3', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    slidesPerView: 6,
+    spaceBetween: 30,
+
+    breakpoints: {
+        991: {
+          slidesPerView: 6,
+          spaceBetween: 20,
+        },
+        600: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        },
+        280: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        }
+      },
+
+});
+

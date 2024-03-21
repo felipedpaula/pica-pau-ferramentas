@@ -129,6 +129,7 @@ class CategoriasController extends Controller
             // Armazenar a nova imagem
             $path = Storage::disk('public')->put('/images', $request->file('img_destaque'));
             $data['img_destaque'] = Storage::url($path);
+            $categoria->img_destaque = $data['img_destaque'];
         }else{
             // Caso contrário, manter a imagem existente
             unset($data['img_destaque']);
@@ -151,7 +152,6 @@ class CategoriasController extends Controller
             $categoria->body = $data['body'];
             $categoria->parent_category_id = $data['parent_category_id'];
             $categoria->status = $data['status'];
-            $categoria->img_destaque = $data['img_destaque'];
             $categoria->save();
             return redirect()->route('admin.categorias.index')->with('success', 'Categoria atualizada com sucesso!');
 

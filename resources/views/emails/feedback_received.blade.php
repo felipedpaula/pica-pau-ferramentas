@@ -54,14 +54,11 @@
 
     <div class="content">
         <h1>Novo Feedback Recebido</h1>
-
         <p>Um novo feedback foi enviado por:</p>
         <p><strong>Nome:</strong> {{ $feedback['name'] }}</p>
         <p><strong>Telefone:</strong> {{ $feedback['telefone'] ? $feedback['telefone'] : 'Não deixou o contato' }}</p>
         <p><strong>Email:</strong> {{ $feedback['email'] ? $feedback['email'] : 'Não deixou o contato' }}</p>
         <p><strong>Mensagem:</strong><br> {{ $feedback['mensagem'] }}</p>
-
-        <a href="{{ url('/admin/feedbacks') }}" class="button">Visualizar Feedback</a>
     </div>
 </body>
 </html>

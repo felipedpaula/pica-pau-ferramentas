@@ -69,7 +69,12 @@
         </div>
         <div class="form-group">
             <label for="img_destaque">Imagem destaque:</label><br>
+            <!-- Visualização da imagem -->
             <img width="300px" src="{{$categoria->img_destaque}}" alt="{{$categoria->name}}">
+            <div id="image-preview" class="mt-3" style="display: none;">
+                <strong>Imagem Selecionada:</strong>
+                <img id="selected-image" src="" alt="Imagem selecionada" style="max-width: 200px; max-height: 200px;">
+            </div>
             <input type="file" class="form-control-file" id="img_destaque" name="img_destaque">
         </div>
         <div class="form-group">
@@ -156,13 +161,6 @@
                 </form>
             </div>
         </div>
-    </div>
-
-
-    <!-- Visualização da imagem -->
-    <div id="image-preview" class="mt-3" style="display: none;">
-        <h4>Imagem Selecionada:</h4>
-        <img id="selected-image" src="" alt="Imagem selecionada" style="max-width: 200px; max-height: 200px;">
     </div>
     <script defer>
         const imageInput = document.getElementById('img_destaque');

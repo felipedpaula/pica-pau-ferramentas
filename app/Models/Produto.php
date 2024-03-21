@@ -60,12 +60,19 @@ class Produto extends Model
     }
 
     public function getProdutosMesmaCategoria($categoriaId){
+        // Obtem IDs de todas as subcategorias
+        $subcategoryIds = $this->getSubcategoryIds($categoriaId);
+
+        // Inclui o ID da categoria atual na lista de IDs para busca
+        $categoryIds = $subcategoryIds->push($categoriaId);
+
         $dados = DB::table($this->table)
             ->select('name','slug','description','price','category_id','image_url','status')
             ->where('status', 1)
-            ->where('category_id', $categoriaId)
+            ->whereIn('category_id', $categoryIds) // Modificado para buscar em múltiplas categorias
             ->orderBy('name', 'asc')
             ->get();
+
         return $dados;
     }
 
@@ -76,5 +83,13 @@ class Produto extends Model
                 ->orderBy('name', 'asc')
                 ->take($limit)
                 ->get();
+    }
+
+    public function getSubcategoryIds($parentId) {
+        $subcategories = DB::table('categories')
+            ->where('parent_category_id', $parentId)
+            ->pluck('id');
+
+        return $subcategories;
     }
 }

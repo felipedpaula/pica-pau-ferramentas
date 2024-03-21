@@ -126,6 +126,13 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.contatos.index') }}">
+            <i class="fas fa-fw fa-mail-bulk"></i>
+            <span>Mensagens</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

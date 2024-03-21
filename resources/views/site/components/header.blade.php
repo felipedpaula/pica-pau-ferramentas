@@ -2,7 +2,7 @@
 <header class="main-header-area">
     <div class="topo-info">
         <div class="container">
-            <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-05</strong>
+            <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
         </div>
     </div>
     <div class="main-header">
@@ -64,7 +64,7 @@
     <div class="side-menu">
         <div class="topo-info-mobile">
             <div class="container">
-                <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-05</strong>
+                <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
             </div>
         </div>
 
@@ -130,7 +130,7 @@
                     // Tenta fechar o submenu após um curto delay para permitir transição suave entre submenu e menu pai
                     setTimeout(() => {
                         if (!isMouseOverSubmenu[index]) {
-                            this.style.bottom = '0px'; // Fecha o submenu
+                            this.style.bottom = '10px'; // Fecha o submenu
                         }
                     }, 100); // Delay de 100ms
                 });
@@ -139,7 +139,7 @@
             // Evento de mouseover no menu pai para mostrar o submenu
             dropdownSubmenu.addEventListener('mouseover', function() {
                 if (submenu) {
-                    submenu.style.bottom = '-250px'; // Mostra o submenu
+                    submenu.style.bottom = '-251px'; // Mostra o submenu
                 }
             });
 
@@ -148,7 +148,7 @@
                 // Fecha o submenu apenas se o mouse não estiver sobre o submenu
                 setTimeout(() => {
                     if (!isMouseOverSubmenu[index] && submenu) {
-                        submenu.style.bottom = '0px';
+                        submenu.style.bottom = '10px';
                     }
                 }, 100); // Delay de 100ms
             });

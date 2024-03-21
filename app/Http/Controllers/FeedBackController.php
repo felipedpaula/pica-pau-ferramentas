@@ -19,18 +19,18 @@ class FeedBackController extends Controller
             'telefone' => 'nullable',
             'mensagem' => 'required'
         ]);
-        
+
         // Adicionando manualmente o valor de 'tipo'
         $feedback['tipo'] = 1;
-        
+
         try {
             Feedback::create($feedback);
         } catch (Exception $e) {
             return back()->with('error', 'Ocorreu um erro ao enviar o feedback. Por favor, tente novamente.');
         }
-        
+
         Mail::to('contato@picapau.com')->send(new FeedbackReceived($feedback));
-        return back()->with('success', 'Seu feedback foi enviado com sucesso!');
+        return back()->with('success', 'Sua mensagem foi enviada com sucesso!');
 
     }
 }
