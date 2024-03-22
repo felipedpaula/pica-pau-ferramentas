@@ -68,7 +68,7 @@
                                 <img class="img-destaque-card" src="{{$item->img_destaque}}" alt="{{$item->name}}" loading="lazy">
                                 <div class="gradient-card-bg"></div>
                                 <h5>{{$item->name}}</h5>
-                                <a class="btn-card" href="/categoria/{{$item->slug}}">
+                                <a class="btn-card" href="/{{$item->slug}}">
                                     <span>Ver produtos</span>
                                     <span class="material-symbols-outlined">
                                         link

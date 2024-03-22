@@ -580,19 +580,123 @@ header {
     display: flex;
     flex-wrap: wrap;
 }
-.listagem-produtos-categoria {
+.title-produtos-categoria {
+    font-size: 18px;
+}
+.listagem-produtos-categoria,
+.listagem-produtos-relacionados {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 2px solid var(--azul);
+    background-color: #e5e5e5;
 }
 .card-produto {
     width: 100%;
-    background-color: #e5e5e5;
+    background-color: #FFF;
+    color: var(--black);
     border-radius: 6px;
+    border: 1px solid #dadada;
     padding: 15px;
     display: flex;
+    text-decoration: none;
 }
 .img-card-produto {
     width: 120px;
     height: 120px;
+}
+.info-card-produto {
+
+}
+.info-card-produto h3,
+.card-price {
+    font-size: 14px;
+    font-weight: 600;
+}
+.info-card-produto p {
+    font-size: 13px;
+    max-height: 60px;
+    overflow: hidden;
+}
+.bottom-produto {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-produto .tag-buy {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: var(--offwhite);
+    padding: 5px;
+    background-color: var(--azul);
+    border-radius: 4px;
+}
+.area-single-produto {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img-detaque-single-produto {
+    width: 100%;
+    position: relative;
+}
+.img-detaque-single-produto .img-principal {
+    /* position: absolute; */
+    width: 100%;
+    max-height: 490px;
+    object-fit: cover;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+}
+.shop-single-produto {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contato-shop,
+.wpp-shop {
+    width: 48%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: var(--offwhite);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+.contato-shop {
+    background-color: var(--azul);
+}
+.wpp-shop {
+    background-color: #359613;
+}
+.imagens-carrosel-produto {
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+    background-color: #e5e5e5;
+}
+.img-carrosel-produto {
+    min-width: 80px;
+    height: 100%;
+    background-color: #FFF;
+    border-radius: 4px;
+    position: relative;
+}
+.img-carrosel-produto img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
 }
 footer {
     width: 100%;
@@ -672,6 +776,14 @@ footer {
     .row-footer .copy,
     .row-footer .links-paginas {
         margin-top: 20px;
+    }
+    .shop-single-produto {
+        flex-direction: column;
+    }
+    .contato-shop,
+    .wpp-shop {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 @media (max-width: 960px) {

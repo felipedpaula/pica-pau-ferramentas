@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
 // Pagina de Produto unico
-Route::get('/produto/{slug}.html', [SiteProdutosControllers::class, 'singleProduto'])->name('produto.single');
+Route::get('/produto/{slug}', [SiteProdutosControllers::class, 'singleProduto'])->name('produto.single');
 
 // Pagina com todos os produtos
 Route::get('/produtos', [SiteProdutosControllers::class, 'index'])->name('produto.geral');
@@ -32,7 +32,7 @@ Route::get('/produtos', [SiteProdutosControllers::class, 'index'])->name('produt
 Route::get('/categorias', [SiteCategoriasController::class, 'index'])->name('categoria.geral');
 
 // Pagina de Categoria unica
-Route::get('/categoria/{slug}', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
+Route::get('/{slug}', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
 
 // Sobre nós ---------------------------------
 Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');
