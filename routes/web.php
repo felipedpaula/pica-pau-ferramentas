@@ -32,7 +32,7 @@ Route::get('/produtos', [SiteProdutosControllers::class, 'index'])->name('produt
 Route::get('/categorias', [SiteCategoriasController::class, 'index'])->name('categoria.geral');
 
 // Pagina de Categoria unica
-Route::get('/{slug}', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
+Route::get('categoria/{slug}', [SiteCategoriasController::class, 'singleCategoria'])->name('categoria.single');
 
 // Sobre nós ---------------------------------
 Route::get('/sobre', [SobreController::class, 'index'])->name('sobre');

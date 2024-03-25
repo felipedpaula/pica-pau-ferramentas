@@ -32,6 +32,12 @@
         <label for="description">Descrição do Produto:</label>
         <textarea class="form-control" id="descricao" name="description" rows="4" required></textarea>
     </div>
+
+    <div class="form-group">
+        <label for="url">URL Mercado Livre:</label>
+        <input type="text" class="form-control" id="url" name="url" required>
+    </div>
+
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">

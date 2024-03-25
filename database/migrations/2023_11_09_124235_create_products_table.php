@@ -12,8 +12,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->text('description');
-            $table->decimal('price', 8, 2);
+            $table->text('description')->nullable();
+            $table->text('url')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->foreignId('category_id')->constrained();
             $table->string('image_url')->nullable();
             $table->integer('status')->default(0);

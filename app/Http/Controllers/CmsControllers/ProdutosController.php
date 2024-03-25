@@ -56,6 +56,7 @@ class ProdutosController extends Controller
             'name',
             'parent_category_id',
             'description',
+            'url',
             'image_url',
             'status',
             'price'
@@ -67,6 +68,7 @@ class ProdutosController extends Controller
             'name' => 'required|string|max:255',
             'parent_category_id' => 'required|numeric|max:255',
             'description' => 'required|string|max:255',
+            'url' => 'string|max:255',
             'status' => ['required', 'in:0,1'],
             'price' => 'required|numeric'
         ];
@@ -93,6 +95,7 @@ class ProdutosController extends Controller
             $this->produto->category_id = $data['parent_category_id'];
             $this->produto->slug = $data['slug'];
             $this->produto->description = $data['description'];
+            $this->produto->url = $data['url'];
             $this->produto->price = $data['price'];
             $this->produto->status = $data['status'];
             $this->produto->image_url = $data['image_url'];
@@ -111,6 +114,7 @@ class ProdutosController extends Controller
             'name',
             'parent_category_id',
             'description',
+            'url',
             'image_url',
             'status',
             'price'
@@ -122,6 +126,7 @@ class ProdutosController extends Controller
             'name' => 'required|string|max:255',
             'parent_category_id' => 'required|numeric|max:255',
             'description' => 'required|string|max:255',
+            'url' => 'string|max:255',
             'status' => ['required', 'in:0,1'],
             'price' => 'required|numeric'
         ];
@@ -136,6 +141,7 @@ class ProdutosController extends Controller
             // Armazenar a nova imagem
             $path = Storage::disk('public')->put('/images', $request->file('image_url'));
             $data['image_url'] = Storage::url($path);
+            $produto->image_url = $data['image_url'];
         }else{
             // Caso contrário, manter a imagem existente
             unset($data['image_url']);
@@ -158,7 +164,6 @@ class ProdutosController extends Controller
             $produto->description = $data['description'];
             $produto->price = $data['price'];
             $produto->status = $data['status'];
-            $produto->image_url = $data['image_url'];
             $produto->save();
             return redirect()->route('admin.produtos.index')->with('success', 'Produto atualizado com sucesso!');
         } catch (\Exception $e) {

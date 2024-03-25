@@ -64,6 +64,11 @@
             <textarea class="form-control" id="description" name="description" rows="4" required>{{ $produto->description }}</textarea>
         </div>
 
+        <div class="form-group">
+            <label for="url">URL Mercado Livre:</label>
+            {{-- <input value="{{$produto->url}}" type="text" class="form-control" id="url" name="url" required> --}}
+        </div>
+
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
