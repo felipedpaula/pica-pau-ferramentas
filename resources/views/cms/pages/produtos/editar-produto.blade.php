@@ -66,7 +66,7 @@
 
         <div class="form-group">
             <label for="url">URL Mercado Livre:</label>
-            {{-- <input value="{{$produto->url}}" type="text" class="form-control" id="url" name="url" required> --}}
+            <input value="{{$produto->url}}" type="text" class="form-control" id="url" name="url" required>
         </div>
 
         <div class="row">

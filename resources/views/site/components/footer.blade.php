@@ -8,10 +8,10 @@
             <div class="col-12 col-lg-4 col-xs-12">
                 <h5>Atalhos do site</h5>
                 <ul class="links-atalhos mt-3">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Categorias</a></li>
-                    <li><a href="">Sobre nós</a></li>
-                    <li><a href="">Contato</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categorias">Categorias</a></li>
+                    <li><a href="/sobre">Sobre nós</a></li>
+                    <li><a href="/contato">Contato</a></li>
                 </ul>
             </div>
             <div class="col-12 col-lg-4 col-xs-12">

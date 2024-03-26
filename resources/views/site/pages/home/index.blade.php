@@ -68,7 +68,7 @@
                                 <img class="img-destaque-card" src="{{$item->img_destaque}}" alt="{{$item->name}}" loading="lazy">
                                 <div class="gradient-card-bg"></div>
                                 <h5>{{$item->name}}</h5>
-                                <a class="btn-card" href="/{{$item->slug}}">
+                                <a class="btn-card" href="/categoria/{{$item->slug}}">
                                     <span>Ver produtos</span>
                                     <span class="material-symbols-outlined">
                                         link
@@ -105,8 +105,8 @@
                         <div class="info-oferta">
                             <h5>{{$item->titulo}}</h5>
                             <p>{{$item->subtitulo}}</p>
-                            <a href="/contatos" class="link-oferta">
-                                Saiba mais
+                            <a href="{{$item->url_link}}" class="link-oferta">
+                                Aproveitar oferta
                                 <span class="material-symbols-outlined">
                                     contact_support
                                 </span>
@@ -129,7 +129,7 @@
                     </span>
                     Sobre nós
                 </h3>
-                <a class="link-section" href="/categorias">
+                <a class="link-section" href="/sobre">
                     Saiba mais
                     <span class="material-symbols-outlined">
                         link
@@ -209,7 +209,7 @@
                     Visite a loja física
                 </h3>
             </div>
-            <div class="contact-map">
+            <div class="contact-map mt-3">
                 <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15312.280028793391!2d-49.493885!3d-16.3703958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e785b8c0cd89b%3A0x82a58af7e8af35e5!2sPica-Pau%20Parafusos%20e%20Ferramentas!5e0!3m2!1spt-BR!2sbr!4v1700676388141!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>

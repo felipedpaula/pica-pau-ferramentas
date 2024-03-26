@@ -131,30 +131,26 @@ class ProdutosController extends Controller
             'price' => 'required|numeric'
         ];
 
-        // Verificar se um novo arquivo foi enviado
-        if($request->hasFile('image_url')) {
-            // Remover a imagem anterior (opcional)
-            $existingImage = $produto->image_url;
-            if ($existingImage) {
-                Storage::disk('public')->delete($existingImage);
-            }
-            // Armazenar a nova imagem
-            $path = Storage::disk('public')->put('/images', $request->file('image_url'));
-            $data['image_url'] = Storage::url($path);
-            $produto->image_url = $data['image_url'];
-        }else{
-            // Caso contrário, manter a imagem existente
-            unset($data['image_url']);
-        }
-
         $validator = Validator::make($data, $rules);
-
         if($validator->fails()) {
             return redirect()->route('admin.produto.edit', $id)
                 ->withErrors($validator)
                 ->withInput();
         }
 
+        if($request->hasFile('image_url')) {
+            // Confirma se a imagem existente precisa ser removida
+            $existingImage = $produto->image_url;
+            if ($existingImage && Storage::disk('public')->exists($existingImage)) {
+                Storage::disk('public')->delete($existingImage);
+            }
+            $path = Storage::disk('public')->put('/images', $request->file('image_url'));
+            $data['image_url'] = Storage::url($path);
+        } else {
+            $data['image_url'] = $produto->image_url; // Mantém a imagem atual caso não seja enviada uma nova
+        }
+
+        // Gerar slug
         $data['slug'] = Str::slug($data['name'], '-');
 
         try {
@@ -164,10 +160,10 @@ class ProdutosController extends Controller
             $produto->description = $data['description'];
             $produto->price = $data['price'];
             $produto->status = $data['status'];
+            $produto->url = $data['url'];
             $produto->save();
             return redirect()->route('admin.produtos.index')->with('success', 'Produto atualizado com sucesso!');
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->route('admin.produto.edit', $id)->with('error', 'Ocorreu um erro ao atualizar o produto. Por favor, tente novamente.');
         }
     }

@@ -17,7 +17,7 @@ class PoliticaDePrivacidadeController extends Controller
 
     public function index()
     {
-        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(15);
         return view('site.pages.politica-de-privacidade.index', $this->dadosPagina);
     }
 }

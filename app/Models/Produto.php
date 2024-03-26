@@ -41,7 +41,7 @@ class Produto extends Model
     */
     public function getSingleProduto($slug){
         $dados = DB::table($this->table)
-            ->select('id','name','slug','description','price','category_id','image_url','status')
+            ->select('id','url', 'name','slug','description','price','category_id','image_url','status')
             ->where('status', 1)
             ->where('slug', $slug)
             ->first();
@@ -91,5 +91,15 @@ class Produto extends Model
             ->pluck('id');
 
         return $subcategories;
+    }
+
+    public function getProdutosPorTermo($termo){
+        $dados = DB::table($this->table)
+            ->select('id','name','slug','description','price','category_id','image_url','status')
+            ->where('status', 1)
+            ->where('name', 'like', '%' . $termo . '%')
+            ->orderBy('name', 'asc')
+            ->get();
+        return $dados;
     }
 }

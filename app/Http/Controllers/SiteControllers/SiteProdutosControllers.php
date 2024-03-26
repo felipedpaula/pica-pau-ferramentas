@@ -34,6 +34,7 @@ class SiteProdutosControllers extends Controller
         $this->dadosPagina['imgsProduto'] = $this->imgsProduto->getImagensByProdutoId($produto->id);
         $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
         $this->dadosPagina['produtosRelacionados'] = $this->produto->getProdutosSimilares($produto->id, $produto->category_id);
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(15);
 
         $this->dadosPagina['produto'] = $produto;
         $this->dadosPagina['slug'] = $request->slug;
@@ -44,9 +45,18 @@ class SiteProdutosControllers extends Controller
 
     public function index(Request $request){
         $this->dadosPagina['tituloPagina'] = 'Todos os produtos';
-
         $this->dadosPagina['allProdutos'] = $this->produto->getProdutos();
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
 
         return view('site.pages.produtos.all-produtos', $this->dadosPagina);
+    }
+
+    public function pesquisa(Request $request) {
+        $termo = $request->termo;
+        $this->dadosPagina['termo'] = $termo;
+        $this->dadosPagina['produtos'] = $this->produto->getProdutosPorTermo($termo);
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
+
+        return view('site.pages.search.index', $this->dadosPagina);
     }
 }

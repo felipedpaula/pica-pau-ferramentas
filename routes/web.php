@@ -46,6 +46,9 @@ Route::get('/termos-de-uso', [TermosDeUsoController::class, 'index'])->name('ter
 // Contato ---------------------------------
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
+// Pesquisa Controller
+Route::get('/pesquisa/{termo}', [SiteProdutosControllers::class, 'pesquisa'])->name('pesquisa');
+
 // Fedback
 Route::post('/contato/send-feedback', [FeedBackController::class, 'sendFeedBack'])->name('sendfb');
 

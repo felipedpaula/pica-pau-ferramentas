@@ -17,7 +17,7 @@ class ContatoController extends Controller
 
     public function index()
     {
-        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(18);
+        $this->dadosPagina['categoriasMenu'] = $this->categorias->getCategoriasMenu(15);
         return view('site.pages.contato.index', $this->dadosPagina);
     }
 }

@@ -84,6 +84,7 @@
             </div>
         </div>
     </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Seleciona todas as imagens dentro do carrossel

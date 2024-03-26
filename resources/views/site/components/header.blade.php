@@ -13,12 +13,12 @@
                         <img src="{{asset('assets/site/images/logos-text/logo_vermelho.svg')}}" alt="Pica Pau Ferramentas">
                     </div>
                     <div class="search-menu">
-                        {{-- <input class="input-search-menu" type="text" placeholder="Econtre no site...">
-                        <button id="btn-search-menu">Pesquisar</button> --}}
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Econtre no site..." aria-label="Econtre no site..." aria-describedby="button-addon2">
-                            <button class="btn btn-danger" type="button" id="btn-search-menu">Pesquisar</button>
-                        </div>
+                        <form id="formPesquisa">
+                            <div class="input-group">
+                                <input id="inputPesquisa" name="termo" type="text" class="form-control" placeholder="Econtre no site..." aria-label="Econtre no site..." aria-describedby="button-addon2">
+                                <button class="btn btn-danger" type="submit" id="btn-search-menu">Pesquisar</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="btn-wpp-menu">
                         <button id="btn-wpp-menu">
@@ -48,9 +48,11 @@
                                     </span>
                                 </a>
                                 <ul class="submenu">
-                                    <li><a class="link-submenu" href="#">Subcategoria 1</a></li>
-                                    <li><a class="link-submenu" href="#">Subcategoria 2</a></li>
-                                    <li><a class="link-submenu" href="#">Subcategoria 3</a></li>
+                                    @foreach ($categoriasMenu as $item)
+                                    @if ($loop->index < 15)
+                                    <li><a class="link-submenu" href="#">{{$item->name}}</a></li>
+                                    @endif
+                                    @endforeach
                                 </ul>
                             </li>
                             <li><a class="link-menu" href="/sobre">Sobre nós</a></li>
@@ -61,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="side-menu">
+    <div class="side-menu pb-2">
         <div class="topo-info-mobile">
             <div class="container">
                 <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
@@ -81,9 +83,10 @@
                         </span>
                     </a>
                     <ul class="side-submenu">
-                        <li><a class="ps-2" href="#">Subcategoria 1</a></li>
-                        <li><a class="ps-2" href="#">Subcategoria 2</a></li>
-                        <li><a class="ps-2" href="#">Subcategoria 3</a></li>
+                        <li><a class="ps-2" href="/categorias">Todas as categorias</a></li>
+                        @foreach ($categoriasMenu as $item)
+                        <li><a class="ps-2" href="/categoria/{{$item->slug}}">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li>
@@ -167,4 +170,23 @@
         sideSubmenu.classList.toggle('open-sidemenu');
     }
 
+
+    let form = document.getElementById('formPesquisa');
+
+    // Adiciona um ouvinte de eventos para o evento de 'submit'
+    form.addEventListener('submit', function(e) {
+        // Impede o formulário de ser enviado da maneira tradicional
+        e.preventDefault();
+
+        // Obtém o valor do campo de pesquisa
+        var termoPesquisa = document.getElementById('inputPesquisa').value;
+
+        // Verifica se o termo de pesquisa não está vazio
+        if (termoPesquisa.trim() !== '') {
+            // Redireciona para a URL desejada, inserindo o termo de pesquisa na URL
+            window.location.href = '/pesquisa/' + encodeURIComponent(termoPesquisa);
+        } else {
+            alert('Por favor, digite um termo para pesquisa.');
+        }
+    });
 </script>
