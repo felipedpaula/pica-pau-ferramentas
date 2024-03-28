@@ -53,7 +53,6 @@ class DestaquesController extends Controller
             'texto_link' => ['nullable', 'string' , 'max:255'],
             'data_inicio' => ['nullable', 'date'],
             'data_fim' => ['nullable', 'date'],
-            'ordem' => ['required'],
             'status' => ['required', 'in:0,1'],
         ];
 
@@ -142,7 +141,6 @@ class DestaquesController extends Controller
             'texto_link' => ['nullable', 'string' , 'max:255'],
             'data_inicio' => ['nullable', 'date'],
             'data_fim' => ['nullable', 'date'],
-            'ordem' => ['required'],
             'status' => ['required', 'in:0,1'],
         ];
 

@@ -120,6 +120,30 @@
     </section>
     @endif
 
+    @if (isset($destaques_card) && count($destaques_card) > 0)
+    <section class="main-section section-5 py-4 mt-5">
+        <div class="container">
+            <div class="topo-section">
+                <h3>
+                    <span class="material-symbols-outlined">
+                        local_fire_department
+                    </span>
+                    Destaques
+                </h3>
+            </div>
+            <div class="destaques-row mt-3">
+                @foreach ($destaques_card as $item)
+                <div class="col-12 col-md-6 p-2 d-flex justify-content-center">
+                    <a href="{{$item->url_link}}" class="destaque-card">
+                        <img src="{{$item->img_src}}" alt="{{$item->titulo}}">
+                    </a>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
     <section class="main-section section-4 pt-5 pb-3">
         <div class="container">
             <div class="topo-section">

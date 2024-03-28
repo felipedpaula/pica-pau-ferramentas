@@ -52,14 +52,22 @@ class DatabaseSeeder extends Seeder
             'titulo' => 'Slider Home',
             'slug' => 'slider-home',
             'descricao' => 'Slides da primeira seção da Home',
-            'tamanho_img' => '1920x803',
+            'tamanho_img' => '-',
             'status' => true
         ]);
 
         DB::table('destaques_categorias')->insert([
             'titulo' => 'Ofertas Especiais',
             'slug' => 'ofertas-especiais',
-            'descricao' => 'Cards ao lado do banner latera na Home | 1 Grande - 4 Pequenos',
+            'descricao' => 'Cards de produtos | 4 por linha',
+            'tamanho_img' => '300x300',
+            'status' => true
+        ]);
+
+        DB::table('destaques_categorias')->insert([
+            'titulo' => 'Cards Destaques',
+            'slug' => 'cards-destaques',
+            'descricao' => 'Cards de destaques | 2',
             'tamanho_img' => '620x350 | 390x350',
             'status' => true
         ]);

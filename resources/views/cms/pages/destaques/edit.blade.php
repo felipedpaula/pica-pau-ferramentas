@@ -155,17 +155,34 @@
 
 
     <script>
-            function readImage() {
-                if (this.files && this.files[0]) {
-                    var file = new FileReader();
-                    file.onload = function(e) {
-                        document.getElementById("preview").src = e.target.result;
-                    };
-                    file.readAsDataURL(this.files[0]);
-                }
+        function readImage() {
+            if (this.files && this.files[0]) {
+                var file = new FileReader();
+                file.onload = function(e) {
+                    document.getElementById("preview").src = e.target.result;
+                };
+                file.readAsDataURL(this.files[0]);
             }
+        }
 
-            document.getElementById("img_default").addEventListener("change", readImage, false);
+        document.getElementById("img_src").addEventListener("change", readImage, false);
+
+        document.getElementById('categoria_id').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var imageUrl = "";
+            switch (selectedValue) {
+                case '1':
+                    imageUrl = "/tromic/assets/images/slider/bg/1-1.jpg";
+                    break;
+                case '2':
+                    imageUrl = "/tromic/assets/images/banner/destaque-ofertas.png";
+                    break;
+                case '3':
+                    imageUrl = "/tromic/assets/images/banner/destaque-card.png";
+                    break;
+            }
+            document.getElementById('preview').src = imageUrl;
+        });
 
     </script>
 

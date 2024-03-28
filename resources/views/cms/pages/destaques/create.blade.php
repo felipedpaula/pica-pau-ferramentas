@@ -118,25 +118,21 @@
         document.getElementById("img_src").addEventListener("change", readImage, false);
 
         document.getElementById('categoria_id').addEventListener('change', function() {
-        var selectedValue = this.value;
-        var imageUrl = "";
-        switch (selectedValue) {
-            case '1':
-                imageUrl = "/tromic/assets/images/slider/bg/1-1.jpg";
-                break;
-            case '2':
-                imageUrl = "/tromic/assets/images/banner/1-1-400x250.jpg";
-                break;
-            case '3':
-                imageUrl = "/tromic/assets/images/product/medium-size/special-deals/banner/1-1-290x748.jpg";
-                break;
-            case '4':
-            case '5': // As categorias 4 e 5 compartilham a mesma imagem
-                imageUrl = "/tromic/assets/images/about/banner/1-1-400x500.jpg";
-                break;
-        }
-        document.getElementById('preview').src = imageUrl;
-    });
+            var selectedValue = this.value;
+            var imageUrl = "";
+            switch (selectedValue) {
+                case '1':
+                    imageUrl = "/tromic/assets/images/slider/bg/1-1.jpg";
+                    break;
+                case '2':
+                    imageUrl = "/tromic/assets/images/banner/destaque-ofertas.png";
+                    break;
+                case '3':
+                    imageUrl = "/tromic/assets/images/banner/destaque-card.png";
+                    break;
+            }
+            document.getElementById('preview').src = imageUrl;
+        });
 
     </script>
 

@@ -20,7 +20,7 @@ class CreateDestaquesTable extends Migration
             $table->string('background')->nullable();
             $table->dateTime('data_inicio')->nullable();
             $table->dateTime('data_fim')->nullable();
-            $table->integer('ordem')->default(0);
+            $table->integer('ordem')->nullable()->default(0);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

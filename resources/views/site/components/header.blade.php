@@ -2,7 +2,7 @@
 <header class="main-header-area">
     <div class="topo-info">
         <div class="container">
-            <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
+            <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 99146-6107</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
         </div>
     </div>
     <div class="main-header">
@@ -68,7 +68,7 @@
     <div class="side-menu pb-2">
         <div class="topo-info-mobile">
             <div class="container">
-                <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 0000-0000</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
+                <strong>Inhumas</strong> &nbsp; | &nbsp; Compre pelo telefone <strong>(62) 99146-6107</strong> ou no nosso endereço: <strong>Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</strong>
             </div>
         </div>
 

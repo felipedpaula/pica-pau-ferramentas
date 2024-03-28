@@ -3,7 +3,7 @@
         <div class="row-footer">
             <div class="col-12 col-lg-4 col-xs-12 pe-4">
                 <h5>Nossa loja</h5>
-                <p class="mt-3">Compre pelo telefone (62) 0000-0000 ou no nosso endereço: Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</p>
+                <p class="mt-3">Compre pelo telefone (62) 99146-6107 ou no nosso endereço: Av. Bernardo Sayão, 2462, Inhumas - GO, 75402-050</p>
             </div>
             <div class="col-12 col-lg-4 col-xs-12">
                 <h5>Atalhos do site</h5>
