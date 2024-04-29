@@ -6,12 +6,12 @@
     <section class="main-section section-1">
         {{-- <p>$destaques_slide</p> --}}
         <div class="swiper swiper-1">
-            <div id="area-video-bg">
+            {{-- <div id="area-video-bg">
                 <div class="gradient-slider-bg"></div>
                 <video width="320" height="240" loop autoplay muted>
                   <source src="{{asset('assets/site/videos/video-comprimido.mp4')}}" type="video/mp4">
                 </video>
-            </div>
+            </div> --}}
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -19,9 +19,14 @@
                 <div class="swiper-slide">
                     <div class="container">
                         <div class="main-slide">
-                            <h2>{{$item->titulo}}</h2>
-                            <p>{{$item->subtitulo}}</p>
-                            <a class="btn-slider" href="{{$item->url_link}}">{{$item->texto_link}}</a>
+                            <div class="main-slide-info">
+                                <h2>{{$item->titulo}}</h2>
+                                <p>{{$item->subtitulo}}</p>
+                                <a class="btn-slider" href="{{$item->url_link}}">{{$item->texto_link}}</a>
+                            </div>
+                            <div class="img-slide">
+                                <img src="{{$item->img_src}}" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>

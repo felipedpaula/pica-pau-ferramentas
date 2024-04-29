@@ -280,18 +280,21 @@ header {
     height: 400px;
     padding: 10px 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 5px;
 }
+.main-slide .main-slide-info {
+    width: 50%;
+}
+.main-slide .img-slide {
+    width: 50%;
+}
 .main-slide h2 {
-    color: #FFF;
+    color: var(--black);
     font-weight: 700;
     font-size: 48px;
 }
 .main-slide p {
-    color: #FFF;
+    color: var(--black);
     font-size: 22px;
 }
 .main-slide a {
